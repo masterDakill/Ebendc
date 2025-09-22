@@ -1,0 +1,26 @@
+<svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+      .logo-primary { fill: var(--primary, #7a5230); }
+      .logo-accent { fill: var(--accent, #c48f59); }
+    </style>
+  </defs>
+  
+  <!-- Icône outil ébénisterie stylisé -->
+  <g transform="translate(5, 10)">
+    <!-- Rabot/plane stylisé -->
+    <rect x="0" y="15" width="25" height="8" rx="2" class="logo-primary"/>
+    <rect x="2" y="17" width="3" height="4" class="logo-accent"/>
+    <path d="M25 19 L35 19 L33 15 L27 15 Z" class="logo-accent"/>
+    
+    <!-- Copeaux de bois -->
+    <path d="M30 10 Q32 8 34 10 Q32 12 30 10" class="logo-accent" opacity="0.7"/>
+    <path d="M35 8 Q37 6 39 8 Q37 10 35 8" class="logo-accent" opacity="0.5"/>
+  </g>
+  
+  <!-- Texte -->
+  <text x="50" y="25" class="logo-text logo-primary" font-size="12" font-weight="700">ÉBÉNISTERIE</text>
+  <text x="50" y="40" class="logo-text logo-primary" font-size="16" font-weight="800">DANIEL CHAMBERLAND</text>
+  <line x1="50" y1="45" x2="190" y2="45" stroke="var(--accent, #c48f59)" stroke-width="1" opacity="0.6"/>
+</svg>

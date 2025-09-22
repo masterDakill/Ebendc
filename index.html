@@ -1,316 +1,444 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ébénisterie Daniel Chamberland - Artisan du bois sur mesure</title>
-    <meta name="description" content="Ébénisterie Daniel Chamberland - Création artisanale de meubles sur mesure, restauration et ébénisterie fine au Québec">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ébénisterie Daniel Chamberland - Atelier d'ébénisterie haut de gamme à Charlesbourg. Cuisines, manteaux de foyer, mobiliers complexes sur mesure d'exception.">
+  <meta name="keywords" content="ébénisterie, cuisine sur mesure, manteau foyer, mobilier, Charlesbourg, Québec, artisan, bois, haut de gamme">
+  <meta name="author" content="Ébénisterie Daniel Chamberland">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7a5230">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ébénisterie Daniel Chamberland - Sur-mesure d'exception">
+  <meta property="og:description" content="Atelier d'ébénisterie haut de gamme à Charlesbourg : cuisines, manteaux de foyer, mobiliers complexes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ebenisteriechamberland.com">
+  <meta property="og:image" content="https://ebenisteriechamberland.com/assets/img/og-image.jpg">
+  <meta property="og:locale" content="fr_CA">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ébénisterie Daniel Chamberland">
+  <meta name="twitter:description" content="Sur-mesure d'exception, de la conception à l'installation">
+  <meta name="twitter:image" content="https://ebenisteriechamberland.com/assets/img/twitter-card.jpg">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="./manifest.json">
+  
+  <!-- Preconnect pour performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://ebenisteriechamberland.com",
+    "name": "Ébénisterie Daniel Chamberland",
+    "alternateName": "Daniel Chamberland Ébéniste",
+    "description": "Atelier d'ébénisterie haut de gamme spécialisé dans les cuisines, manteaux de foyer et mobiliers complexes sur mesure à Charlesbourg, Québec.",
+    "url": "https://ebenisteriechamberland.com",
+    "telephone": "+1-418-563-6781",
+    "faxNumber": "+1-418-849-7710",
+    "email": "eben.dc@ccapcable.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "350, rue Boyle",
+      "addressLocality": "Charlesbourg", 
+      "addressRegion": "QC",
+      "postalCode": "G2M 1H9",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "46.8389",
+      "longitude": "-71.2918"
+    },
+    "openingHours": [
+      "Mo-Fr 07:30-16:30",
+      "Sa 08:00-12:00"
+    ],
+    "priceRange": "$$$",
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "46.8389",
+        "longitude": "-71.2918"
+      },
+      "geoRadius": "100000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services d'ébénisterie",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cuisine sur mesure",
+            "description": "Conception et fabrication de cuisines sur mesure en bois massif"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Manteau de foyer",
+            "description": "Création de manteaux de foyer personnalisés"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Mobilier sur mesure",
+            "description": "Fabrication de meubles sur mesure pour tous les besoins"
+          }
+        }
+      ]
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Daniel Chamberland"
+    },
+    "sameAs": [
+      "https://www.facebook.com/ebenisteriechamberland",
+      "https://www.instagram.com/ebenisteriechamberland"
+    ]
+  }
+  </script>
+  
+  <title>Ébénisterie Daniel Chamberland - Sur-mesure d'exception à Charlesbourg</title>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h2>Ébénisterie Daniel Chamberland</h2>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#accueil" class="nav-link">Accueil</a>
-                <a href="#realisations" class="nav-link">Nos Réalisations</a>
-                <a href="#apropos" class="nav-link">À Propos</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="container">
+      <div class="nav-container">
+        <a href="./" class="nav-brand" aria-label="Accueil Ébénisterie Daniel Chamberland">
+          <img src="./assets/logo.svg" alt="Logo Ébénisterie Daniel Chamberland" class="nav-logo">
+        </a>
+        
+        <ul class="nav-menu" role="menubar">
+          <li role="none">
+            <a href="./" class="nav-link active" role="menuitem">Accueil</a>
+          </li>
+          <li role="none">
+            <a href="./realisations.html" class="nav-link" role="menuitem">Réalisations</a>
+          </li>
+          <li role="none">
+            <a href="./a-propos.html" class="nav-link" role="menuitem">À propos</a>
+          </li>
+          <li role="none">
+            <a href="./processus.html" class="nav-link" role="menuitem">Processus</a>
+          </li>
+          <li role="none">
+            <a href="./contact.html" class="nav-link" role="menuitem">Contact</a>
+          </li>
+        </ul>
+        
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Section Accueil -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>L'art du bois, l'excellence du sur-mesure</h1>
-                <p class="hero-subtitle">Création artisanale de meubles uniques depuis plus de 20 ans</p>
-                <div class="hero-buttons">
-                    <a href="#realisations" class="btn btn-primary">Découvrir nos créations</a>
-                    <a href="#contact" class="btn btn-secondary">Demander un devis</a>
-                </div>
-            </div>
+  <!-- Section Héro -->
+  <section class="hero" id="accueil" role="banner">
+    <div class="hero-bg" aria-hidden="true">
+      <!-- L'image sera chargée via CSS ou JS pour l'optimisation -->
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Sur-mesure d'exception, de la conception à l'installation</h1>
+        <p class="hero-subtitle">
+          Atelier d'ébénisterie haut de gamme à Charlesbourg : cuisines, manteaux de foyer, mobiliers complexes.
+        </p>
+        <div class="d-flex gap-lg justify-center">
+          <a href="./realisations.html" class="btn btn-primary">
+            Voir nos réalisations
+          </a>
+          <a href="./contact.html" class="btn btn-secondary">
+            Parler de votre projet
+          </a>
         </div>
-        <div class="hero-image">
-            <div class="hero-bg"></div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Section Nos Réalisations -->
-    <section id="realisations" class="realisations">
-        <div class="container">
-            <h2 class="section-title">Nos Réalisations</h2>
-            <p class="section-subtitle">Découvrez quelques-unes de nos créations artisanales</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <div class="placeholder-image cuisine"></div>
-                        <div class="overlay">
-                            <h3>Cuisine Sur Mesure</h3>
-                            <p>Armoires en érable massif avec finition naturelle</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <div class="placeholder-image bibliotheque"></div>
-                        <div class="overlay">
-                            <h3>Bibliothèque Intégrée</h3>
-                            <p>Chêne blanc avec éclairage LED intégré</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <div class="placeholder-image table"></div>
-                        <div class="overlay">
-                            <h3>Table de Salle à Manger</h3>
-                            <p>Noyer noir avec piètement en acier</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <div class="placeholder-image bureau"></div>
-                        <div class="overlay">
-                            <h3>Bureau Exécutif</h3>
-                            <p>Cerisier massif avec tiroirs à fermeture douce</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <div class="placeholder-image escalier"></div>
-                        <div class="overlay">
-                            <h3>Escalier sur Mesure</h3>
-                            <p>Frêne blanc avec rampe en acier forgé</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <div class="gallery-image">
-                        <div class="placeholder-image dressing"></div>
-                        <div class="overlay">
-                            <h3>Dressing Walk-in</h3>
-                            <p>Organisation optimisée en bois de cèdre</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Section USP (Unique Selling Points) -->
+  <section class="section" id="usp" aria-labelledby="usp-title">
+    <div class="container">
+      <h2 id="usp-title" class="text-center mb-2xl">Pourquoi choisir notre atelier ?</h2>
+      
+      <div class="grid grid-3">
+        <article class="card text-center">
+          <div class="card-content">
+            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);" aria-hidden="true">🎯</div>
+            <h3 class="card-title">Sur-mesure</h3>
+            <p class="card-text">
+              Chaque projet est unique, conçu spécifiquement selon vos besoins, votre espace et vos goûts. 
+              Du premier croquis à l'installation finale.
+            </p>
+          </div>
+        </article>
+        
+        <article class="card text-center">
+          <div class="card-content">
+            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);" aria-hidden="true">🌲</div>
+            <h3 class="card-title">Matériaux nobles</h3>
+            <p class="card-text">
+              Sélection rigoureuse des essences de bois : érable, chêne, noyer, cerisier. 
+              Finitions haut de gamme et quincaillerie européenne.
+            </p>
+          </div>
+        </article>
+        
+        <article class="card text-center">
+          <div class="card-content">
+            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);" aria-hidden="true">🏆</div>
+            <h3 class="card-title">Installation soignée</h3>
+            <p class="card-text">
+              Livraison et installation professionnelle avec finitions parfaites. 
+              Suivi post-installation et garantie sur tous nos ouvrages.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-    <!-- Section À Propos -->
-    <section id="apropos" class="apropos">
-        <div class="container">
-            <div class="apropos-content">
-                <div class="apropos-text">
-                    <h2 class="section-title">À Propos de Daniel Chamberland</h2>
-                    
-                    <div class="text-content">
-                        <p class="lead">Maître ébéniste passionné depuis plus de 20 ans, Daniel Chamberland perpétue la tradition de l'artisanat québécois tout en intégrant les techniques modernes.</p>
-                        
-                        <p>Formé à l'École nationale du meuble et de l'ébénisterie de Victoriaville, Daniel a développé une expertise reconnue dans la création de meubles sur mesure, alliant savoir-faire traditionnel et innovation contemporaine.</p>
-                        
-                        <div class="values">
-                            <h3>Nos Valeurs</h3>
-                            <div class="values-grid">
-                                <div class="value-item">
-                                    <i class="fas fa-hammer"></i>
-                                    <h4>Artisanat</h4>
-                                    <p>Chaque pièce est unique, façonnée à la main avec le plus grand soin</p>
-                                </div>
-                                <div class="value-item">
-                                    <i class="fas fa-leaf"></i>
-                                    <h4>Durabilité</h4>
-                                    <p>Utilisation exclusive de bois locaux et de finitions écologiques</p>
-                                </div>
-                                <div class="value-item">
-                                    <i class="fas fa-users"></i>
-                                    <h4>Collaboration</h4>
-                                    <p>Travail étroit avec nos clients pour concrétiser leur vision</p>
-                                </div>
-                                <div class="value-item">
-                                    <i class="fas fa-award"></i>
-                                    <h4>Excellence</h4>
-                                    <p>Engagement vers la perfection dans chaque détail</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <blockquote>
-                            "Le bois raconte une histoire. Mon rôle est de lui donner une nouvelle vie, de créer des pièces qui traverseront les générations."
-                            <cite>- Daniel Chamberland</cite>
-                        </blockquote>
-                    </div>
-                </div>
-                
-                <div class="apropos-image">
-                    <div class="placeholder-portrait"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Section Réalisations Vedettes -->
+  <section class="section" id="realisations-vedettes" aria-labelledby="vedettes-title" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <header class="text-center mb-2xl">
+        <h2 id="vedettes-title">Nos dernières réalisations</h2>
+        <p class="lead">Découvrez quelques-unes de nos créations les plus remarquables</p>
+      </header>
+      
+      <div class="projects-grid" id="featured-projects">
+        <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+        <article class="project-card">
+          <div class="project-image">
+            <img data-src="./assets/img/cuisine-noyer-1.webp" alt="Cuisine sur mesure en noyer" class="gallery-img" data-title="Cuisine sur mesure en noyer" data-description="Design contemporain et fonctionnalité optimale">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Cuisine</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=cuisine-noyer-moderne">Cuisine sur mesure en noyer</a>
+            </h3>
+            <p class="project-subtitle">Design contemporain et fonctionnalité optimale</p>
+          </div>
+        </article>
+        
+        <article class="project-card">
+          <div class="project-image">
+            <img data-src="./assets/img/manteau-pierre-1.webp" alt="Manteau de foyer pierre et chêne" class="gallery-img" data-title="Manteau de foyer pierre et chêne" data-description="Mariage harmonieux entre tradition et modernité">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Manteau de foyer</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=manteau-foyer-pierre-chene">Manteau de foyer pierre et chêne</a>
+            </h3>
+            <p class="project-subtitle">Mariage harmonieux entre tradition et modernité</p>
+          </div>
+        </article>
+        
+        <article class="project-card">
+          <div class="project-image">
+            <img data-src="./assets/img/garde-robe-1.webp" alt="Garde-robe intégré walk-in" class="gallery-img" data-title="Garde-robe intégré walk-in" data-description="Organisation optimale et finitions luxueuses">
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Rangement</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=garde-robe-integre">Garde-robe intégré walk-in</a>
+            </h3>
+            <p class="project-subtitle">Organisation optimale et finitions luxueuses</p>
+          </div>
+        </article>
+      </div>
+      
+      <div class="text-center mt-2xl">
+        <a href="./realisations.html" class="btn btn-outline">
+          Voir toutes nos réalisations
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contactez-nous</h2>
-            <p class="section-subtitle">Donnons vie à vos projets ensemble</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Informations de Contact</h3>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Atelier</h4>
-                            <p>123 Rue de l'Artisan<br>
-                            Victoriaville, QC G6P 1A1</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Téléphone</h4>
-                            <p><a href="tel:+14185551234">(418) 555-1234</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Courriel</h4>
-                            <p><a href="mailto:eben.dc@ccapcable.com">eben.dc@ccapcable.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-fax"></i>
-                        <div>
-                            <h4>Télécopieur</h4>
-                            <p>(418) 849-7710</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Heures d'ouverture</h4>
-                            <p>Lundi - Vendredi : 8h00 - 17h00<br>
-                            Samedi : 9h00 - 15h00<br>
-                            Dimanche : Sur rendez-vous</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3>Demande de Renseignements</h3>
-                    
-                    <form action="mailto:eben.dc@ccapcable.com" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <label for="nom">Nom complet *</label>
-                            <input type="text" id="nom" name="nom" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="courriel">Adresse courriel *</label>
-                            <input type="email" id="courriel" name="courriel" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <input type="tel" id="telephone" name="telephone">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="projet">Type de projet</label>
-                            <select id="projet" name="projet">
-                                <option value="">Sélectionnez un type</option>
-                                <option value="cuisine">Cuisine sur mesure</option>
-                                <option value="meuble">Meuble sur mesure</option>
-                                <option value="renovation">Rénovation</option>
-                                <option value="restauration">Restauration</option>
-                                <option value="autre">Autre</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Description du projet *</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Décrivez votre projet en détail..."></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Envoyer la demande
-                        </button>
-                    </form>
-                </div>
-            </div>
+  <!-- Section À propos (résumé) -->
+  <section class="section" id="apropos-resume" aria-labelledby="apropos-title">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center; gap: var(--space-4xl);">
+        <div>
+          <h2 id="apropos-title">L'expertise au service de vos projets</h2>
+          <p class="lead">
+            Plus de 20 ans d'expérience dans l'ébénisterie fine et la création de mobilier sur mesure.
+          </p>
+          <p>
+            Daniel Chamberland perpétue la tradition artisanale québécoise en alliant savoir-faire ancestral 
+            et techniques modernes. Chaque projet est une œuvre unique, réalisée avec passion et précision.
+          </p>
+          <ul style="list-style: none; padding: 0; margin: var(--space-xl) 0;">
+            <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
+              <span style="color: var(--accent); font-weight: bold;">✓</span>
+              Formation École nationale du meuble et de l'ébénisterie
+            </li>
+            <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
+              <span style="color: var(--accent); font-weight: bold;">✓</span>
+              Spécialisation projets complexes et haut de gamme
+            </li>
+            <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
+              <span style="color: var(--accent); font-weight: bold;">✓</span>
+              Matériaux locaux et finitions écologiques
+            </li>
+          </ul>
+          <a href="./a-propos.html" class="btn btn-outline">
+            En savoir plus sur notre approche
+          </a>
         </div>
-    </section>
-
-    <!-- Pied de page -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Ébénisterie Daniel Chamberland</h3>
-                    <p>Artisan du bois depuis 2003, créateur de meubles sur mesure qui traversent les générations.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#realisations">Meubles sur mesure</a></li>
-                        <li><a href="#realisations">Manteaux de foyer</a></li>
-                        <li><a href="#realisations">Armoires</a></li>
-                        <li><a href="#realisations">Cuisines</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Charlesbourg, QC</li>
-                        <li><i class="fas fa-phone"></i> (418) 563-6781</li>
-                        <li><i class="fas fa-envelope"></i> eben.dc@ccapcable.com</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Ébénisterie Daniel Chamberland. Tous droits réservés.</p>
-                <p>Site web conçu avec passion pour l'artisanat québécois</p>
-            </div>
+        
+        <div>
+          <img 
+            data-src="./assets/img/atelier-daniel.webp" 
+            alt="Daniel Chamberland dans son atelier d'ébénisterie" 
+            style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);"
+          >
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/script.js"></script>
+  <!-- Section Contact rapide -->
+  <section class="section" id="contact-rapide" aria-labelledby="contact-title" style="background-color: var(--bg-secondary);">
+    <div class="container text-center">
+      <h2 id="contact-title">Démarrons votre projet ensemble</h2>
+      <p class="lead mb-2xl">
+        Contactez-nous pour discuter de votre projet et obtenir une consultation personnalisée.
+      </p>
+      
+      <div class="grid grid-3" style="max-width: 800px; margin: 0 auto;">
+        <div>
+          <div style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-md);" aria-hidden="true">📞</div>
+          <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Appelez-nous</h3>
+          <a href="tel:+14185636781" style="font-weight: 600; font-size: 1.1rem;">(418) 563-6781</a>
+        </div>
+        
+        <div>
+          <div style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-md);" aria-hidden="true">✉️</div>
+          <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Écrivez-nous</h3>
+          <a href="mailto:eben.dc@ccapcable.com" style="font-weight: 600;">eben.dc@ccapcable.com</a>
+        </div>
+        
+        <div>
+          <div style="font-size: 2rem; color: var(--accent); margin-bottom: var(--space-md);" aria-hidden="true">📍</div>
+          <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Visitez-nous</h3>
+          <address style="font-style: normal; font-weight: 600; line-height: 1.4;">
+            350, rue Boyle<br>
+            Charlesbourg, QC
+          </address>
+        </div>
+      </div>
+      
+      <div class="mt-2xl">
+        <a href="./contact.html" class="btn btn-primary">
+          Demander une soumission
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section" role="contentinfo" style="background-color: var(--primary-dark); color: white; padding: var(--space-4xl) 0 var(--space-2xl);">
+    <div class="container">
+      <div class="grid grid-4" style="margin-bottom: var(--space-3xl);">
+        <div>
+          <img src="./assets/logo.svg" alt="Logo Ébénisterie Daniel Chamberland" style="height: 50px; margin-bottom: var(--space-lg); filter: brightness(0) invert(1);">
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            Atelier d'ébénisterie haut de gamme spécialisé dans la création de mobilier sur mesure d'exception.
+          </p>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Services</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Cuisines sur mesure</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Manteaux de foyer</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Mobilier sur mesure</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Rangements intégrés</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Contact</h3>
+          <address style="font-style: normal; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            <div style="margin-bottom: var(--space-sm);">
+              📍 350, rue Boyle<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Charlesbourg, QC G2M 1H9
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              📞 <a href="tel:+14185636781" style="color: rgba(255, 255, 255, 0.8);">(418) 563-6781</a>
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              ✉️ <a href="mailto:eben.dc@ccapcable.com" style="color: rgba(255, 255, 255, 0.8);">eben.dc@ccapcable.com</a>
+            </div>
+          </address>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Horaires</h3>
+          <div style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            <div style="margin-bottom: var(--space-sm);">
+              <strong>Lundi - Vendredi</strong><br>
+              7h30 - 16h30
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              <strong>Samedi</strong><br>
+              Sur rendez-vous
+            </div>
+            <div>
+              <strong>Dimanche</strong><br>
+              Fermé
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-xl); text-align: center; color: rgba(255, 255, 255, 0.6);">
+        <p>&copy; 2024 Ébénisterie Daniel Chamberland. Tous droits réservés.</p>
+        <p style="font-size: 0.875rem; margin-top: var(--space-sm);">
+          Artisanat québécois d'exception • Charlesbourg, Québec
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
 </body>
 </html>

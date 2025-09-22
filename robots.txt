@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ebenisteriechamberland.com/sitemap.xml
+
+# Pages prioritaires
+Allow: /index.html
+Allow: /realisations.html
+Allow: /a-propos.html
+Allow: /processus.html
+Allow: /contact.html
+
+# Assets autorisés
+Allow: /assets/
+Allow: /style.css
+Allow: /script.js
+
+# Pas de restrictions particulières
+# Site vitrine professionnel ouvert à l'indexation
+
+# Crawl-delay recommandé pour éviter la surcharge
+Crawl-delay: 1
