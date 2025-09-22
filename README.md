@@ -1,6 +1,6 @@
 # Ébénisterie Daniel Chamberland
 
-Site web statique élégant et responsive pour présenter l'entreprise d'ébénisterie Daniel Chamberland.
+Site web statique élégant et responsive pour présenter l'entreprise d'ébénisterie Daniel Chamberland, spécialisée en manteaux de foyer, meubles sur mesure et armoires.
 
 ## 🌟 Caractéristiques
 
@@ -127,9 +127,10 @@ Remplacer les placeholders dans le dossier `/images/` :
 ## 📞 Contact entreprise
 
 **Ébénisterie Daniel Chamberland**
-- 📍 123 Rue de l'Artisan, Victoriaville, QC G6P 1A1
-- ☎️ (418) 555-1234
-- ✉️ info@ebenisteriechamberland.ca
+- 📍 350 rue Boyle, Charlesbourg, QC G2M 1H9
+- ☎️ (418) 563-6781
+- 📠 (418) 849-7710 (Fax)
+- ✉️ eben.dc@ccapcable.com
 
 ## 🛠️ Développement
 

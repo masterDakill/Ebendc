@@ -1,13 +1,13 @@
 /* ===== Variables CSS ===== */
 :root {
     /* Palette de couleurs inspirée du bois */
-    --primary-brown: #8B4513;      /* Brun riche */
+    --primary-brown: #A0522D;      /* Brun riche avec chaleur */
     --light-brown: #D2B48C;        /* Beige sable */
     --dark-brown: #654321;         /* Brun foncé */
-    --anthracite: #2F2F2F;         /* Anthracite */
+    --anthracite: #3A1F1A;         /* Brun anthracite */
     --warm-beige: #F5E6D3;         /* Beige chaud */
     --cream: #FFF8E7;              /* Crème */
-    --accent-gold: #CD853F;        /* Accent doré */
+    --accent-gold: #D4A574;        /* Accent doré chaud */
     --white: #FFFFFF;
     --text-dark: #333333;
     --text-light: #666666;
@@ -133,7 +133,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--dark-brown) 0%, var(--primary-brown) 100%);
+    background: linear-gradient(135deg, var(--anthracite) 0%, var(--primary-brown) 50%, var(--accent-gold) 100%);
 }
 
 .hero-content {

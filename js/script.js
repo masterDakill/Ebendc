@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const emailSubject = `Demande de renseignements - ${formData.get('nom')}`;
                 
                 // Ouvrir le client de messagerie
-                const mailtoLink = `mailto:info@ebenisteriechamberland.ca?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                const mailtoLink = `mailto:eben.dc@ccapcable.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
                 window.location.href = mailtoLink;
                 
                 // Afficher un message de confirmation
