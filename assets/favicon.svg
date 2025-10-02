@@ -1,20 +1,23 @@
-<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <style>
-      .favicon-bg { fill: #7a5230; }
-      .favicon-accent { fill: #c48f59; }
-    </style>
+    <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513"/>
+      <stop offset="50%" style="stop-color:#A0522D"/>
+      <stop offset="100%" style="stop-color:#D2691E"/>
+    </linearGradient>
   </defs>
   
-  <!-- Background -->
-  <rect width="32" height="32" rx="4" class="favicon-bg"/>
+  <!-- Cercle -->
+  <circle cx="50" cy="50" r="42" stroke="url(#faviconGradient)" stroke-width="3" fill="none"/>
   
-  <!-- Rabot stylisé -->
-  <rect x="6" y="14" width="16" height="5" rx="1" class="favicon-accent"/>
-  <rect x="7" y="15" width="2" height="3" fill="#7a5230"/>
-  <path d="M22 16 L26 16 L25 13 L23 13 Z" class="favicon-accent"/>
+  <!-- Ligne verticale -->
+  <line x1="50" y1="15" x2="50" y2="85" stroke="url(#faviconGradient)" stroke-width="2"/>
   
-  <!-- Copeaux -->
-  <circle cx="24" cy="10" r="1.5" class="favicon-accent" opacity="0.8"/>
-  <circle cx="26" cy="8" r="1" class="favicon-accent" opacity="0.6"/>
+  <!-- D simplifié -->
+  <path d="M 35 35 L 35 65 Q 42 65 45 57 Q 45 50 45 43 Q 42 35 35 35 Z" 
+        fill="url(#faviconGradient)"/>
+  
+  <!-- C simplifié -->
+  <path d="M 65 37 Q 55 35 52 43 Q 52 50 52 57 Q 55 65 65 63" 
+        stroke="url(#faviconGradient)" stroke-width="5" fill="none" stroke-linecap="round"/>
 </svg>

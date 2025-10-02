@@ -1,26 +1,30 @@
-<svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
-    <style>
-      .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 600; }
-      .logo-primary { fill: var(--primary, #7a5230); }
-      .logo-accent { fill: var(--accent, #c48f59); }
-    </style>
+    <!-- Définition du dégradé brun/doré pour le logo -->
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D2691E;stop-opacity:1" />
+    </linearGradient>
   </defs>
   
-  <!-- Icône outil ébénisterie stylisé -->
-  <g transform="translate(5, 10)">
-    <!-- Rabot/plane stylisé -->
-    <rect x="0" y="15" width="25" height="8" rx="2" class="logo-primary"/>
-    <rect x="2" y="17" width="3" height="4" class="logo-accent"/>
-    <path d="M25 19 L35 19 L33 15 L27 15 Z" class="logo-accent"/>
-    
-    <!-- Copeaux de bois -->
-    <path d="M30 10 Q32 8 34 10 Q32 12 30 10" class="logo-accent" opacity="0.7"/>
-    <path d="M35 8 Q37 6 39 8 Q37 10 35 8" class="logo-accent" opacity="0.5"/>
-  </g>
+  <!-- Cercle extérieur -->
+  <circle cx="100" cy="100" r="85" stroke="url(#logoGradient)" stroke-width="4" fill="none"/>
   
-  <!-- Texte -->
-  <text x="50" y="25" class="logo-text logo-primary" font-size="12" font-weight="700">ÉBÉNISTERIE</text>
-  <text x="50" y="40" class="logo-text logo-primary" font-size="16" font-weight="800">DANIEL CHAMBERLAND</text>
-  <line x1="50" y1="45" x2="190" y2="45" stroke="var(--accent, #c48f59)" stroke-width="1" opacity="0.6"/>
+  <!-- Ligne verticale centrale -->
+  <line x1="100" y1="25" x2="100" y2="175" stroke="url(#logoGradient)" stroke-width="2.5"/>
+  
+  <!-- Lettre D stylisée (partie gauche) -->
+  <path d="M 70 70 L 70 130 Q 85 130 92 115 Q 92 100 92 85 Q 85 70 70 70 Z" 
+        fill="url(#logoGradient)" stroke="none"/>
+  <rect x="65" y="70" width="8" height="60" fill="url(#logoGradient)"/>
+  
+  <!-- Lettre C stylisée (partie droite) -->
+  <path d="M 130 75 Q 115 70 108 85 Q 108 100 108 115 Q 115 130 130 125" 
+        stroke="url(#logoGradient)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Détails artistiques (effet bois) -->
+  <line x1="72" y1="80" x2="75" y2="85" stroke="#6B3410" stroke-width="1" opacity="0.3"/>
+  <line x1="72" y1="95" x2="76" y2="100" stroke="#6B3410" stroke-width="1" opacity="0.3"/>
+  <line x1="73" y1="110" x2="77" y2="115" stroke="#6B3410" stroke-width="1" opacity="0.3"/>
 </svg>
