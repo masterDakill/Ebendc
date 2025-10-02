@@ -1,0 +1,109 @@
+═══════════════════════════════════════════════════════════
+  📸 COMMENT AJOUTER VOS IMAGES - MÉTHODE SIMPLE
+═══════════════════════════════════════════════════════════
+
+🎯 MÉTHODE LA PLUS FACILE (Recommandée)
+────────────────────────────────────────
+
+1️⃣  UPLOADEZ VOS IMAGES
+   • Cliquez sur le bouton "Upload" dans le chat
+   • Ou donnez-moi des URLs d'images en ligne
+
+2️⃣  DITES-MOI CE QUE C'EST
+   Exemple:
+   "Voici mon logo: https://page.gensparksite.com/v1/xxxxx"
+   "Voici 5 photos de ma cuisine en noyer: [URLs]"
+
+3️⃣  JE M'OCCUPE DU RESTE!
+   • Je télécharge les images
+   • Je les optimise
+   • Je les place au bon endroit
+   • Je mets à jour le site automatiquement
+
+═══════════════════════════════════════════════════════════
+
+📂 OÙ VONT LES IMAGES?
+────────────────────────
+
+assets/img/
+├── logos/     → Votre logo (PNG, SVG)
+├── hero/      → Grande image d'accueil
+└── projets/   → Photos de vos réalisations
+
+═══════════════════════════════════════════════════════════
+
+🖼️  DE QUELLES IMAGES AVEZ-VOUS BESOIN?
+──────────────────────────────────────────
+
+✅ UN LOGO
+   • Format: PNG ou SVG
+   • Taille: 200-500px
+   • Sur fond transparent si possible
+
+✅ UNE IMAGE HERO (optionnel)
+   • Grande photo pour page d'accueil
+   • Votre atelier ou une belle réalisation
+   • Taille: 1920x1080px idéalement
+
+✅ PHOTOS DE VOS RÉALISATIONS (4-6 par projet)
+   
+   Pour une CUISINE:
+   • Vue d'ensemble
+   • Détail des tiroirs/portes
+   • Îlot central
+   • Détail du bois/finitions
+   • Vue avec éclairage
+
+   Pour un MANTEAU DE FOYER:
+   • Vue frontale complète
+   • Détail du bois
+   • Détail de la pierre
+   • Vue d'ambiance
+
+   Pour un WALK-IN:
+   • Vue d'entrée
+   • Rangements organisés
+   • Tiroirs/accessoires
+   • Vue complète
+
+═══════════════════════════════════════════════════════════
+
+💡 EXEMPLE CONCRET
+──────────────────
+
+VOUS DITES:
+"Voici 3 photos de ma cuisine:
+1. https://page.gensparksite.com/v1/abc123 (vue d'ensemble)
+2. https://page.gensparksite.com/v1/def456 (îlot)
+3. https://page.gensparksite.com/v1/ghi789 (tiroirs)"
+
+JE FAIS:
+✓ Télécharge les 3 images
+✓ Les renomme: cuisine-noyer-1.jpg, cuisine-noyer-2.jpg...
+✓ Les optimise pour le web
+✓ Met à jour le site automatiquement
+
+═══════════════════════════════════════════════════════════
+
+🚀 PRÊT À COMMENCER?
+────────────────────
+
+Dites-moi simplement:
+• "J'ai mon logo à ajouter"
+• "J'ai des photos de cuisine"
+• "J'ai une photo d'atelier pour l'accueil"
+
+Et donnez-moi les URLs ou uploadez les fichiers!
+
+═══════════════════════════════════════════════════════════
+
+📚 GUIDES DÉTAILLÉS
+────────────────────
+
+Pour plus d'infos, consultez:
+• GUIDE-IMAGES.md  → Guide complet détaillé
+• add-images.sh    → Script d'assistance (terminal)
+
+═══════════════════════════════════════════════════════════
+
+C'EST TOUT! Facile non? 😊🪵
