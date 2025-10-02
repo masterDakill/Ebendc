@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Identité visuelle Ébénisterie Daniel Chamberland - Découvrez notre système de marque complet avec logos, couleurs et applications.">
+  <meta name="keywords" content="identité visuelle, logo, branding, ébénisterie, Daniel Chamberland, design graphique">
+  <meta name="author" content="Ébénisterie Daniel Chamberland">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7a5230">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Identité Visuelle - Ébénisterie Daniel Chamberland">
+  <meta property="og:description" content="Découvrez l'identité visuelle complète de l'Ébénisterie Daniel Chamberland : logos, couleurs et applications de marque.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ebenisteriechamberland.com/identite-visuelle.html">
+  <meta property="og:image" content="https://ebenisteriechamberland.com/assets/img/brand-showcase.jpg">
+  <meta property="og:locale" content="fr_CA">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+  
+  <!-- Preconnect pour performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+  
+  <title>Identité Visuelle - Ébénisterie Daniel Chamberland</title>
+  
+  <style>
+    /* Styles spécifiques à la page identité visuelle */
+    .brand-hero {
+      padding: 8rem 0 6rem;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+      text-align: center;
+    }
+    
+    .brand-section {
+      padding: 4rem 0;
+    }
+    
+    .brand-section:nth-child(even) {
+      background-color: var(--bg-secondary);
+    }
+    
+    .logo-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .logo-variant {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .logo-variant:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .logo-variant.dark {
+      background: var(--primary-dark);
+    }
+    
+    .logo-display {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+    }
+    
+    .logo-display img {
+      max-width: 200px;
+      height: auto;
+    }
+    
+    .logo-info {
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+    
+    .logo-variant.dark .logo-info {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+    }
+    
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .color-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    
+    .color-swatch {
+      height: 120px;
+      position: relative;
+    }
+    
+    .color-info {
+      padding: 1.5rem;
+    }
+    
+    .color-name {
+      font-weight: 700;
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .color-values {
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .applications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .application-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.3s ease;
+    }
+    
+    .application-card:hover {
+      transform: translateY(-4px);
+    }
+    
+    .application-image {
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .application-info {
+      padding: 1.5rem;
+    }
+    
+    .usage-guidelines {
+      background: #f8f9fa;
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    
+    .download-section {
+      text-align: center;
+      padding: 3rem 0;
+      background: var(--primary-dark);
+      color: white;
+      margin: 2rem 0;
+      border-radius: var(--radius-lg);
+    }
+    
+    .download-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-download {
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-download:hover {
+      background: #d49a61;
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .brand-hero {
+        padding: 4rem 0 3rem;
+      }
+      
+      .logo-showcase {
+        grid-template-columns: 1fr;
+      }
+      
+      .color-palette {
+        grid-template-columns: 1fr;
+      }
+      
+      .applications-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .download-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="container">
+      <div class="nav-container">
+        <a href="./" class="nav-brand" aria-label="Accueil Ébénisterie Daniel Chamberland">
+          <img src="./assets/logo.svg" alt="Logo Ébénisterie Daniel Chamberland" class="nav-logo">
+        </a>
+        
+        <ul class="nav-menu" role="menubar">
+          <li role="none">
+            <a href="./" class="nav-link" role="menuitem">Accueil</a>
+          </li>
+          <li role="none">
+            <a href="./realisations.html" class="nav-link" role="menuitem">Réalisations</a>
+          </li>
+          <li role="none">
+            <a href="./a-propos.html" class="nav-link" role="menuitem">À propos</a>
+          </li>
+          <li role="none">
+            <a href="./processus.html" class="nav-link" role="menuitem">Processus</a>
+          </li>
+          <li role="none">
+            <a href="./contact.html" class="nav-link" role="menuitem">Contact</a>
+          </li>
+          <li role="none">
+            <a href="./identite-visuelle.html" class="nav-link active" role="menuitem">Identité Visuelle</a>
+          </li>
+        </ul>
+        
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Section Héro -->
+  <section class="brand-hero">
+    <div class="container">
+      <h1 class="hero-title">Identité Visuelle</h1>
+      <p class="hero-subtitle">
+        Découvrez l'univers graphique de l'Ébénisterie Daniel Chamberland
+      </p>
+      <p class="lead">
+        Une identité forte qui reflète notre engagement envers l'excellence et le raffinement artisanal
+      </p>
+    </div>
+  </section>
+
+  <!-- Section Logo Principal -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Logo Principal</h2>
+      <p class="text-center lead mb-xl">
+        Notre logo représente l'union harmonieuse entre tradition et modernité, 
+        avec les initiales "DC" intégrées dans un cercle symbolisant la perfection artisanale.
+      </p>
+      
+      <div class="logo-showcase">
+        <div class="logo-variant">
+          <div class="logo-display">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Version claire avec dégradé brun/doré -->
+              <defs>
+                <linearGradient id="lightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#D2691E;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="90" stroke="url(#lightGradient)" stroke-width="8" fill="none"/>
+              <line x1="100" y1="20" x2="100" y2="180" stroke="url(#lightGradient)" stroke-width="3"/>
+              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#lightGradient)">D</text>
+              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#lightGradient)">C</text>
+            </svg>
+          </div>
+          <div class="logo-info">
+            <h3 class="color-name">Version Claire</h3>
+            <p>Utilisée sur fonds clairs et blancs</p>
+          </div>
+        </div>
+        
+        <div class="logo-variant dark">
+          <div class="logo-display">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Version sombre avec dégradé doré -->
+              <defs>
+                <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#DAA520;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="90" stroke="url(#darkGradient)" stroke-width="8" fill="none"/>
+              <line x1="100" y1="20" x2="100" y2="180" stroke="url(#darkGradient)" stroke-width="3"/>
+              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#darkGradient)">D</text>
+              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#darkGradient)">C</text>
+            </svg>
+          </div>
+          <div class="logo-info">
+            <h3 class="color-name">Version Sombre</h3>
+            <p>Utilisée sur fonds sombres et colorés</p>
+          </div>
+        </div>
+        
+        <div class="logo-variant">
+          <div class="logo-display">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Version monochrome noire -->
+              <circle cx="100" cy="100" r="90" stroke="#000000" stroke-width="8" fill="none"/>
+              <line x1="100" y1="20" x2="100" y2="180" stroke="#000000" stroke-width="3"/>
+              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#000000">D</text>
+              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#000000">C</text>
+            </svg>
+          </div>
+          <div class="logo-info">
+            <h3 class="color-name">Version Monochrome</h3>
+            <p>Pour impression en noir et blanc</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="usage-guidelines">
+        <h3>Directives d'utilisation</h3>
+        <ul>
+          <li>Respecter un espace libre équivalent à la moitié de la hauteur du logo autour de celui-ci</li>
+          <li>Taille minimale recommandée : 40px en version numérique, 15mm en version imprimée</li>
+          <li>Ne pas déformer, incliner ou modifier les proportions du logo</li>
+          <li>Utiliser uniquement les versions approuvées dans les couleurs officielles</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Palette de couleurs -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Palette de Couleurs</h2>
+      <p class="text-center lead mb-xl">
+        Notre palette reflète la chaleur et la noblesse du bois, avec des tons naturels et raffinés.
+      </p>
+      
+      <div class="color-palette">
+        <div class="color-card">
+          <div class="color-swatch" style="background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #D2691E 100%);"></div>
+          <div class="color-info">
+            <h3 class="color-name">Brun Noyer</h3>
+            <div class="color-values">
+              HEX: #7a5230<br>
+              RGB: 122, 82, 48<br>
+              CMYK: 0, 33, 61, 52
+            </div>
+          </div>
+        </div>
+        
+        <div class="color-card">
+          <div class="color-swatch" style="background: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #B8860B 100%);"></div>
+          <div class="color-info">
+            <h3 class="color-name">Doré Cuivré</h3>
+            <div class="color-values">
+              HEX: #c48f59<br>
+              RGB: 196, 143, 89<br>
+              CMYK: 0, 27, 55, 23
+            </div>
+          </div>
+        </div>
+        
+        <div class="color-card">
+          <div class="color-swatch" style="background: #f7f3ee;"></div>
+          <div class="color-info">
+            <h3 class="color-name">Beige Chaud</h3>
+            <div class="color-values">
+              HEX: #f7f3ee<br>
+              RGB: 247, 243, 238<br>
+              CMYK: 0, 2, 4, 3
+            </div>
+          </div>
+        </div>
+        
+        <div class="color-card">
+          <div class="color-swatch" style="background: #2c3e50;"></div>
+          <div class="color-info">
+            <h3 class="color-name">Anthracite</h3>
+            <div class="color-values">
+              HEX: #2c3e50<br>
+              RGB: 44, 62, 80<br>
+              CMYK: 45, 23, 0, 69
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Applications -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Applications de Marque</h2>
+      <p class="text-center lead mb-xl">
+        Découvrez comment notre identité visuelle s'adapte à différents supports de communication.
+      </p>
+      
+      <div class="applications-grid">
+        <div class="application-card">
+          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/1c77e8ab4846d0d1699984d78726e60b');">
+          </div>
+          <div class="application-info">
+            <h3>Papeterie d'Entreprise</h3>
+            <p>Cartes de visite, en-têtes de lettre et enveloppes avec application cohérente de l'identité visuelle sur fond blanc et anthracite.</p>
+          </div>
+        </div>
+        
+        <div class="application-card">
+          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/fea8855a340fbddafd94c80bdfd25d34');">
+          </div>
+          <div class="application-info">
+            <h3>Applications Numériques</h3>
+            <p>Interface mobile et documents numériques avec adaptation de l'identité pour les écrans et supports digitaux.</p>
+          </div>
+        </div>
+        
+        <div class="application-card">
+          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/ad01868499ae52f7739e085c288ae993');">
+          </div>
+          <div class="application-info">
+            <h3>Signalétique & Véhicules</h3>
+            <p>Applications sur véhicule d'entreprise, signalétique extérieure et supports de présentation avec différentes tailles de logo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Typographie -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Typographie</h2>
+      
+      <div class="grid grid-2" style="gap: 3rem; align-items: start;">
+        <div>
+          <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2rem; color: var(--primary);">
+            ÉBÉNISTERIE<br>
+            DANIEL CHAMBERLAND
+          </h3>
+          <p style="font-family: 'Montserrat', sans-serif; margin-top: 1rem;">
+            <strong>Montserrat Bold</strong><br>
+            Police principale pour les titres et le nom de l'entreprise. 
+            Caractère moderne et élégant qui apporte sophistication et lisibilité.
+          </p>
+        </div>
+        
+        <div>
+          <p style="font-size: 1.125rem; line-height: 1.6;">
+            Pour les textes courants, nous utilisons une typographie sans-serif claire et moderne 
+            qui assure une excellente lisibilité sur tous les supports, du web à l'impression.
+          </p>
+          <p style="margin-top: 1rem; color: #666;">
+            <strong>Source Sans 3</strong><br>
+            Police secondaire pour les textes de contenu, 
+            offrant une lisibilité optimale et un excellent rendu sur écran.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Téléchargements -->
+  <div class="download-section">
+    <div class="container">
+      <h2>Ressources de Marque</h2>
+      <p>Téléchargez les éléments d'identité visuelle dans différents formats</p>
+      
+      <div class="download-buttons">
+        <a href="#" class="btn-download">📁 Kit Logo Complet</a>
+        <a href="#" class="btn-download">🎨 Guide de Marque PDF</a>
+        <a href="#" class="btn-download">📐 Templates InDesign</a>
+        <a href="#" class="btn-download">🌐 Assets Web</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="section" role="contentinfo" style="background-color: var(--primary-dark); color: white; padding: var(--space-4xl) 0 var(--space-2xl);">
+    <div class="container">
+      <div class="grid grid-4" style="margin-bottom: var(--space-3xl);">
+        <div>
+          <img src="./assets/logo.svg" alt="Logo Ébénisterie Daniel Chamberland" style="height: 50px; margin-bottom: var(--space-lg); filter: brightness(0) invert(1);">
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            Atelier d'ébénisterie haut de gamme spécialisé dans la création de mobilier sur mesure d'exception.
+          </p>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Services</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Cuisines sur mesure</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Manteaux de foyer</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Mobilier sur mesure</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Rangements intégrés</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Contact</h3>
+          <address style="font-style: normal; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            <div style="margin-bottom: var(--space-sm);">
+              📍 350, rue Boyle<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Charlesbourg, QC G2M 1H9
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              📞 <a href="tel:+14185636781" style="color: rgba(255, 255, 255, 0.8);">(418) 563-6781</a>
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              ✉️ <a href="mailto:eben.dc@ccapcable.com" style="color: rgba(255, 255, 255, 0.8);">eben.dc@ccapcable.com</a>
+            </div>
+          </address>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Horaires</h3>
+          <div style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            <div style="margin-bottom: var(--space-sm);">
+              <strong>Lundi - Vendredi</strong><br>
+              7h30 - 16h30
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              <strong>Samedi</strong><br>
+              Sur rendez-vous
+            </div>
+            <div>
+              <strong>Dimanche</strong><br>
+              Fermé
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-xl); text-align: center; color: rgba(255, 255, 255, 0.6);">
+        <p>&copy; 2024 Ébénisterie Daniel Chamberland. Tous droits réservés.</p>
+        <p style="font-size: 0.875rem; margin-top: var(--space-sm);">
+          Artisanat québécois d'exception • Charlesbourg, Québec
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
+</body>
+</html>
