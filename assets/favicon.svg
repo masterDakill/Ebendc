@@ -1,0 +1,20 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .favicon-bg { fill: #7a5230; }
+      .favicon-accent { fill: #c48f59; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="32" height="32" rx="4" class="favicon-bg"/>
+  
+  <!-- Rabot stylisé -->
+  <rect x="6" y="14" width="16" height="5" rx="1" class="favicon-accent"/>
+  <rect x="7" y="15" width="2" height="3" fill="#7a5230"/>
+  <path d="M22 16 L26 16 L25 13 L23 13 Z" class="favicon-accent"/>
+  
+  <!-- Copeaux -->
+  <circle cx="24" cy="10" r="1.5" class="favicon-accent" opacity="0.8"/>
+  <circle cx="26" cy="8" r="1" class="favicon-accent" opacity="0.6"/>
+</svg>

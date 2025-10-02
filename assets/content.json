@@ -1,0 +1,248 @@
+{
+  "projects": [
+    {
+      "id": "cuisine-noyer-moderne",
+      "title": "Cuisine sur mesure en noyer",
+      "subtitle": "Design contemporain et fonctionnalité optimale",
+      "category": "Cuisine",
+      "featured": true,
+      "images": [
+        "cuisine-noyer-1.webp",
+        "cuisine-noyer-2.webp",
+        "cuisine-noyer-3.webp",
+        "cuisine-noyer-4.webp",
+        "cuisine-noyer-5.webp"
+      ],
+      "description": "Cette cuisine sur mesure allie l'élégance intemporelle du noyer noir américain à un design résolument contemporain. Chaque détail a été pensé pour optimiser l'espace tout en créant un environnement chaleureux et fonctionnel pour une famille moderne.",
+      "materials": [
+        "Noyer noir américain massif",
+        "Quartz Caesarstone blanc pur",
+        "Acier inoxydable brossé",
+        "Verre trempé fumé"
+      ],
+      "features": [
+        "Îlot central avec comptoir-lunch",
+        "Système d'éclairage LED intégré", 
+        "Tiroirs à fermeture douce",
+        "Électroménagers encastrés haut de gamme"
+      ],
+      "complexity": "Élevée",
+      "duration": "8-10 semaines",
+      "tags": ["cuisine", "noyer", "contemporain", "îlot"]
+    },
+    {
+      "id": "manteau-foyer-pierre-chene",
+      "title": "Manteau de foyer pierre et chêne",
+      "subtitle": "Mariage harmonieux entre tradition et modernité",
+      "category": "Manteau de foyer",
+      "featured": true,
+      "images": [
+        "manteau-pierre-1.webp",
+        "manteau-pierre-2.webp",
+        "manteau-pierre-3.webp",
+        "manteau-pierre-4.webp"
+      ],
+      "description": "Ce manteau de foyer unique combine la robustesse de la pierre naturelle et la chaleur du chêne blanc. Une pièce maîtresse qui transforme le salon en véritable cœur de la maison, alliant authenticité artisanale et design contemporain.",
+      "materials": [
+        "Chêne blanc du Québec",
+        "Pierre calcaire de Deschambault",
+        "Acier forgé artisanal",
+        "Finition huile naturelle"
+      ],
+      "features": [
+        "Tablette flottante en chêne massif",
+        "Inserts en pierre sculptée à la main",
+        "Éclairage d'ambiance intégré",
+        "Finition résistante aux hautes températures"
+      ],
+      "complexity": "Très élevée",
+      "duration": "6-8 semaines",
+      "tags": ["manteau", "foyer", "pierre", "chêne", "artisanal"]
+    },
+    {
+      "id": "meuble-tv-suspendu",
+      "title": "Meuble télé suspendu sur mesure",
+      "subtitle": "Minimalisme et technologie intégrée",
+      "category": "Mobilier",
+      "featured": false,
+      "images": [
+        "meuble-tv-1.webp",
+        "meuble-tv-2.webp",
+        "meuble-tv-3.webp",
+        "meuble-tv-4.webp",
+        "meuble-tv-5.webp",
+        "meuble-tv-6.webp"
+      ],
+      "description": "Meuble télé suspendu aux lignes épurées, conçu pour s'intégrer parfaitement dans un salon contemporain. La gestion des câbles intégrée et les compartiments sur mesure pour les appareils électroniques font de ce meuble une solution aussi esthétique que pratique.",
+      "materials": [
+        "Érable ondé du Québec",
+        "Placage de noyer européen",
+        "Métal laqué mat",
+        "Verre trempé teinté"
+      ],
+      "features": [
+        "Système de gestion de câbles invisible",
+        "Compartiments ventilés pour électronique",
+        "Fixation murale sécurisée",
+        "Portes à ouverture push-pull"
+      ],
+      "complexity": "Moyenne",
+      "duration": "4-5 semaines", 
+      "tags": ["meuble", "télé", "suspendu", "moderne", "technologie"]
+    },
+    {
+      "id": "garde-robe-integre",
+      "title": "Garde-robe intégré walk-in",
+      "subtitle": "Organisation optimale et finitions luxueuses",
+      "category": "Rangement",
+      "featured": true,
+      "images": [
+        "garde-robe-1.webp",
+        "garde-robe-2.webp",
+        "garde-robe-3.webp",
+        "garde-robe-4.webp"
+      ],
+      "description": "Walk-in sur mesure transformant un espace sous-utilisé en dressing de luxe. Chaque centimètre est optimisé avec des solutions de rangement innovantes, des finitions impeccables et un système d'éclairage LED créant une ambiance boutique.",
+      "materials": [
+        "Cèdre rouge de l'Ouest",
+        "Mélamine texturée anthracite", 
+        "Quincaillerie Blum haut de gamme",
+        "Miroirs biseautés"
+      ],
+      "features": [
+        "Îlot central avec tiroirs bijoux",
+        "Éclairage LED progressif",
+        "Tringles télescopiques ajustables",
+        "Rangements chaussures rotatifs"
+      ],
+      "complexity": "Élevée",
+      "duration": "6-7 semaines",
+      "tags": ["garde-robe", "walk-in", "rangement", "luxe", "organisation"]
+    },
+    {
+      "id": "bibliotheque-murale-complexe",
+      "title": "Bibliothèque murale complexe",
+      "subtitle": "Architecture sur mesure et élégance intellectuelle",
+      "category": "Mobilier",
+      "featured": false,
+      "images": [
+        "bibliotheque-1.webp",
+        "bibliotheque-2.webp", 
+        "bibliotheque-3.webp",
+        "bibliotheque-4.webp",
+        "bibliotheque-5.webp"
+      ],
+      "description": "Bibliothèque murale s'étendant du sol au plafond, intégrant parfaitement les contraintes architecturales. Un bureau intégré et des étagères ajustables créent un espace de travail sophistiqué dans cette pièce dédiée à la lecture et à l'étude.",
+      "materials": [
+        "Cerisier massif sélectionné",
+        "MDF haute densité",
+        "Quincaillerie européenne",
+        "Finition vernis satiné"
+      ],
+      "features": [
+        "Bureau intégré avec rangements",
+        "Échelle coulissante traditionnelle",
+        "Étagères hauteur ajustable",
+        "Éclairage LED sous étagères"
+      ],
+      "complexity": "Très élevée",
+      "duration": "10-12 semaines",
+      "tags": ["bibliothèque", "bureau", "cerisier", "traditionnel", "échelle"]
+    },
+    {
+      "id": "vanite-salle-bain-spa",
+      "title": "Vanité de salle de bain spa",
+      "subtitle": "Luxe quotidien et résistance à l'humidité",
+      "category": "Salle de bain",
+      "featured": false,
+      "images": [
+        "vanite-spa-1.webp",
+        "vanite-spa-2.webp",
+        "vanite-spa-3.webp", 
+        "vanite-spa-4.webp"
+      ],
+      "description": "Vanité double vasque transformant la salle de bain en véritable spa privé. Les matériaux sélectionnés résistent parfaitement à l'humidité tout en apportant une dimension luxueuse à cet espace de bien-être quotidien.",
+      "materials": [
+        "Teck traité marine",
+        "Marbre Calacatta doré",
+        "Bronze brossé vieilli",
+        "Verre dépoli texturé"
+      ],
+      "features": [
+        "Double vasque intégrée",
+        "Miroirs éclairage périphérique",
+        "Tiroirs étanches soft-close",
+        "Rangements serviettes chauffants"
+      ],
+      "complexity": "Moyenne",
+      "duration": "5-6 semaines",
+      "tags": ["vanité", "salle-de-bain", "spa", "teck", "marbre", "double-vasque"]
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Marie-Claire Dubois",
+      "project": "Cuisine sur mesure",
+      "text": "Un travail d'une qualité exceptionnelle. Daniel a su comprendre nos besoins et créer la cuisine de nos rêves.",
+      "rating": 5
+    },
+    {
+      "name": "Jean-François Lemieux", 
+      "project": "Bibliothèque murale",
+      "text": "Artisan passionné et méticuleux. Le résultat dépasse toutes nos attentes. Du grand art !",
+      "rating": 5
+    },
+    {
+      "name": "Sophie Tremblay",
+      "project": "Walk-in sur mesure", 
+      "text": "Professionnalisme exemplaire du début à la fin. Notre dressing est maintenant notre pièce préférée.",
+      "rating": 5
+    }
+  ],
+  "company": {
+    "name": "Ébénisterie Daniel Chamberland",
+    "tagline": "Sur-mesure d'exception, de la conception à l'installation",
+    "description": "Atelier d'ébénisterie haut de gamme à Charlesbourg : cuisines, manteaux de foyer, mobiliers complexes.",
+    "address": "350, rue Boyle, Charlesbourg (Québec), G2M 1H9",
+    "phone": "(418) 563-6781",
+    "fax": "(418) 849-7710",
+    "email": "eben.dc@ccapcable.com",
+    "hours": {
+      "weekdays": "Lundi - Vendredi : 7h30 - 16h30",
+      "saturday": "Samedi : Sur rendez-vous",
+      "sunday": "Dimanche : Fermé"
+    }
+  },
+  "process": [
+    {
+      "step": 1,
+      "title": "Conception & Design",
+      "description": "Rencontre personnalisée pour comprendre vos besoins, prise de mesures précises et création des plans 3D détaillés.",
+      "icon": "design"
+    },
+    {
+      "step": 2,
+      "title": "Sélection des matériaux",
+      "description": "Choix guidé des essences de bois, quincailleries et finitions selon vos goûts et contraintes techniques.",
+      "icon": "materials"
+    },
+    {
+      "step": 3,
+      "title": "Fabrication artisanale",
+      "description": "Réalisation en atelier avec un savoir-faire traditionnel et des techniques modernes pour une qualité irréprochable.",
+      "icon": "crafting"
+    },
+    {
+      "step": 4,
+      "title": "Livraison & Installation",
+      "description": "Transport soigné et installation professionnelle avec finitions finales et mise en service complète.",
+      "icon": "installation"
+    },
+    {
+      "step": 5,
+      "title": "Suivi & Garantie",
+      "description": "Service après-vente personnalisé et garantie sur nos réalisations pour votre tranquillité d'esprit.",
+      "icon": "support"
+    }
+  ]
+}

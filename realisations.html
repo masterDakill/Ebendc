@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez nos réalisations d'ébénisterie haut de gamme : cuisines sur mesure, manteaux de foyer, mobilier complexe. Portfolio complet de Daniel Chamberland.">
+  <meta name="keywords" content="réalisations ébénisterie, portfolio, cuisines sur mesure, manteau foyer, mobilier, projets, Charlesbourg">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7a5230">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nos Réalisations - Ébénisterie Daniel Chamberland">
+  <meta property="og:description" content="Portfolio de nos plus belles créations : cuisines, manteaux de foyer, mobilier sur mesure d'exception.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ebenisteriechamberland.com/realisations.html">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
+  
+  <title>Nos Réalisations - Ébénisterie Daniel Chamberland</title>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="container">
+      <div class="nav-container">
+        <a href="./" class="nav-brand" aria-label="Accueil Ébénisterie Daniel Chamberland">
+          <img src="./assets/logo.svg" alt="Logo Ébénisterie Daniel Chamberland" class="nav-logo">
+        </a>
+        
+        <ul class="nav-menu" role="menubar">
+          <li role="none">
+            <a href="./" class="nav-link" role="menuitem">Accueil</a>
+          </li>
+          <li role="none">
+            <a href="./realisations.html" class="nav-link active" role="menuitem">Réalisations</a>
+          </li>
+          <li role="none">
+            <a href="./a-propos.html" class="nav-link" role="menuitem">À propos</a>
+          </li>
+          <li role="none">
+            <a href="./processus.html" class="nav-link" role="menuitem">Processus</a>
+          </li>
+          <li role="none">
+            <a href="./contact.html" class="nav-link" role="menuitem">Contact</a>
+          </li>
+        </ul>
+        
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- En-tête de page -->
+  <header class="section-sm" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); margin-top: 70px;">
+    <div class="container text-center">
+      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: var(--space-lg);">Nos Réalisations</h1>
+      <p class="lead" style="max-width: 600px; margin: 0 auto;">
+        Découvrez notre portfolio de créations sur mesure, témoin de notre expertise et de notre passion pour l'ébénisterie fine.
+      </p>
+    </div>
+  </header>
+
+  <!-- Filtres de projets -->
+  <section class="section-sm" id="filtres">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <div class="filter-tabs" style="display: inline-flex; gap: var(--space-md); flex-wrap: wrap; justify-content: center;">
+          <button class="filter-btn active" data-filter="all" style="padding: var(--space-sm) var(--space-lg); border: 2px solid var(--primary); background: var(--primary); color: white; border-radius: var(--radius-full); cursor: pointer; transition: all var(--duration-fast); font-weight: 600;">
+            Tous les projets
+          </button>
+          <button class="filter-btn" data-filter="cuisine" style="padding: var(--space-sm) var(--space-lg); border: 2px solid var(--primary); background: transparent; color: var(--primary); border-radius: var(--radius-full); cursor: pointer; transition: all var(--duration-fast); font-weight: 600;">
+            Cuisines
+          </button>
+          <button class="filter-btn" data-filter="manteau" style="padding: var(--space-sm) var(--space-lg); border: 2px solid var(--primary); background: transparent; color: var(--primary); border-radius: var(--radius-full); cursor: pointer; transition: all var(--duration-fast); font-weight: 600;">
+            Manteaux de foyer
+          </button>
+          <button class="filter-btn" data-filter="mobilier" style="padding: var(--space-sm) var(--space-lg); border: 2px solid var(--primary); background: transparent; color: var(--primary); border-radius: var(--radius-full); cursor: pointer; transition: all var(--duration-fast); font-weight: 600;">
+            Mobilier
+          </button>
+          <button class="filter-btn" data-filter="rangement" style="padding: var(--space-sm) var(--space-lg); border: 2px solid var(--primary); background: transparent; color: var(--primary); border-radius: var(--radius-full); cursor: pointer; transition: all var(--duration-fast); font-weight: 600;">
+            Rangements
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie de projets -->
+  <main class="section" id="galerie-projets" role="main">
+    <div class="container">
+      <div class="projects-grid" id="all-projects">
+        <!-- Le contenu sera chargé dynamiquement via JavaScript -->
+        <!-- Projet 1 - Cuisine noyer -->
+        <article class="project-card" data-category="cuisine">
+          <div class="project-image">
+            <img 
+              data-src="./assets/img/cuisine-noyer-1.webp" 
+              alt="Cuisine sur mesure en noyer - vue d'ensemble" 
+              class="gallery-img"
+              data-title="Cuisine sur mesure en noyer"
+              data-description="Design contemporain avec îlot central et comptoir-lunch"
+            >
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Cuisine</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=cuisine-noyer-moderne">Cuisine sur mesure en noyer</a>
+            </h3>
+            <p class="project-subtitle">Design contemporain et fonctionnalité optimale</p>
+          </div>
+        </article>
+
+        <!-- Projet 2 - Manteau foyer -->
+        <article class="project-card" data-category="manteau">
+          <div class="project-image">
+            <img 
+              data-src="./assets/img/manteau-pierre-1.webp" 
+              alt="Manteau de foyer pierre et chêne" 
+              class="gallery-img"
+              data-title="Manteau de foyer pierre et chêne"
+              data-description="Alliance parfaite entre pierre naturelle et chêne blanc du Québec"
+            >
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Manteau de foyer</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=manteau-foyer-pierre-chene">Manteau de foyer pierre et chêne</a>
+            </h3>
+            <p class="project-subtitle">Mariage harmonieux entre tradition et modernité</p>
+          </div>
+        </article>
+
+        <!-- Projet 3 - Meuble TV -->
+        <article class="project-card" data-category="mobilier">
+          <div class="project-image">
+            <img 
+              data-src="./assets/img/meuble-tv-1.webp" 
+              alt="Meuble télé suspendu sur mesure" 
+              class="gallery-img"
+              data-title="Meuble télé suspendu sur mesure"
+              data-description="Solution minimaliste avec gestion de câbles intégrée"
+            >
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Mobilier</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=meuble-tv-suspendu">Meuble télé suspendu sur mesure</a>
+            </h3>
+            <p class="project-subtitle">Minimalisme et technologie intégrée</p>
+          </div>
+        </article>
+
+        <!-- Projet 4 - Walk-in -->
+        <article class="project-card" data-category="rangement">
+          <div class="project-image">
+            <img 
+              data-src="./assets/img/garde-robe-1.webp" 
+              alt="Garde-robe intégré walk-in" 
+              class="gallery-img"
+              data-title="Garde-robe intégré walk-in"
+              data-description="Dressing de luxe avec îlot central et éclairage LED"
+            >
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Rangement</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=garde-robe-integre">Garde-robe intégré walk-in</a>
+            </h3>
+            <p class="project-subtitle">Organisation optimale et finitions luxueuses</p>
+          </div>
+        </article>
+
+        <!-- Projet 5 - Bibliothèque -->
+        <article class="project-card" data-category="mobilier">
+          <div class="project-image">
+            <img 
+              data-src="./assets/img/bibliotheque-1.webp" 
+              alt="Bibliothèque murale complexe" 
+              class="gallery-img"
+              data-title="Bibliothèque murale complexe"
+              data-description="Bureau intégré avec échelle coulissante traditionnelle"
+            >
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Mobilier</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=bibliotheque-murale-complexe">Bibliothèque murale complexe</a>
+            </h3>
+            <p class="project-subtitle">Architecture sur mesure et élégance intellectuelle</p>
+          </div>
+        </article>
+
+        <!-- Projet 6 - Vanité -->
+        <article class="project-card" data-category="rangement">
+          <div class="project-image">
+            <img 
+              data-src="./assets/img/vanite-spa-1.webp" 
+              alt="Vanité de salle de bain spa" 
+              class="gallery-img"
+              data-title="Vanité de salle de bain spa"
+              data-description="Double vasque en teck avec finitions résistantes à l'humidité"
+            >
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Salle de bain</span>
+            <h3 class="project-title">
+              <a href="projet.html?id=vanite-salle-bain-spa">Vanité de salle de bain spa</a>
+            </h3>
+            <p class="project-subtitle">Luxe quotidien et résistance à l'humidité</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Section CTA -->
+  <section class="section text-center" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <h2>Votre projet nous inspire</h2>
+      <p class="lead mb-2xl">
+        Chaque réalisation est unique. Parlons de la vôtre et créons ensemble quelque chose d'exceptionnel.
+      </p>
+      <div class="d-flex gap-lg justify-center">
+        <a href="./contact.html" class="btn btn-primary">
+          Demander une consultation
+        </a>
+        <a href="./processus.html" class="btn btn-outline">
+          Découvrir notre processus
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section" role="contentinfo" style="background-color: var(--primary-dark); color: white; padding: var(--space-4xl) 0 var(--space-2xl);">
+    <div class="container">
+      <div class="grid grid-4" style="margin-bottom: var(--space-3xl);">
+        <div>
+          <img src="./assets/logo.svg" alt="Logo Ébénisterie Daniel Chamberland" style="height: 50px; margin-bottom: var(--space-lg); filter: brightness(0) invert(1);">
+          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            Atelier d'ébénisterie haut de gamme spécialisé dans la création de mobilier sur mesure d'exception.
+          </p>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Services</h3>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Cuisines sur mesure</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Manteaux de foyer</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Mobilier sur mesure</a>
+            </li>
+            <li style="margin-bottom: var(--space-sm);">
+              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Rangements intégrés</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Contact</h3>
+          <address style="font-style: normal; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            <div style="margin-bottom: var(--space-sm);">
+              📍 350, rue Boyle<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;Charlesbourg, QC G2M 1H9
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              📞 <a href="tel:+14185636781" style="color: rgba(255, 255, 255, 0.8);">(418) 563-6781</a>
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              ✉️ <a href="mailto:eben.dc@ccapcable.com" style="color: rgba(255, 255, 255, 0.8);">eben.dc@ccapcable.com</a>
+            </div>
+          </address>
+        </div>
+        
+        <div>
+          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Horaires</h3>
+          <div style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+            <div style="margin-bottom: var(--space-sm);">
+              <strong>Lundi - Vendredi</strong><br>
+              7h30 - 16h30
+            </div>
+            <div style="margin-bottom: var(--space-sm);">
+              <strong>Samedi</strong><br>
+              Sur rendez-vous
+            </div>
+            <div>
+              <strong>Dimanche</strong><br>
+              Fermé
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-xl); text-align: center; color: rgba(255, 255, 255, 0.6);">
+        <p>&copy; 2024 Ébénisterie Daniel Chamberland. Tous droits réservés.</p>
+        <p style="font-size: 0.875rem; margin-top: var(--space-sm);">
+          Artisanat québécois d'exception • Charlesbourg, Québec
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
+  
+  <!-- Script pour les filtres -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Mettre à jour l'état actif
+          filterBtns.forEach(b => {
+            b.classList.remove('active');
+            b.style.background = 'transparent';
+            b.style.color = 'var(--primary)';
+          });
+          
+          this.classList.add('active');
+          this.style.background = 'var(--primary)';
+          this.style.color = 'white';
+          
+          // Filtrer les projets
+          const filter = this.dataset.filter;
+          
+          projectCards.forEach(card => {
+            if (filter === 'all') {
+              card.style.display = 'block';
+            } else {
+              const category = card.dataset.category;
+              card.style.display = category === filter ? 'block' : 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
