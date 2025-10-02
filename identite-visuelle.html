@@ -48,8 +48,8 @@
     
     .logo-showcase {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
       margin: 2rem 0;
     }
     
@@ -350,16 +350,101 @@
             <p>Pour impression en noir et blanc</p>
           </div>
         </div>
+        
+        <div class="logo-variant">
+          <div class="logo-display">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Version hexagonale -->
+              <defs>
+                <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#D2691E;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <polygon points="100,20 160,55 160,130 100,165 40,130 40,55" stroke="url(#hexGradient)" stroke-width="6" fill="none"/>
+              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#hexGradient)">D</text>
+              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#hexGradient)">C</text>
+            </svg>
+          </div>
+          <div class="logo-info">
+            <h3 class="color-name">Version Hexagonale</h3>
+            <p>Variation géométrique moderne</p>
+          </div>
+        </div>
+        
+        <div class="logo-variant">
+          <div class="logo-display">
+            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Version compacte pour petits formats -->
+              <circle cx="100" cy="100" r="70" stroke="#7a5230" stroke-width="6" fill="none"/>
+              <text x="82" y="112" font-family="serif" font-size="36" font-weight="bold" fill="#7a5230">DC</text>
+            </svg>
+          </div>
+          <div class="logo-info">
+            <h3 class="color-name">Version Compacte</h3>
+            <p>Pour applications de petite taille</p>
+          </div>
+        </div>
       </div>
       
       <div class="usage-guidelines">
         <h3>Directives d'utilisation</h3>
         <ul>
-          <li>Respecter un espace libre équivalent à la moitié de la hauteur du logo autour de celui-ci</li>
-          <li>Taille minimale recommandée : 40px en version numérique, 15mm en version imprimée</li>
-          <li>Ne pas déformer, incliner ou modifier les proportions du logo</li>
-          <li>Utiliser uniquement les versions approuvées dans les couleurs officielles</li>
+          <li><strong>Espace de sécurité :</strong> Respecter un espace libre équivalent à la moitié de la hauteur du logo</li>
+          <li><strong>Taille minimale :</strong> 40px en version numérique, 15mm en version imprimée</li>
+          <li><strong>Proportions :</strong> Ne jamais déformer, incliner ou modifier les proportions</li>
+          <li><strong>Couleurs :</strong> Utiliser uniquement les versions approuvées dans les couleurs officielles</li>
+          <li><strong>Version hexagonale :</strong> Réservée aux applications modernes et supports numériques</li>
+          <li><strong>Version compacte :</strong> Pour les applications de moins de 30mm de diamètre</li>
         </ul>
+      </div>
+      
+      <!-- Showcase des variations en contexte -->
+      <div class="grid grid-3" style="margin-top: 3rem;">
+        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm);">
+          <h4>Carte de Visite</h4>
+          <div style="background: #2c3e50; color: white; padding: 1rem; border-radius: 4px; margin: 1rem 0; font-size: 0.75rem;">
+            <svg width="30" height="30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="float: left; margin-right: 0.5rem;">
+              <polygon points="100,20 160,55 160,130 100,165 40,130 40,55" stroke="#c48f59" stroke-width="6" fill="none"/>
+              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#c48f59">D</text>
+              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#c48f59">C</text>
+            </svg>
+            <strong>Daniel Chamberland</strong><br>
+            Ébénisterie sur mesure
+          </div>
+          <small>Logo hexagonal 25mm</small>
+        </div>
+        
+        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm);">
+          <h4>En-tête de Lettre</h4>
+          <div style="background: #f7f3ee; padding: 1rem; border-radius: 4px; margin: 1rem 0; position: relative;">
+            <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 1rem; right: 1rem;">
+              <circle cx="100" cy="100" r="90" stroke="#7a5230" stroke-width="8" fill="none"/>
+              <line x1="100" y1="20" x2="100" y2="180" stroke="#7a5230" stroke-width="3"/>
+              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#7a5230">D</text>
+              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#7a5230">C</text>
+            </svg>
+            <div style="font-size: 0.75rem; text-align: left; padding-top: 2rem;">
+              <strong>ÉBÉNISTERIE DANIEL CHAMBERLAND</strong><br>
+              350, rue Boyle, Charlesbourg...
+            </div>
+          </div>
+          <small>Logo principal 35mm</small>
+        </div>
+        
+        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm);">
+          <h4>Signature Email</h4>
+          <div style="background: white; border: 1px solid #ddd; padding: 1rem; border-radius: 4px; margin: 1rem 0; font-size: 0.7rem; text-align: left;">
+            <svg width="20" height="20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="float: left; margin-right: 0.5rem;">
+              <text x="82" y="112" font-family="serif" font-size="72" font-weight="bold" fill="#7a5230">DC</text>
+            </svg>
+            <strong>Daniel Chamberland</strong><br>
+            (418) 563-6781<br>
+            eben.dc@ccapcable.com
+          </div>
+          <small>Version compacte 20px</small>
+        </div>
       </div>
     </div>
   </section>
@@ -437,8 +522,17 @@
           <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/1c77e8ab4846d0d1699984d78726e60b');">
           </div>
           <div class="application-info">
-            <h3>Papeterie d'Entreprise</h3>
-            <p>Cartes de visite, en-têtes de lettre et enveloppes avec application cohérente de l'identité visuelle sur fond blanc et anthracite.</p>
+            <h3>Papeterie d'Entreprise Complète</h3>
+            <p>Système complet incluant cartes de visite recto-verso, en-têtes de lettre, enveloppes diverses et applications hexagonales modernes.</p>
+          </div>
+        </div>
+        
+        <div class="application-card">
+          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/1c77e8ab4846d0d1699984d78726e60b'); background-position: right center;">
+          </div>
+          <div class="application-info">
+            <h3>Cartes de Visite Premium</h3>
+            <p>Design élégant avec logo hexagonal, finitions dorées et informations structurées. Version sombre premium et claire classique.</p>
           </div>
         </div>
         
@@ -457,6 +551,143 @@
           <div class="application-info">
             <h3>Signalétique & Véhicules</h3>
             <p>Applications sur véhicule d'entreprise, signalétique extérieure et supports de présentation avec différentes tailles de logo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Email & Signatures -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Signatures Numériques & Email</h2>
+      <p class="text-center lead mb-xl">
+        Modèles de signatures professionnelles pour maintenir la cohérence de marque dans toutes vos communications.
+      </p>
+      
+      <div class="applications-grid">
+        <div class="application-card">
+          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/ad01868499ae52f7739e085c288ae993'); background-position: left center;">
+          </div>
+          <div class="application-info">
+            <h3>Signature Email Professionnelle</h3>
+            <p>Modèle de signature email avec logo, coordonnées complètes et liens sociaux pour une présentation professionnelle constante.</p>
+          </div>
+        </div>
+        
+        <div class="application-card">
+          <div style="padding: 2rem; background: #f8f9fa; min-height: 250px;">
+            <div style="border-left: 3px solid var(--accent); padding-left: 1rem; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4;">
+              <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="margin-right: 1rem;">
+                  <circle cx="100" cy="100" r="90" stroke="#7a5230" stroke-width="8" fill="none"/>
+                  <line x1="100" y1="20" x2="100" y2="180" stroke="#7a5230" stroke-width="3"/>
+                  <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#7a5230">D</text>
+                  <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#7a5230">C</text>
+                </svg>
+                <div>
+                  <strong style="color: var(--primary);">Daniel Chamberland</strong><br>
+                  <span style="color: var(--accent);">Maître Ébéniste</span>
+                </div>
+              </div>
+              <div style="color: #666;">
+                📍 350, rue Boyle, Charlesbourg, QC G2M 1H9<br>
+                📞 (418) 563-6781 | 📠 (418) 849-7710<br>
+                ✉️ eben.dc@ccapcable.com<br>
+                🌐 www.ebenisteriechamberland.com
+              </div>
+            </div>
+          </div>
+          <div class="application-info">
+            <h3>Format HTML Email</h3>
+            <p>Version interactive avec liens cliquables et design responsive pour tous les clients email.</p>
+          </div>
+        </div>
+        
+        <div class="application-card">
+          <div style="padding: 2rem; background: #2c3e50; color: white; min-height: 250px;">
+            <div style="border-left: 3px solid var(--accent); padding-left: 1rem; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.5;">
+              <div style="margin-bottom: 1rem;">
+                <strong>DANIEL CHAMBERLAND</strong><br>
+                Ébénisterie | Sur-mesure d'exception
+              </div>
+              <div>
+                350, rue Boyle, Charlesbourg, QC G2M 1H9<br>
+                T: (418) 563-6781 | F: (418) 849-7710<br>
+                E: eben.dc@ccapcable.com<br>
+                W: www.ebenisteriechamberland.com
+              </div>
+            </div>
+          </div>
+          <div class="application-info">
+            <h3>Version Texte Simple</h3>
+            <p>Format texte brut compatible avec tous les systèmes et clients email, sans images.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="usage-guidelines">
+        <h3>Guidelines pour signatures email</h3>
+        <ul>
+          <li><strong>Logo :</strong> Maximum 150px de largeur pour compatibilité mobile</li>
+          <li><strong>Couleurs :</strong> Utiliser uniquement les couleurs de la palette officielle</li>
+          <li><strong>Polices :</strong> Arial ou Helvetica pour compatibilité maximale</li>
+          <li><strong>Liens :</strong> Toujours tester sur différents clients email (Outlook, Gmail, Apple Mail)</li>
+          <li><strong>Taille :</strong> Maintenir une hauteur totale sous 200px</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Spécifications Techniques -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Spécifications Techniques</h2>
+      
+      <div class="grid grid-2" style="gap: 3rem;">
+        <div>
+          <h3>Applications Numériques</h3>
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--radius); margin: 1rem 0;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Web (200px minimum)</h4>
+            <ul style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666;">
+              <li>Format: SVG, PNG (haute résolution)</li>
+              <li>Résolution: 72 DPI minimum</li>
+              <li>Largeur minimale: 200px</li>
+              <li>Formats: .svg, .png, .jpg</li>
+            </ul>
+          </div>
+          
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--radius); margin: 1rem 0;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Réseaux Sociaux</h4>
+            <ul style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666;">
+              <li>Profil: 400x400px (carré)</li>
+              <li>Bannière: 1200x630px</li>
+              <li>Format: PNG avec transparence</li>
+              <li>Résolution: 72-150 DPI</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div>
+          <h3>Applications Imprimées</h3>
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--radius); margin: 1rem 0;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Supports Imprimés (15mm minimum)</h4>
+            <ul style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666;">
+              <li>Format: EPS, PDF vectoriel, AI</li>
+              <li>Résolution: 300 DPI minimum</li>
+              <li>Taille minimale: 15mm de diamètre</li>
+              <li>Couleurs: CMYK + Pantone</li>
+            </ul>
+          </div>
+          
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--radius); margin: 1rem 0;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Grande Format</h4>
+            <ul style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666;">
+              <li>Signalétique: Version vectorielle obligatoire</li>
+              <li>Véhicules: Minimum 30cm de diamètre</li>
+              <li>Bannières: Maintenir proportions 1:1</li>
+              <li>Découpe: Prévoir zones de sécurité</li>
+            </ul>
           </div>
         </div>
       </div>
