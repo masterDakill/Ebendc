@@ -14,7 +14,7 @@
   <meta property="og:description" content="Découvrez l'identité visuelle complète de l'Ébénisterie Daniel Chamberland : logos, couleurs et applications de marque.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ebenisteriechamberland.com/identite-visuelle.html">
-  <meta property="og:image" content="https://ebenisteriechamberland.com/assets/img/brand-showcase.jpg">
+  <meta property="og:image" content="https://ebenisteriechamberland.com/assets/img/brand/logo-variations.jpg">
   <meta property="og:locale" content="fr_CA">
   
   <!-- Favicons -->
@@ -34,8 +34,9 @@
     /* Styles spécifiques à la page identité visuelle */
     .brand-hero {
       padding: 8rem 0 6rem;
-      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+      background: linear-gradient(135deg, #f7f3ee 0%, #e8e4df 100%);
       text-align: center;
+      border-bottom: 3px solid var(--accent);
     }
     
     .brand-section {
@@ -43,163 +44,157 @@
     }
     
     .brand-section:nth-child(even) {
-      background-color: var(--bg-secondary);
+      background-color: #f7f3ee;
     }
     
-    .logo-showcase {
+    .brand-section:nth-child(odd) {
+      background-color: #ffffff;
+    }
+    
+    .brand-image-showcase {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
     }
     
-    .logo-variant {
+    .brand-image-card {
       background: white;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .logo-variant:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
+    .brand-image-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
     
-    .logo-variant.dark {
-      background: var(--primary-dark);
-    }
-    
-    .logo-display {
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 200px;
-    }
-    
-    .logo-display img {
-      max-width: 200px;
+    .brand-image-card img {
+      width: 100%;
       height: auto;
+      display: block;
     }
     
-    .logo-info {
+    .brand-image-info {
       padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-    }
-    
-    .logo-variant.dark .logo-info {
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-    }
-    
-    .color-palette {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .color-card {
       background: white;
+    }
+    
+    .brand-image-info h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    
+    .brand-image-info p {
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .full-width-image {
+      margin: 3rem 0;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    
+    .full-width-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .split-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 3rem 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    
+    .split-showcase img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .color-palette-section {
+      background: linear-gradient(135deg, #f7f3ee 0%, #ffffff 100%);
+      padding: 4rem 0;
+    }
+    
+    .color-swatches {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
     }
     
     .color-swatch {
+      text-align: center;
+    }
+    
+    .color-circle {
+      width: 120px;
       height: 120px;
-      position: relative;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border: 4px solid white;
     }
     
-    .color-info {
-      padding: 1.5rem;
+    .color-beige {
+      background: linear-gradient(135deg, #f7f3ee 0%, #e8e4df 100%);
     }
     
-    .color-name {
-      font-weight: 700;
-      font-size: 1.125rem;
-      margin-bottom: 0.5rem;
+    .color-brown {
+      background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #D2691E 100%);
     }
     
-    .color-values {
-      font-family: 'Courier New', monospace;
-      font-size: 0.875rem;
-      color: #666;
-      line-height: 1.6;
+    .color-dark {
+      background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
     }
     
-    .applications-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-    
-    .application-card {
-      background: white;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      transition: transform 0.3s ease;
-    }
-    
-    .application-card:hover {
-      transform: translateY(-4px);
-    }
-    
-    .application-image {
-      height: 250px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    
-    .application-info {
-      padding: 1.5rem;
+    .color-gold {
+      background: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #B8860B 100%);
     }
     
     .usage-guidelines {
       background: #f8f9fa;
       border-left: 4px solid var(--accent);
-      padding: 1.5rem;
-      margin: 1rem 0;
+      padding: 2rem;
+      margin: 2rem 0;
       border-radius: 0 var(--radius) var(--radius) 0;
     }
     
-    .download-section {
-      text-align: center;
-      padding: 3rem 0;
-      background: var(--primary-dark);
-      color: white;
-      margin: 2rem 0;
-      border-radius: var(--radius-lg);
+    .usage-guidelines h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
     }
     
-    .download-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
+    .usage-guidelines ul {
+      list-style: none;
+      padding: 0;
     }
     
-    .btn-download {
-      background: var(--accent);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
+    .usage-guidelines li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
     }
     
-    .btn-download:hover {
-      background: #d49a61;
-      transform: translateY(-2px);
+    .usage-guidelines li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
     }
     
     @media (max-width: 768px) {
@@ -207,21 +202,16 @@
         padding: 4rem 0 3rem;
       }
       
-      .logo-showcase {
+      .brand-image-showcase {
         grid-template-columns: 1fr;
       }
       
-      .color-palette {
+      .split-showcase {
         grid-template-columns: 1fr;
       }
       
-      .applications-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .download-buttons {
-        flex-direction: column;
-        align-items: center;
+      .color-swatches {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -270,425 +260,239 @@
   <section class="brand-hero">
     <div class="container">
       <h1 class="hero-title">Identité Visuelle</h1>
-      <p class="hero-subtitle">
+      <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto;">
         Découvrez l'univers graphique de l'Ébénisterie Daniel Chamberland
       </p>
-      <p class="lead">
+      <p class="lead" style="max-width: 700px; margin: 1.5rem auto 0;">
         Une identité forte qui reflète notre engagement envers l'excellence et le raffinement artisanal
       </p>
     </div>
   </section>
 
-  <!-- Section Logo Principal -->
+  <!-- Section Logo Principal - Monochrome -->
   <section class="brand-section">
     <div class="container">
       <h2 class="text-center mb-2xl">Logo Principal</h2>
-      <p class="text-center lead mb-xl">
+      <p class="text-center lead mb-xl" style="max-width: 800px; margin: 0 auto 3rem;">
         Notre logo représente l'union harmonieuse entre tradition et modernité, 
         avec les initiales "DC" intégrées dans un cercle symbolisant la perfection artisanale.
       </p>
       
-      <div class="logo-showcase">
-        <div class="logo-variant">
-          <div class="logo-display">
-            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <!-- Version claire avec dégradé brun/doré -->
-              <defs>
-                <linearGradient id="lightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
-                  <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#D2691E;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-              <circle cx="100" cy="100" r="90" stroke="url(#lightGradient)" stroke-width="8" fill="none"/>
-              <line x1="100" y1="20" x2="100" y2="180" stroke="url(#lightGradient)" stroke-width="3"/>
-              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#lightGradient)">D</text>
-              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#lightGradient)">C</text>
-            </svg>
-          </div>
-          <div class="logo-info">
-            <h3 class="color-name">Version Claire</h3>
-            <p>Utilisée sur fonds clairs et blancs</p>
-          </div>
-        </div>
-        
-        <div class="logo-variant dark">
-          <div class="logo-display">
-            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <!-- Version sombre avec dégradé doré -->
-              <defs>
-                <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
-                  <stop offset="50%" style="stop-color:#DAA520;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-              <circle cx="100" cy="100" r="90" stroke="url(#darkGradient)" stroke-width="8" fill="none"/>
-              <line x1="100" y1="20" x2="100" y2="180" stroke="url(#darkGradient)" stroke-width="3"/>
-              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#darkGradient)">D</text>
-              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#darkGradient)">C</text>
-            </svg>
-          </div>
-          <div class="logo-info">
-            <h3 class="color-name">Version Sombre</h3>
-            <p>Utilisée sur fonds sombres et colorés</p>
-          </div>
-        </div>
-        
-        <div class="logo-variant">
-          <div class="logo-display">
-            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <!-- Version monochrome noire -->
-              <circle cx="100" cy="100" r="90" stroke="#000000" stroke-width="8" fill="none"/>
-              <line x1="100" y1="20" x2="100" y2="180" stroke="#000000" stroke-width="3"/>
-              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#000000">D</text>
-              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#000000">C</text>
-            </svg>
-          </div>
-          <div class="logo-info">
-            <h3 class="color-name">Version Monochrome</h3>
-            <p>Pour impression en noir et blanc</p>
-          </div>
-        </div>
-        
-        <div class="logo-variant">
-          <div class="logo-display">
-            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <!-- Version hexagonale -->
-              <defs>
-                <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
-                  <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#D2691E;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-              <polygon points="100,20 160,55 160,130 100,165 40,130 40,55" stroke="url(#hexGradient)" stroke-width="6" fill="none"/>
-              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#hexGradient)">D</text>
-              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="url(#hexGradient)">C</text>
-            </svg>
-          </div>
-          <div class="logo-info">
-            <h3 class="color-name">Version Hexagonale</h3>
-            <p>Variation géométrique moderne</p>
-          </div>
-        </div>
-        
-        <div class="logo-variant">
-          <div class="logo-display">
-            <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <!-- Version compacte pour petits formats -->
-              <circle cx="100" cy="100" r="70" stroke="#7a5230" stroke-width="6" fill="none"/>
-              <text x="82" y="112" font-family="serif" font-size="36" font-weight="bold" fill="#7a5230">DC</text>
-            </svg>
-          </div>
-          <div class="logo-info">
-            <h3 class="color-name">Version Compacte</h3>
-            <p>Pour applications de petite taille</p>
-          </div>
-        </div>
+      <div class="full-width-image">
+        <img src="./assets/img/brand/logo-monochrome.jpg" alt="Logo Ébénisterie Daniel Chamberland - Version Monochrome" loading="lazy">
       </div>
       
       <div class="usage-guidelines">
-        <h3>Directives d'utilisation</h3>
+        <h3>Version Monochrome</h3>
         <ul>
-          <li><strong>Espace de sécurité :</strong> Respecter un espace libre équivalent à la moitié de la hauteur du logo</li>
-          <li><strong>Taille minimale :</strong> 40px en version numérique, 15mm en version imprimée</li>
-          <li><strong>Proportions :</strong> Ne jamais déformer, incliner ou modifier les proportions</li>
-          <li><strong>Couleurs :</strong> Utiliser uniquement les versions approuvées dans les couleurs officielles</li>
-          <li><strong>Version hexagonale :</strong> Réservée aux applications modernes et supports numériques</li>
-          <li><strong>Version compacte :</strong> Pour les applications de moins de 30mm de diamètre</li>
+          <li>Logo principal en noir sur fond blanc pour applications classiques</li>
+          <li>Parfait pour documents officiels, contrats et courrier d'affaires</li>
+          <li>Utilisé pour impression monochrome et fax</li>
+          <li>Maintenir un espace libre minimal de 15mm autour du logo</li>
         </ul>
-      </div>
-      
-      <!-- Showcase des variations en contexte -->
-      <div class="grid grid-3" style="margin-top: 3rem;">
-        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm);">
-          <h4>Carte de Visite</h4>
-          <div style="background: #2c3e50; color: white; padding: 1rem; border-radius: 4px; margin: 1rem 0; font-size: 0.75rem;">
-            <svg width="30" height="30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="float: left; margin-right: 0.5rem;">
-              <polygon points="100,20 160,55 160,130 100,165 40,130 40,55" stroke="#c48f59" stroke-width="6" fill="none"/>
-              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#c48f59">D</text>
-              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#c48f59">C</text>
-            </svg>
-            <strong>Daniel Chamberland</strong><br>
-            Ébénisterie sur mesure
-          </div>
-          <small>Logo hexagonal 25mm</small>
-        </div>
-        
-        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm);">
-          <h4>En-tête de Lettre</h4>
-          <div style="background: #f7f3ee; padding: 1rem; border-radius: 4px; margin: 1rem 0; position: relative;">
-            <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 1rem; right: 1rem;">
-              <circle cx="100" cy="100" r="90" stroke="#7a5230" stroke-width="8" fill="none"/>
-              <line x1="100" y1="20" x2="100" y2="180" stroke="#7a5230" stroke-width="3"/>
-              <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#7a5230">D</text>
-              <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#7a5230">C</text>
-            </svg>
-            <div style="font-size: 0.75rem; text-align: left; padding-top: 2rem;">
-              <strong>ÉBÉNISTERIE DANIEL CHAMBERLAND</strong><br>
-              350, rue Boyle, Charlesbourg...
-            </div>
-          </div>
-          <small>Logo principal 35mm</small>
-        </div>
-        
-        <div style="text-align: center; padding: 1.5rem; background: white; border-radius: var(--radius); box-shadow: var(--shadow-sm);">
-          <h4>Signature Email</h4>
-          <div style="background: white; border: 1px solid #ddd; padding: 1rem; border-radius: 4px; margin: 1rem 0; font-size: 0.7rem; text-align: left;">
-            <svg width="20" height="20" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="float: left; margin-right: 0.5rem;">
-              <text x="82" y="112" font-family="serif" font-size="72" font-weight="bold" fill="#7a5230">DC</text>
-            </svg>
-            <strong>Daniel Chamberland</strong><br>
-            (418) 563-6781<br>
-            eben.dc@ccapcable.com
-          </div>
-          <small>Version compacte 20px</small>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Palette de couleurs -->
+  <!-- Section Variations Couleurs -->
   <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Variations de Couleurs</h2>
+      <p class="text-center lead mb-xl" style="max-width: 800px; margin: 0 auto 3rem;">
+        Le logo s'adapte harmonieusement aux fonds clairs et foncés avec des couleurs 
+        qui évoquent la chaleur du bois et l'élégance du travail artisanal.
+      </p>
+      
+      <div class="full-width-image">
+        <img src="./assets/img/brand/logo-variations.jpg" alt="Variations de couleurs du logo - Fond clair et fond foncé" loading="lazy">
+      </div>
+      
+      <div class="usage-guidelines">
+        <h3>Utilisation des Variations</h3>
+        <ul>
+          <li><strong>Fond Clair (Gauche) :</strong> Dégradé brun/doré pour papeterie, site web sur fond beige</li>
+          <li><strong>Fond Foncé (Droite) :</strong> Dégradé doré lumineux pour applications premium et supports sombres</li>
+          <li>Le contraste entre beige chaud et bleu foncé crée une identité distinctive</li>
+          <li>Toujours privilégier la lisibilité et le contraste approprié</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Toutes les Variations -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Système Complet de Logos</h2>
+      <p class="text-center lead mb-xl" style="max-width: 800px; margin: 0 auto 3rem;">
+        Une famille complète de logos avec différentes tailles et variations 
+        pour s'adapter à tous les supports de communication.
+      </p>
+      
+      <div class="full-width-image">
+        <img src="./assets/img/brand/logo-all-variations.jpg" alt="Toutes les variations du logo dans différentes couleurs et tailles" loading="lazy">
+      </div>
+      
+      <div class="usage-guidelines">
+        <h3>Directives d'Application</h3>
+        <ul>
+          <li><strong>Grande version :</strong> Pour en-têtes, signalétique extérieure (minimum 100mm)</li>
+          <li><strong>Version intermédiaire :</strong> Pour cartes de visite, documents (minimum 30mm)</li>
+          <li><strong>Petite version :</strong> Pour signatures email, applications web (minimum 20px)</li>
+          <li>Maintenir les proportions originales dans toutes les tailles</li>
+          <li>Ne jamais étirer, déformer ou modifier l'espacement des lettres</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Palette de Couleurs -->
+  <section class="color-palette-section">
     <div class="container">
       <h2 class="text-center mb-2xl">Palette de Couleurs</h2>
-      <p class="text-center lead mb-xl">
-        Notre palette reflète la chaleur et la noblesse du bois, avec des tons naturels et raffinés.
+      <p class="text-center lead mb-xl" style="max-width: 800px; margin: 0 auto;">
+        Notre palette reflète la chaleur et la noblesse du bois, avec des tons naturels 
+        qui évoquent l'authenticité et le raffinement de notre artisanat.
       </p>
       
-      <div class="color-palette">
-        <div class="color-card">
-          <div class="color-swatch" style="background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #D2691E 100%);"></div>
-          <div class="color-info">
-            <h3 class="color-name">Brun Noyer</h3>
-            <div class="color-values">
-              HEX: #7a5230<br>
-              RGB: 122, 82, 48<br>
-              CMYK: 0, 33, 61, 52
-            </div>
-          </div>
+      <div class="color-swatches">
+        <div class="color-swatch">
+          <div class="color-circle color-beige"></div>
+          <h3 style="color: var(--primary); font-size: 1.125rem;">Beige Chaud</h3>
+          <p style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666; margin-top: 0.5rem;">
+            #F7F3EE<br>
+            RGB 247, 243, 238<br>
+            Fond principal
+          </p>
         </div>
         
-        <div class="color-card">
-          <div class="color-swatch" style="background: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #B8860B 100%);"></div>
-          <div class="color-info">
-            <h3 class="color-name">Doré Cuivré</h3>
-            <div class="color-values">
-              HEX: #c48f59<br>
-              RGB: 196, 143, 89<br>
-              CMYK: 0, 27, 55, 23
-            </div>
-          </div>
+        <div class="color-swatch">
+          <div class="color-circle color-brown"></div>
+          <h3 style="color: var(--primary); font-size: 1.125rem;">Brun Noyer</h3>
+          <p style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666; margin-top: 0.5rem;">
+            #8B4513 - #D2691E<br>
+            Dégradé signature<br>
+            Couleur primaire
+          </p>
         </div>
         
-        <div class="color-card">
-          <div class="color-swatch" style="background: #f7f3ee;"></div>
-          <div class="color-info">
-            <h3 class="color-name">Beige Chaud</h3>
-            <div class="color-values">
-              HEX: #f7f3ee<br>
-              RGB: 247, 243, 238<br>
-              CMYK: 0, 2, 4, 3
-            </div>
-          </div>
+        <div class="color-swatch">
+          <div class="color-circle color-dark"></div>
+          <h3 style="color: var(--primary); font-size: 1.125rem;">Bleu Foncé</h3>
+          <p style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666; margin-top: 0.5rem;">
+            #1A2332 - #2C3E50<br>
+            RGB 44, 62, 80<br>
+            Fond premium
+          </p>
         </div>
         
-        <div class="color-card">
-          <div class="color-swatch" style="background: #2c3e50;"></div>
-          <div class="color-info">
-            <h3 class="color-name">Anthracite</h3>
-            <div class="color-values">
-              HEX: #2c3e50<br>
-              RGB: 44, 62, 80<br>
-              CMYK: 45, 23, 0, 69
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Applications -->
-  <section class="brand-section">
-    <div class="container">
-      <h2 class="text-center mb-2xl">Applications de Marque</h2>
-      <p class="text-center lead mb-xl">
-        Découvrez comment notre identité visuelle s'adapte à différents supports de communication.
-      </p>
-      
-      <div class="applications-grid">
-        <div class="application-card">
-          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/1c77e8ab4846d0d1699984d78726e60b');">
-          </div>
-          <div class="application-info">
-            <h3>Papeterie d'Entreprise Complète</h3>
-            <p>Système complet incluant cartes de visite recto-verso, en-têtes de lettre, enveloppes diverses et applications hexagonales modernes.</p>
-          </div>
-        </div>
-        
-        <div class="application-card">
-          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/1c77e8ab4846d0d1699984d78726e60b'); background-position: right center;">
-          </div>
-          <div class="application-info">
-            <h3>Cartes de Visite Premium</h3>
-            <p>Design élégant avec logo hexagonal, finitions dorées et informations structurées. Version sombre premium et claire classique.</p>
-          </div>
-        </div>
-        
-        <div class="application-card">
-          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/fea8855a340fbddafd94c80bdfd25d34');">
-          </div>
-          <div class="application-info">
-            <h3>Applications Numériques</h3>
-            <p>Interface mobile et documents numériques avec adaptation de l'identité pour les écrans et supports digitaux.</p>
-          </div>
-        </div>
-        
-        <div class="application-card">
-          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/ad01868499ae52f7739e085c288ae993');">
-          </div>
-          <div class="application-info">
-            <h3>Signalétique & Véhicules</h3>
-            <p>Applications sur véhicule d'entreprise, signalétique extérieure et supports de présentation avec différentes tailles de logo.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Email & Signatures -->
-  <section class="brand-section">
-    <div class="container">
-      <h2 class="text-center mb-2xl">Signatures Numériques & Email</h2>
-      <p class="text-center lead mb-xl">
-        Modèles de signatures professionnelles pour maintenir la cohérence de marque dans toutes vos communications.
-      </p>
-      
-      <div class="applications-grid">
-        <div class="application-card">
-          <div class="application-image" style="background-image: url('https://page.gensparksite.com/v1/base64_upload/ad01868499ae52f7739e085c288ae993'); background-position: left center;">
-          </div>
-          <div class="application-info">
-            <h3>Signature Email Professionnelle</h3>
-            <p>Modèle de signature email avec logo, coordonnées complètes et liens sociaux pour une présentation professionnelle constante.</p>
-          </div>
-        </div>
-        
-        <div class="application-card">
-          <div style="padding: 2rem; background: #f8f9fa; min-height: 250px;">
-            <div style="border-left: 3px solid var(--accent); padding-left: 1rem; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4;">
-              <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="margin-right: 1rem;">
-                  <circle cx="100" cy="100" r="90" stroke="#7a5230" stroke-width="8" fill="none"/>
-                  <line x1="100" y1="20" x2="100" y2="180" stroke="#7a5230" stroke-width="3"/>
-                  <text x="75" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#7a5230">D</text>
-                  <text x="110" y="110" font-family="serif" font-size="48" font-weight="bold" fill="#7a5230">C</text>
-                </svg>
-                <div>
-                  <strong style="color: var(--primary);">Daniel Chamberland</strong><br>
-                  <span style="color: var(--accent);">Maître Ébéniste</span>
-                </div>
-              </div>
-              <div style="color: #666;">
-                📍 350, rue Boyle, Charlesbourg, QC G2M 1H9<br>
-                📞 (418) 563-6781 | 📠 (418) 849-7710<br>
-                ✉️ eben.dc@ccapcable.com<br>
-                🌐 www.ebenisteriechamberland.com
-              </div>
-            </div>
-          </div>
-          <div class="application-info">
-            <h3>Format HTML Email</h3>
-            <p>Version interactive avec liens cliquables et design responsive pour tous les clients email.</p>
-          </div>
-        </div>
-        
-        <div class="application-card">
-          <div style="padding: 2rem; background: #2c3e50; color: white; min-height: 250px;">
-            <div style="border-left: 3px solid var(--accent); padding-left: 1rem; font-family: 'Courier New', monospace; font-size: 12px; line-height: 1.5;">
-              <div style="margin-bottom: 1rem;">
-                <strong>DANIEL CHAMBERLAND</strong><br>
-                Ébénisterie | Sur-mesure d'exception
-              </div>
-              <div>
-                350, rue Boyle, Charlesbourg, QC G2M 1H9<br>
-                T: (418) 563-6781 | F: (418) 849-7710<br>
-                E: eben.dc@ccapcable.com<br>
-                W: www.ebenisteriechamberland.com
-              </div>
-            </div>
-          </div>
-          <div class="application-info">
-            <h3>Version Texte Simple</h3>
-            <p>Format texte brut compatible avec tous les systèmes et clients email, sans images.</p>
-          </div>
+        <div class="color-swatch">
+          <div class="color-circle color-gold"></div>
+          <h3 style="color: var(--primary); font-size: 1.125rem;">Doré Cuivré</h3>
+          <p style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666; margin-top: 0.5rem;">
+            #FFD700 - #B8860B<br>
+            Dégradé accent<br>
+            Couleur secondaire
+          </p>
         </div>
       </div>
       
       <div class="usage-guidelines">
-        <h3>Guidelines pour signatures email</h3>
+        <h3>Utilisation des Couleurs</h3>
         <ul>
-          <li><strong>Logo :</strong> Maximum 150px de largeur pour compatibilité mobile</li>
-          <li><strong>Couleurs :</strong> Utiliser uniquement les couleurs de la palette officielle</li>
-          <li><strong>Polices :</strong> Arial ou Helvetica pour compatibilité maximale</li>
-          <li><strong>Liens :</strong> Toujours tester sur différents clients email (Outlook, Gmail, Apple Mail)</li>
-          <li><strong>Taille :</strong> Maintenir une hauteur totale sous 200px</li>
+          <li><strong>Beige chaud :</strong> Utilisé comme fond principal sur le site web et la papeterie</li>
+          <li><strong>Brun noyer :</strong> Couleur signature pour le logo sur fonds clairs</li>
+          <li><strong>Bleu foncé :</strong> Fond premium pour cartes de visite et applications élégantes</li>
+          <li><strong>Doré cuivré :</strong> Accent pour éléments interactifs et mise en valeur</li>
+          <li>Le contraste beige/bleu foncé crée l'identité distinctive de la marque</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Section Spécifications Techniques -->
+  <!-- Section Papeterie avec Smartphone -->
   <section class="brand-section">
     <div class="container">
-      <h2 class="text-center mb-2xl">Spécifications Techniques</h2>
+      <h2 class="text-center mb-2xl">Applications Papeterie & Digital</h2>
+      <p class="text-center lead mb-xl" style="max-width: 800px; margin: 0 auto 3rem;">
+        Notre identité visuelle s'adapte harmonieusement aux supports imprimés et numériques, 
+        offrant une cohérence parfaite sur tous les points de contact.
+      </p>
       
-      <div class="grid grid-2" style="gap: 3rem;">
-        <div>
-          <h3>Applications Numériques</h3>
-          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--radius); margin: 1rem 0;">
-            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Web (200px minimum)</h4>
-            <ul style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666;">
-              <li>Format: SVG, PNG (haute résolution)</li>
-              <li>Résolution: 72 DPI minimum</li>
-              <li>Largeur minimale: 200px</li>
-              <li>Formats: .svg, .png, .jpg</li>
-            </ul>
-          </div>
-          
-          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--radius); margin: 1rem 0;">
-            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Réseaux Sociaux</h4>
-            <ul style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666;">
-              <li>Profil: 400x400px (carré)</li>
-              <li>Bannière: 1200x630px</li>
-              <li>Format: PNG avec transparence</li>
-              <li>Résolution: 72-150 DPI</li>
-            </ul>
-          </div>
+      <div class="full-width-image">
+        <img src="./assets/img/brand/stationery-mockup.jpg" alt="Papeterie d'entreprise - Cartes de visite, lettres, enveloppes et application mobile" loading="lazy">
+      </div>
+      
+      <div class="usage-guidelines">
+        <h3>Supports de Communication</h3>
+        <ul>
+          <li><strong>Cartes de visite :</strong> Format standard 3.5" x 2", impression recto-verso avec finition mate</li>
+          <li><strong>En-têtes de lettre :</strong> Format lettre (8.5" x 11"), logo en haut à droite</li>
+          <li><strong>Enveloppes :</strong> Format #10, logo positionné en haut à gauche</li>
+          <li><strong>Application mobile :</strong> Design responsive adapté aux écrans smartphones</li>
+          <li>Cohérence des couleurs beige/doré sur tous les supports</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Papeterie Hexagonale -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Papeterie Complète avec Logo Hexagonal</h2>
+      <p class="text-center lead mb-xl" style="max-width: 800px; margin: 0 auto 3rem;">
+        Une variation moderne avec logo hexagonal pour des applications contemporaines 
+        qui conservent l'élégance de notre identité visuelle.
+      </p>
+      
+      <div class="full-width-image">
+        <img src="./assets/img/brand/stationery-hexagon.jpg" alt="Système complet de papeterie avec logo hexagonal" loading="lazy">
+      </div>
+      
+      <div class="usage-guidelines">
+        <h3>Logo Hexagonal - Applications Spéciales</h3>
+        <ul>
+          <li><strong>Design moderne :</strong> Variation hexagonale pour projets contemporains</li>
+          <li><strong>Carte de visite premium :</strong> Fond sombre avec logo doré hexagonal</li>
+          <li><strong>Papeterie complète :</strong> En-têtes, enveloppes et cartes coordonnées</li>
+          <li><strong>Applications numériques :</strong> Interface mobile adaptée au logo hexagonal</li>
+          <li>Réservé aux applications modernes et supports premium</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Applications Complètes -->
+  <section class="brand-section">
+    <div class="container">
+      <h2 class="text-center mb-2xl">Applications Multisupports</h2>
+      <p class="text-center lead mb-xl" style="max-width: 800px; margin: 0 auto 3rem;">
+        Guide complet des applications sur supports numériques, imprimés et signalétique 
+        avec spécifications techniques pour chaque usage.
+      </p>
+      
+      <div class="full-width-image">
+        <img src="./assets/img/brand/brand-applications.jpg" alt="Applications complètes - Web, email, papeterie et véhicule" loading="lazy">
+      </div>
+      
+      <div class="grid grid-2" style="gap: 2rem; margin-top: 3rem;">
+        <div class="usage-guidelines">
+          <h3>Applications Digitales</h3>
+          <ul>
+            <li><strong>Site Web :</strong> Logo 200px minimum, format PNG/SVG</li>
+            <li><strong>Email Signature :</strong> Logo 40px hauteur, format PNG optimisé</li>
+            <li><strong>Réseaux Sociaux :</strong> Profil 400x400px, bannière 1200x630px</li>
+            <li><strong>Applications Mobiles :</strong> Icône 180x180px pour iOS, 192x192px Android</li>
+          </ul>
         </div>
         
-        <div>
+        <div class="usage-guidelines">
           <h3>Applications Imprimées</h3>
-          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--radius); margin: 1rem 0;">
-            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Supports Imprimés (15mm minimum)</h4>
-            <ul style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666;">
-              <li>Format: EPS, PDF vectoriel, AI</li>
-              <li>Résolution: 300 DPI minimum</li>
-              <li>Taille minimale: 15mm de diamètre</li>
-              <li>Couleurs: CMYK + Pantone</li>
-            </ul>
-          </div>
-          
-          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: var(--radius); margin: 1rem 0;">
-            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Grande Format</h4>
-            <ul style="font-family: 'Courier New', monospace; font-size: 0.875rem; color: #666;">
-              <li>Signalétique: Version vectorielle obligatoire</li>
-              <li>Véhicules: Minimum 30cm de diamètre</li>
-              <li>Bannières: Maintenir proportions 1:1</li>
-              <li>Découpe: Prévoir zones de sécurité</li>
-            </ul>
-          </div>
+          <ul>
+            <li><strong>Cartes de visite :</strong> Logo 25mm minimum, 300 DPI</li>
+            <li><strong>Papeterie :</strong> Logo 35mm, impression CMYK</li>
+            <li><strong>Signalétique :</strong> Logo 200mm minimum, découpe vinyle</li>
+            <li><strong>Véhicule :</strong> Logo 400mm, application adhésif professionnel</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -699,48 +503,96 @@
     <div class="container">
       <h2 class="text-center mb-2xl">Typographie</h2>
       
-      <div class="grid grid-2" style="gap: 3rem; align-items: start;">
+      <div class="grid grid-2" style="gap: 3rem; align-items: start; margin-top: 3rem;">
         <div>
-          <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2rem; color: var(--primary);">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2rem; color: var(--primary); line-height: 1.2;">
             ÉBÉNISTERIE<br>
             DANIEL CHAMBERLAND
           </h3>
-          <p style="font-family: 'Montserrat', sans-serif; margin-top: 1rem;">
-            <strong>Montserrat Bold</strong><br>
-            Police principale pour les titres et le nom de l'entreprise. 
-            Caractère moderne et élégant qui apporte sophistication et lisibilité.
+          <p style="font-family: 'Montserrat', sans-serif; margin-top: 1.5rem; line-height: 1.6;">
+            <strong style="color: var(--primary);">Montserrat Bold & Montserrat SemiBold</strong><br>
+            Police principale pour le nom de l'entreprise, les titres et les en-têtes. 
+            Caractère moderne et élégant qui apporte sophistication et lisibilité optimale.
           </p>
+          <div style="margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: var(--radius);">
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 0.875rem; color: #666; margin: 0;">
+              <strong>Usages :</strong> Titres, nom d'entreprise, menu de navigation, boutons d'appel à l'action
+            </p>
+          </div>
         </div>
         
         <div>
-          <p style="font-size: 1.125rem; line-height: 1.6;">
-            Pour les textes courants, nous utilisons une typographie sans-serif claire et moderne 
-            qui assure une excellente lisibilité sur tous les supports, du web à l'impression.
+          <p style="font-size: 1.125rem; line-height: 1.7;">
+            Pour les textes courants et descriptions, nous utilisons une typographie sans-serif 
+            claire et moderne qui assure une excellente lisibilité sur tous les supports, 
+            du web à l'impression. Cette police complémente parfaitement les titres Montserrat.
           </p>
-          <p style="margin-top: 1rem; color: #666;">
-            <strong>Source Sans 3</strong><br>
-            Police secondaire pour les textes de contenu, 
-            offrant une lisibilité optimale et un excellent rendu sur écran.
+          <p style="margin-top: 1.5rem; color: #666; line-height: 1.6;">
+            <strong style="color: var(--primary);">Source Sans 3</strong><br>
+            Police secondaire pour les textes de contenu, paragraphes et descriptions détaillées.
+            Offrant une lisibilité optimale et un excellent rendu sur écran comme à l'impression.
           </p>
+          <div style="margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: var(--radius);">
+            <p style="font-size: 0.875rem; color: #666; margin: 0;">
+              <strong>Usages :</strong> Textes de contenu, descriptions de projets, informations de contact, footer
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Téléchargements -->
-  <div class="download-section">
+  <!-- Section Directives Générales -->
+  <section class="brand-section" style="background: linear-gradient(135deg, #2c3e50 0%, #1a2332 100%); color: white;">
     <div class="container">
-      <h2>Ressources de Marque</h2>
-      <p>Téléchargez les éléments d'identité visuelle dans différents formats</p>
+      <h2 class="text-center mb-2xl" style="color: white;">Directives d'Utilisation</h2>
       
-      <div class="download-buttons">
-        <a href="#" class="btn-download">📁 Kit Logo Complet</a>
-        <a href="#" class="btn-download">🎨 Guide de Marque PDF</a>
-        <a href="#" class="btn-download">📐 Templates InDesign</a>
-        <a href="#" class="btn-download">🌐 Assets Web</a>
+      <div class="grid grid-2" style="gap: 3rem; margin-top: 3rem;">
+        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: var(--radius-lg); backdrop-filter: blur(10px);">
+          <h3 style="color: var(--accent); margin-bottom: 1rem;">✓ À Faire</h3>
+          <ul style="list-style: none; padding: 0; line-height: 1.8;">
+            <li style="padding: 0.5rem 0;">• Respecter l'espace de sécurité autour du logo</li>
+            <li style="padding: 0.5rem 0;">• Utiliser les couleurs officielles de la palette</li>
+            <li style="padding: 0.5rem 0;">• Maintenir les proportions originales</li>
+            <li style="padding: 0.5rem 0;">• Choisir la version appropriée selon le fond</li>
+            <li style="padding: 0.5rem 0;">• Utiliser des fichiers haute résolution</li>
+          </ul>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: var(--radius-lg); backdrop-filter: blur(10px);">
+          <h3 style="color: #ff6b6b; margin-bottom: 1rem;">✗ À Éviter</h3>
+          <ul style="list-style: none; padding: 0; line-height: 1.8;">
+            <li style="padding: 0.5rem 0;">• Ne pas déformer ou étirer le logo</li>
+            <li style="padding: 0.5rem 0;">• Ne pas modifier les couleurs</li>
+            <li style="padding: 0.5rem 0;">• Ne pas ajouter d'effets (ombre, 3D, etc.)</li>
+            <li style="padding: 0.5rem 0;">• Ne pas utiliser sur fond à faible contraste</li>
+            <li style="padding: 0.5rem 0;">• Ne pas réduire sous la taille minimale</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: var(--radius-lg);">
+        <h3 style="color: var(--accent); margin-bottom: 1rem;">Tailles Minimales</h3>
+        <div class="grid grid-3" style="gap: 2rem; margin-top: 1.5rem;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📱</div>
+            <strong>Digital</strong><br>
+            <span style="color: rgba(255,255,255,0.8);">40px minimum</span>
+          </div>
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
+            <strong>Imprimé</strong><br>
+            <span style="color: rgba(255,255,255,0.8);">15mm minimum</span>
+          </div>
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏢</div>
+            <strong>Signalétique</strong><br>
+            <span style="color: rgba(255,255,255,0.8);">200mm minimum</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Footer -->
   <footer class="section" role="contentinfo" style="background-color: var(--primary-dark); color: white; padding: var(--space-4xl) 0 var(--space-2xl);">
