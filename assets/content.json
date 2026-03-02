@@ -13,7 +13,7 @@
         "cuisine-noyer-4.webp",
         "cuisine-noyer-5.webp"
       ],
-      "description": "Cette cuisine sur mesure allie l'élégance intemporelle du noyer noir américain à un design résolument contemporain. Chaque détail a été pensé pour optimiser l'espace tout en créant un environnement chaleureux et fonctionnel pour une famille moderne.",
+      "description": "Cette cuisine sur mesure allie l'élégance intemporelle du noyer noir américain à un design résolument contemporain. Fabrication d'armoires sur mesure en bois massif, teint et lustré. Chaque détail a été pensé pour optimiser l'espace tout en créant un environnement chaleureux et fonctionnel.",
       "materials": [
         "Noyer noir américain massif",
         "Quartz Caesarstone blanc pur",
@@ -94,7 +94,7 @@
       "id": "garde-robe-integre",
       "title": "Garde-robe intégré walk-in",
       "subtitle": "Organisation optimale et finitions luxueuses",
-      "category": "Rangement",
+      "category": "Armoires sur mesure",
       "featured": true,
       "images": [
         "garde-robe-1.webp",
@@ -102,10 +102,10 @@
         "garde-robe-3.webp",
         "garde-robe-4.webp"
       ],
-      "description": "Walk-in sur mesure transformant un espace sous-utilisé en dressing de luxe. Chaque centimètre est optimisé avec des solutions de rangement innovantes, des finitions impeccables et un système d'éclairage LED créant une ambiance boutique.",
+      "description": "Walk-in sur mesure transformant un espace sous-utilisé en dressing de luxe. Fabrication d'armoires sur mesure en mélamine ou bois massif, teint et lustré. Chaque centimètre est optimisé avec des solutions de rangement innovantes.",
       "materials": [
+        "Mélamine ou bois massif, teint et lustré",
         "Cèdre rouge de l'Ouest",
-        "Mélamine texturée anthracite", 
         "Quincaillerie Blum haut de gamme",
         "Miroirs biseautés"
       ],
@@ -117,7 +117,7 @@
       ],
       "complexity": "Élevée",
       "duration": "6-7 semaines",
-      "tags": ["garde-robe", "walk-in", "rangement", "luxe", "organisation"]
+      "tags": ["garde-robe", "walk-in", "armoires-sur-mesure", "rangement", "mélamine", "bois-massif"]
     },
     {
       "id": "bibliotheque-murale-complexe",
@@ -153,15 +153,15 @@
       "id": "vanite-salle-bain-spa",
       "title": "Vanité de salle de bain spa",
       "subtitle": "Luxe quotidien et résistance à l'humidité",
-      "category": "Salle de bain",
+      "category": "Vanité et laveuse-sécheuse",
       "featured": false,
       "images": [
         "vanite-spa-1.webp",
         "vanite-spa-2.webp",
-        "vanite-spa-3.webp", 
+        "vanite-spa-3.webp",
         "vanite-spa-4.webp"
       ],
-      "description": "Vanité double vasque transformant la salle de bain en véritable spa privé. Les matériaux sélectionnés résistent parfaitement à l'humidité tout en apportant une dimension luxueuse à cet espace de bien-être quotidien.",
+      "description": "Vanité double vasque et meuble laveuse-sécheuse transformant la salle de bain en véritable spa privé. Fabrication en mélamine ou bois massif, teint et lustré. Les matériaux résistent parfaitement à l'humidité.",
       "materials": [
         "Teck traité marine",
         "Marbre Calacatta doré",
@@ -176,7 +176,7 @@
       ],
       "complexity": "Moyenne",
       "duration": "5-6 semaines",
-      "tags": ["vanité", "salle-de-bain", "spa", "teck", "marbre", "double-vasque"]
+      "tags": ["vanité", "salle-de-bain", "laveuse-sécheuse", "spa", "teck", "marbre", "mélamine", "bois-massif"]
     }
   ],
   "testimonials": [
@@ -201,8 +201,8 @@
   ],
   "company": {
     "name": "Ébénisterie Daniel Chamberland",
-    "tagline": "Sur-mesure d'exception, de la conception à l'installation",
-    "description": "Atelier d'ébénisterie haut de gamme à Charlesbourg : cuisines, manteaux de foyer, mobiliers complexes.",
+    "tagline": "Fabrication sur mesure d'exception depuis 35+ ans",
+    "description": "Atelier d'ébénisterie spécialisé dans la fabrication de manteaux de foyer, cuisines sur mesure, vanités de salle de bain et laveuse-sécheuse, armoires sur mesure. En mélamine ou en bois massif, teint et lustré. Plus de 35 ans d'expérience à Charlesbourg.",
     "address": "350, rue Boyle, Charlesbourg (Québec), G2M 1H9",
     "phone": "(418) 563-6781",
     "fax": "(418) 849-7710",
@@ -229,7 +229,7 @@
     {
       "step": 3,
       "title": "Fabrication artisanale",
-      "description": "Réalisation en atelier avec un savoir-faire traditionnel et des techniques modernes pour une qualité irréprochable.",
+      "description": "Fabrication en atelier avec équipement industriel professionnel et plus de 35 ans de savoir-faire. Mélamine ou bois massif, teint et lustré.",
       "icon": "crafting"
     },
     {

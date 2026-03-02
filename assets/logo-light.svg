@@ -1,0 +1,22 @@
+<svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gold-l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c48f59"/>
+      <stop offset="50%" stop-color="#d4a571"/>
+      <stop offset="100%" stop-color="#a67842"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(60, 60)">
+    <circle cx="0" cy="0" r="42" stroke="url(#gold-l)" stroke-width="1.5" fill="none"/>
+    <line x1="0" y1="-38" x2="0" y2="38" stroke="url(#gold-l)" stroke-width="1" opacity="0.6"/>
+    <path d="M -12 -22 L -12 22 L -2 22 C 16 22 22 12 22 0 C 22 -12 16 -22 -2 -22 Z M -6 -16 L -2 -16 C 12 -16 16 -8 16 0 C 16 8 12 16 -2 16 L -6 16 Z" fill="url(#gold-l)"/>
+    <path d="M 10 -14 C 4 -20 -6 -22 -14 -18 C -22 -14 -26 -6 -26 0 C -26 6 -22 14 -14 18 C -6 22 4 20 10 14" stroke="#f5f0eb" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <line x1="115" y1="25" x2="115" y2="95" stroke="url(#gold-l)" stroke-width="0.5" opacity="0.4"/>
+  <text x="130" y="42" font-family="'Playfair Display', 'Georgia', serif" font-size="10" font-weight="400" fill="#c48f59" letter-spacing="4">EBENISTERIE</text>
+  <text x="130" y="68" font-family="'Playfair Display', 'Georgia', serif" font-size="18" font-weight="700" fill="#f5f0eb" letter-spacing="1.5">DANIEL</text>
+  <text x="130" y="88" font-family="'Playfair Display', 'Georgia', serif" font-size="18" font-weight="700" fill="#f5f0eb" letter-spacing="1.5">CHAMBERLAND</text>
+  <line x1="130" y1="96" x2="330" y2="96" stroke="url(#gold-l)" stroke-width="0.5" opacity="0.3"/>
+</svg>

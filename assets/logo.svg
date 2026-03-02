@@ -1,26 +1,42 @@
-<svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style>
-      .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 600; }
-      .logo-primary { fill: var(--primary, #7a5230); }
-      .logo-accent { fill: var(--accent, #c48f59); }
-    </style>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c48f59"/>
+      <stop offset="50%" stop-color="#d4a571"/>
+      <stop offset="100%" stop-color="#a67842"/>
+    </linearGradient>
+    <linearGradient id="dark-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d2817"/>
+      <stop offset="50%" stop-color="#5d3a1a"/>
+      <stop offset="100%" stop-color="#4a2e1c"/>
+    </linearGradient>
   </defs>
-  
-  <!-- Icône outil ébénisterie stylisé -->
-  <g transform="translate(5, 10)">
-    <!-- Rabot/plane stylisé -->
-    <rect x="0" y="15" width="25" height="8" rx="2" class="logo-primary"/>
-    <rect x="2" y="17" width="3" height="4" class="logo-accent"/>
-    <path d="M25 19 L35 19 L33 15 L27 15 Z" class="logo-accent"/>
-    
-    <!-- Copeaux de bois -->
-    <path d="M30 10 Q32 8 34 10 Q32 12 30 10" class="logo-accent" opacity="0.7"/>
-    <path d="M35 8 Q37 6 39 8 Q37 10 35 8" class="logo-accent" opacity="0.5"/>
+
+  <!-- DC Monogram Circle -->
+  <g transform="translate(60, 60)">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="42" stroke="url(#gold-grad)" stroke-width="1.5" fill="none"/>
+
+    <!-- Vertical bisecting line -->
+    <line x1="0" y1="-38" x2="0" y2="38" stroke="url(#gold-grad)" stroke-width="1" opacity="0.6"/>
+
+    <!-- Letter D - elegant serif -->
+    <path d="M -12 -22 L -12 22 L -2 22 C 16 22 22 12 22 0 C 22 -12 16 -22 -2 -22 Z M -6 -16 L -2 -16 C 12 -16 16 -8 16 0 C 16 8 12 16 -2 16 L -6 16 Z" fill="url(#dark-grad)"/>
+
+    <!-- Letter C - overlapping -->
+    <path d="M 10 -14 C 4 -20 -6 -22 -14 -18 C -22 -14 -26 -6 -26 0 C -26 6 -22 14 -14 18 C -6 22 4 20 10 14" stroke="url(#gold-grad)" stroke-width="3" fill="none" stroke-linecap="round"/>
   </g>
-  
-  <!-- Texte -->
-  <text x="50" y="25" class="logo-text logo-primary" font-size="12" font-weight="700">ÉBÉNISTERIE</text>
-  <text x="50" y="40" class="logo-text logo-primary" font-size="16" font-weight="800">DANIEL CHAMBERLAND</text>
-  <line x1="50" y1="45" x2="190" y2="45" stroke="var(--accent, #c48f59)" stroke-width="1" opacity="0.6"/>
+
+  <!-- Separator line -->
+  <line x1="115" y1="25" x2="115" y2="95" stroke="url(#gold-grad)" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Text: EBENISTERIE -->
+  <text x="130" y="42" font-family="'Playfair Display', 'Georgia', serif" font-size="10" font-weight="400" fill="#c48f59" letter-spacing="4" text-transform="uppercase">EBENISTERIE</text>
+
+  <!-- Text: DANIEL CHAMBERLAND -->
+  <text x="130" y="68" font-family="'Playfair Display', 'Georgia', serif" font-size="18" font-weight="700" fill="#f5f0eb" letter-spacing="1.5">DANIEL</text>
+  <text x="130" y="88" font-family="'Playfair Display', 'Georgia', serif" font-size="18" font-weight="700" fill="#f5f0eb" letter-spacing="1.5">CHAMBERLAND</text>
+
+  <!-- Accent line under text -->
+  <line x1="130" y1="96" x2="330" y2="96" stroke="url(#gold-grad)" stroke-width="0.5" opacity="0.3"/>
 </svg>
