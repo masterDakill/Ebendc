@@ -3,271 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez notre processus de création : de la conception à l'installation. Méthodologie éprouvée d'Ébénisterie Daniel Chamberland.">
-  <meta name="keywords" content="processus ébénisterie, méthodologie, conception, fabrication, installation, Daniel Chamberland">
+  <meta name="description" content="Decouvrez notre processus de creation : de la conception a l'installation. Methodologie eprouvee d'Ebenisterie Daniel Chamberland.">
+  <meta name="keywords" content="processus ebenisterie, methodologie, conception, fabrication, installation, Daniel Chamberland">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#7a5230">
-  
+  <meta name="theme-color" content="#0a0a0a">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Notre Processus - Ébénisterie Daniel Chamberland">
-  <meta property="og:description" content="Découvrez notre méthodologie éprouvée : conception, fabrication et installation d'exception.">
+  <meta property="og:title" content="Notre Processus - Ebenisterie Daniel Chamberland">
+  <meta property="og:description" content="Decouvrez notre methodologie eprouvee : conception, fabrication et installation d'exception.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ebenisteriechamberland.com/processus.html">
-  
+  <meta property="og:locale" content="fr_CA">
+
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-  
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- CSS -->
   <link rel="stylesheet" href="./style.css">
-  
-  <title>Notre Processus - Ébénisterie Daniel Chamberland</title>
+
+  <title>Notre Processus - Ebenisterie Daniel Chamberland</title>
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading">
+    <div class="loading-bar">
+      <div class="loading-bar-inner" id="loading-bar"></div>
+    </div>
+    <div class="loading-text">Chargement</div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Canvas 3D -->
+  <canvas id="canvas-3d" aria-hidden="true"></canvas>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor" aria-hidden="true"></div>
+
   <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
     <div class="container">
       <div class="nav-container">
-        <a href="./" class="nav-brand" aria-label="Accueil Ébénisterie Daniel Chamberland">
-          <img src="./assets/logo.png" alt="Logo Ébénisterie Daniel Chamberland" class="nav-logo">
+        <a href="./" class="nav-brand" aria-label="Accueil">
+          <img src="./assets/logo.png" alt="Logo Ebenisterie Daniel Chamberland" class="nav-logo">
+          <span class="nav-brand-text">DC Ebenisterie</span>
         </a>
-        
-        <ul class="nav-menu" role="menubar">
-          <li role="none">
-            <a href="./" class="nav-link" role="menuitem">Accueil</a>
-          </li>
-          <li role="none">
-            <a href="./realisations.html" class="nav-link" role="menuitem">Réalisations</a>
-          </li>
-          <li role="none">
-            <a href="./a-propos.html" class="nav-link" role="menuitem">À propos</a>
-          </li>
-          <li role="none">
-            <a href="./processus.html" class="nav-link active" role="menuitem">Processus</a>
-          </li>
-          <li role="none">
-            <a href="./contact.html" class="nav-link" role="menuitem">Contact</a>
-          </li>
+
+        <ul class="nav-menu" id="nav-menu" role="menubar">
+          <li role="none"><a href="./" class="nav-link" role="menuitem">Accueil</a></li>
+          <li role="none"><a href="./realisations.html" class="nav-link" role="menuitem">Realisations</a></li>
+          <li role="none"><a href="./a-propos.html" class="nav-link" role="menuitem">A propos</a></li>
+          <li role="none"><a href="./processus.html" class="nav-link active" role="menuitem">Processus</a></li>
+          <li role="none"><a href="./contact.html" class="nav-link" role="menuitem">Contact</a></li>
         </ul>
-        
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+
+        <div class="nav-cta">
+          <a href="./contact.html" class="btn btn-primary btn-magnetic">Demarrer un projet</a>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
     </div>
+    <div class="nav-menu-overlay" id="nav-overlay"></div>
   </nav>
 
-  <!-- En-tête de page -->
-  <header class="section-sm" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); margin-top: 70px;">
-    <div class="container text-center">
-      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: var(--space-lg);">Notre Processus</h1>
-      <p class="lead" style="max-width: 600px; margin: 0 auto;">
-        De la première idée à l'installation finale : découvrez notre méthodologie éprouvée pour créer votre mobilier sur mesure.
-      </p>
+  <!-- Page Header -->
+  <header class="page-header" role="banner">
+    <div class="container">
+      <div class="page-header-content text-center reveal">
+        <div class="section-label">Methodologie</div>
+        <h1>Notre Processus</h1>
+        <p class="lead max-w-sm" style="margin: 0 auto;">
+          De la premiere idee a l'installation finale : decouvrez notre methodologie eprouvee pour creer votre mobilier sur mesure.
+        </p>
+      </div>
     </div>
   </header>
 
   <!-- Section processus -->
   <main class="section" role="main">
     <div class="container">
-      
-      <!-- Étapes du processus -->
-      <div style="display: flex; flex-direction: column; gap: var(--space-4xl);">
-        
-        <!-- Étape 1 : Conception -->
-        <div class="process-step">
-          <div class="grid grid-2" style="gap: var(--space-4xl); align-items: center;">
-            <div style="order: 1;">
-              <div style="display: flex; align-items: center; gap: var(--space-lg); margin-bottom: var(--space-xl);">
-                <div style="width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">1</div>
-                <h2 style="margin: 0; color: var(--primary);">Conception & Design</h2>
-              </div>
-              
-              <p class="lead">
-                Rencontre personnalisée pour comprendre vos besoins, prise de mesures précises et création des plans 3D détaillés.
-              </p>
-              
-              <ul style="list-style: none; padding: 0; margin: var(--space-xl) 0;">
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Consultation à domicile gratuite
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Analyse des contraintes techniques
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Conception 3D et devis détaillé
-                </li>
-                <li style="display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Validation du projet ensemble
-                </li>
-              </ul>
-            </div>
-            
-            <div style="order: 2;">
-              <div style="background: linear-gradient(135deg, var(--accent-light), var(--accent)); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 4rem;">📐</div>
-            </div>
+      <div class="section-header reveal">
+        <div class="section-label">Etape par etape</div>
+        <h2>Un parcours d'excellence</h2>
+      </div>
+
+      <div class="process-timeline">
+
+        <!-- Etape 1 : Conception -->
+        <div class="process-step reveal stagger-1">
+          <div class="process-step-number">1</div>
+          <div class="process-step-content">
+            <h3>Conception &amp; Design</h3>
+            <p class="lead">
+              Rencontre personnalisee pour comprendre vos besoins, prise de mesures precises et creation des plans 3D detailles.
+            </p>
+            <ul>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Consultation a domicile gratuite
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Analyse des contraintes techniques
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Conception 3D et devis detaille
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Validation du projet ensemble
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Étape 2 : Sélection matériaux -->
-        <div class="process-step">
-          <div class="grid grid-2" style="gap: var(--space-4xl); align-items: center;">
-            <div style="order: 2;">
-              <div style="display: flex; align-items: center; gap: var(--space-lg); margin-bottom: var(--space-xl);">
-                <div style="width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">2</div>
-                <h2 style="margin: 0; color: var(--primary);">Sélection des matériaux</h2>
-              </div>
-              
-              <p class="lead">
-                Choix guidé des essences de bois, quincailleries et finitions selon vos goûts et contraintes techniques.
-              </p>
-              
-              <ul style="list-style: none; padding: 0; margin: var(--space-xl) 0;">
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Sélection d'essences nobles locales
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Quincaillerie haut de gamme européenne
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Finitions écologiques durables
-                </li>
-                <li style="display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Échantillons et tests de compatibilité
-                </li>
-              </ul>
-            </div>
-            
-            <div style="order: 1;">
-              <div style="background: linear-gradient(135deg, var(--primary-light), var(--primary)); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🌲</div>
-            </div>
+        <!-- Etape 2 : Selection materiaux -->
+        <div class="process-step reveal stagger-2">
+          <div class="process-step-number">2</div>
+          <div class="process-step-content">
+            <h3>Selection des materiaux</h3>
+            <p class="lead">
+              Choix guide des essences de bois, quincailleries et finitions selon vos gouts et contraintes techniques.
+            </p>
+            <ul>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Selection d'essences nobles locales
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Quincaillerie haut de gamme europeenne
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Finitions ecologiques durables
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Echantillons et tests de compatibilite
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Étape 3 : Fabrication -->
-        <div class="process-step">
-          <div class="grid grid-2" style="gap: var(--space-4xl); align-items: center;">
-            <div style="order: 1;">
-              <div style="display: flex; align-items: center; gap: var(--space-lg); margin-bottom: var(--space-xl);">
-                <div style="width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">3</div>
-                <h2 style="margin: 0; color: var(--primary);">Fabrication artisanale</h2>
-              </div>
-              
-              <p class="lead">
-                Réalisation en atelier avec un savoir-faire traditionnel et des techniques modernes pour une qualité irréprochable.
-              </p>
-              
-              <ul style="list-style: none; padding: 0; margin: var(--space-xl) 0;">
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Usinage de précision en atelier
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Assemblages traditionnels renforcés
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Finition et ponçage minutieux
-                </li>
-                <li style="display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Contrôle qualité à chaque étape
-                </li>
-              </ul>
-            </div>
-            
-            <div style="order: 2;">
-              <div style="background: linear-gradient(135deg, var(--primary-dark), var(--primary)); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🔨</div>
-            </div>
+        <!-- Etape 3 : Fabrication -->
+        <div class="process-step reveal stagger-3">
+          <div class="process-step-number">3</div>
+          <div class="process-step-content">
+            <h3>Fabrication artisanale</h3>
+            <p class="lead">
+              Realisation en atelier avec un savoir-faire traditionnel et des techniques modernes pour une qualite irreprochable.
+            </p>
+            <ul>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Usinage de precision en atelier
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Assemblages traditionnels renforces
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Finition et poncage minutieux
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Controle qualite a chaque etape
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Étape 4 : Installation -->
-        <div class="process-step">
-          <div class="grid grid-2" style="gap: var(--space-4xl); align-items: center;">
-            <div style="order: 2;">
-              <div style="display: flex; align-items: center; gap: var(--space-lg); margin-bottom: var(--space-xl);">
-                <div style="width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">4</div>
-                <h2 style="margin: 0; color: var(--primary);">Livraison & Installation</h2>
-              </div>
-              
-              <p class="lead">
-                Transport soigné et installation professionnelle avec finitions finales et mise en service complète.
-              </p>
-              
-              <ul style="list-style: none; padding: 0; margin: var(--space-xl) 0;">
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Transport protégé et sécurisé
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Installation par nos équipes
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Ajustements et finitions sur place
-                </li>
-                <li style="display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Nettoyage et mise en service
-                </li>
-              </ul>
-            </div>
-            
-            <div style="order: 1;">
-              <div style="background: linear-gradient(135deg, var(--accent), var(--accent-dark)); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🚚</div>
-            </div>
+        <!-- Etape 4 : Livraison & Installation -->
+        <div class="process-step reveal stagger-4">
+          <div class="process-step-number">4</div>
+          <div class="process-step-content">
+            <h3>Livraison &amp; Installation</h3>
+            <p class="lead">
+              Transport soigne et installation professionnelle avec finitions finales et mise en service complete.
+            </p>
+            <ul>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Transport protege et securise
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Installation par nos equipes
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Ajustements et finitions sur place
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Nettoyage et mise en service
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Étape 5 : Suivi -->
-        <div class="process-step">
-          <div class="grid grid-2" style="gap: var(--space-4xl); align-items: center;">
-            <div style="order: 1;">
-              <div style="display: flex; align-items: center; gap: var(--space-lg); margin-bottom: var(--space-xl);">
-                <div style="width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">5</div>
-                <h2 style="margin: 0; color: var(--primary);">Suivi & Garantie</h2>
-              </div>
-              
-              <p class="lead">
-                Service après-vente personnalisé et garantie sur nos réalisations pour votre tranquillité d'esprit.
-              </p>
-              
-              <ul style="list-style: none; padding: 0; margin: var(--space-xl) 0;">
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Garantie 2 ans sur fabrication
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Service après-vente réactif
-                </li>
-                <li style="margin-bottom: var(--space-md); display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Conseils d'entretien personnalisés
-                </li>
-                <li style="display: flex; align-items: center; gap: var(--space-md);">
-                  <span style="color: var(--accent); font-weight: bold;">✓</span>
-                  Relation de confiance à long terme
-                </li>
-              </ul>
-            </div>
-            
-            <div style="order: 2;">
-              <div style="background: linear-gradient(135deg, var(--primary), var(--accent)); height: 300px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🛡️</div>
-            </div>
+        <!-- Etape 5 : Suivi & Garantie -->
+        <div class="process-step reveal stagger-5">
+          <div class="process-step-number">5</div>
+          <div class="process-step-content">
+            <h3>Suivi &amp; Garantie</h3>
+            <p class="lead">
+              Service apres-vente personnalise et garantie sur nos realisations pour votre tranquillite d'esprit.
+            </p>
+            <ul>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Garantie 2 ans sur fabrication
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Service apres-vente reactif
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Conseils d'entretien personnalises
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Relation de confiance a long terme
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -275,135 +250,144 @@
     </div>
   </main>
 
-  <!-- Section timeline -->
-  <section class="section" style="background-color: var(--bg-secondary);">
-    <div class="container text-center">
-      <h2 class="mb-2xl">Délais moyens par type de projet</h2>
-      
+  <!-- Section timeline / delais -->
+  <section class="section cta-section" aria-labelledby="delais-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Planification</div>
+        <h2 id="delais-title">Delais moyens par type de projet</h2>
+      </div>
+
       <div class="grid grid-3">
-        <div class="card">
-          <div class="card-content text-center">
-            <h3 style="color: var(--accent); margin-bottom: var(--space-md);">Mobilier simple</h3>
-            <div style="font-size: 2rem; font-weight: bold; color: var(--primary); margin-bottom: var(--space-md);">4-6 semaines</div>
-            <p style="margin: 0; color: var(--text-secondary);">Tables, étagères, meubles TV</p>
+        <div class="card card-3d reveal stagger-1">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon" style="margin: 0 auto var(--space-lg);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3 class="card-title">Mobilier simple</h3>
+              <p class="text-gradient mb-md" style="font-size: 2rem; font-weight: 700; font-family: var(--font-heading);">4-6 semaines</p>
+              <p class="card-text mb-0">Tables, etageres, meubles TV</p>
+            </div>
           </div>
         </div>
-        
-        <div class="card">
-          <div class="card-content text-center">
-            <h3 style="color: var(--accent); margin-bottom: var(--space-md);">Projets complexes</h3>
-            <div style="font-size: 2rem; font-weight: bold; color: var(--primary); margin-bottom: var(--space-md);">8-12 semaines</div>
-            <p style="margin: 0; color: var(--text-secondary);">Cuisines, bibliothèques, walk-in</p>
+
+        <div class="card card-3d reveal stagger-2">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon" style="margin: 0 auto var(--space-lg);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3 class="card-title">Projets complexes</h3>
+              <p class="text-gradient mb-md" style="font-size: 2rem; font-weight: 700; font-family: var(--font-heading);">8-12 semaines</p>
+              <p class="card-text mb-0">Cuisines, bibliotheques, walk-in</p>
+            </div>
           </div>
         </div>
-        
-        <div class="card">
-          <div class="card-content text-center">
-            <h3 style="color: var(--accent); margin-bottom: var(--space-md);">Projets sur mesure</h3>
-            <div style="font-size: 2rem; font-weight: bold; color: var(--primary); margin-bottom: var(--space-md);">12+ semaines</div>
-            <p style="margin: 0; color: var(--text-secondary);">Architecturaux, restauration</p>
+
+        <div class="card card-3d reveal stagger-3">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon" style="margin: 0 auto var(--space-lg);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <h3 class="card-title">Projets sur mesure</h3>
+              <p class="text-gradient mb-md" style="font-size: 2rem; font-weight: 700; font-family: var(--font-heading);">12+ semaines</p>
+              <p class="card-text mb-0">Architecturaux, restauration</p>
+            </div>
           </div>
         </div>
       </div>
-      
-      <p style="margin-top: var(--space-2xl); color: var(--text-muted);">
-        *Les délais peuvent varier selon la complexité et la période de l'année
+
+      <p class="text-center mt-2xl reveal" style="color: var(--text-muted); font-size: 0.9rem;">
+        *Les delais peuvent varier selon la complexite et la periode de l'annee
       </p>
     </div>
   </section>
 
   <!-- Section CTA -->
-  <section class="section text-center">
+  <section class="section cta-section text-center" aria-labelledby="cta-title">
     <div class="container">
-      <h2>Commençons votre projet ensemble</h2>
-      <p class="lead mb-2xl">
-        Chaque création débute par une conversation. Contactez-nous pour démarrer votre projet sur mesure.
-      </p>
-      <div class="d-flex gap-lg justify-center">
-        <a href="./contact.html" class="btn btn-primary">
-          Démarrer un projet
+      <div class="section-header reveal">
+        <div class="section-label">Votre projet</div>
+        <h2 id="cta-title">Commencons votre projet ensemble</h2>
+        <p class="lead">
+          Chaque creation debute par une conversation. Contactez-nous pour demarrer votre projet sur mesure.
+        </p>
+      </div>
+
+      <div class="d-flex gap-lg justify-center reveal">
+        <a href="./contact.html" class="btn btn-primary btn-magnetic">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Demarrer un projet
         </a>
-        <a href="./realisations.html" class="btn btn-outline">
-          Voir nos réalisations
+        <a href="./realisations.html" class="btn btn-outline btn-magnetic">
+          Voir nos realisations
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="section" role="contentinfo" style="background-color: var(--primary-dark); color: white; padding: var(--space-4xl) 0 var(--space-2xl);">
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="grid grid-4" style="margin-bottom: var(--space-3xl);">
-        <div>
-          <img src="./assets/logo.png" alt="Logo Ébénisterie Daniel Chamberland" style="height: 50px; margin-bottom: var(--space-lg); filter: brightness(0) invert(1);">
-          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            Atelier d'ébénisterie haut de gamme spécialisé dans la création de mobilier sur mesure d'exception.
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="./assets/logo.png" alt="Logo Ebenisterie Daniel Chamberland" class="nav-logo mb-xl">
+          <p>
+            Atelier d'ebenisterie haut de gamme specialise dans la creation de mobilier sur mesure d'exception a Charlesbourg, Quebec.
           </p>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Services</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Cuisines sur mesure</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Manteaux de foyer</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Mobilier sur mesure</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Rangements intégrés</a>
-            </li>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="./realisations.html">Cuisines sur mesure</a></li>
+            <li><a href="./realisations.html">Manteaux de foyer</a></li>
+            <li><a href="./realisations.html">Mobilier sur mesure</a></li>
+            <li><a href="./realisations.html">Rangements integres</a></li>
           </ul>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Contact</h3>
-          <address style="font-style: normal; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            <div style="margin-bottom: var(--space-sm);">
-              📍 350, rue Boyle<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;Charlesbourg, QC G2M 1H9
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              📞 <a href="tel:+14185636781" style="color: rgba(255, 255, 255, 0.8);">(418) 563-6781</a>
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              ✉️ <a href="mailto:eben.dc@ccapcable.com" style="color: rgba(255, 255, 255, 0.8);">eben.dc@ccapcable.com</a>
-            </div>
-          </address>
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-links">
+            <li>350, rue Boyle</li>
+            <li>Charlesbourg, QC G2M 1H9</li>
+            <li><a href="tel:+14185636781">(418) 563-6781</a></li>
+            <li><a href="mailto:eben.dc@ccapcable.com">eben.dc@ccapcable.com</a></li>
+          </ul>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Horaires</h3>
-          <div style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            <div style="margin-bottom: var(--space-sm);">
-              <strong>Lundi - Vendredi</strong><br>
-              7h30 - 16h30
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              <strong>Samedi</strong><br>
-              Sur rendez-vous
-            </div>
-            <div>
-              <strong>Dimanche</strong><br>
-              Fermé
-            </div>
-          </div>
+          <h3 class="footer-heading">Horaires</h3>
+          <ul class="footer-links">
+            <li><strong>Lun-Ven</strong> 7h30-16h30</li>
+            <li><strong>Samedi</strong> Sur rendez-vous</li>
+            <li><strong>Dimanche</strong> Ferme</li>
+          </ul>
         </div>
       </div>
-      
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-xl); text-align: center; color: rgba(255, 255, 255, 0.6);">
-        <p>&copy; 2024 Ébénisterie Daniel Chamberland. Tous droits réservés.</p>
-        <p style="font-size: 0.875rem; margin-top: var(--space-sm);">
-          Artisanat québécois d'exception • Charlesbourg, Québec
-        </p>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ebenisterie Daniel Chamberland. Tous droits reserves.</p>
+        <p>Artisanat quebecois d'exception</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- App -->
   <script src="./script.js"></script>
 </body>
 </html>

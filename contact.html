@@ -3,193 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez Ébénisterie Daniel Chamberland pour votre projet sur mesure. Consultation gratuite, devis personnalisé. Charlesbourg, Québec.">
-  <meta name="keywords" content="contact ébénisterie, devis, consultation, projet sur mesure, Daniel Chamberland, Charlesbourg">
+  <meta name="description" content="Contactez Ebenisterie Daniel Chamberland pour votre projet sur mesure. Consultation gratuite, devis personnalise. Charlesbourg, Quebec.">
+  <meta name="keywords" content="contact ebenisterie, devis, consultation, projet sur mesure, Daniel Chamberland, Charlesbourg">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#7a5230">
-  
+  <meta name="theme-color" content="#0a0a0a">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Contact - Ébénisterie Daniel Chamberland">
-  <meta property="og:description" content="Parlons de votre projet d'ébénisterie sur mesure. Consultation personnalisée et devis gratuit.">
+  <meta property="og:title" content="Contact - Ebenisterie Daniel Chamberland">
+  <meta property="og:description" content="Parlons de votre projet d'ebenisterie sur mesure. Consultation personnalisee et devis gratuit.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ebenisteriechamberland.com/contact.html">
-  
+  <meta property="og:locale" content="fr_CA">
+
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-  
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- CSS -->
   <link rel="stylesheet" href="./style.css">
-  
-  <title>Contact - Ébénisterie Daniel Chamberland</title>
+
+  <title>Contact - Ebenisterie Daniel Chamberland</title>
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading">
+    <div class="loading-bar">
+      <div class="loading-bar-inner" id="loading-bar"></div>
+    </div>
+    <div class="loading-text">Chargement</div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Canvas 3D -->
+  <canvas id="canvas-3d" aria-hidden="true"></canvas>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor" aria-hidden="true"></div>
+
   <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
     <div class="container">
       <div class="nav-container">
-        <a href="./" class="nav-brand" aria-label="Accueil Ébénisterie Daniel Chamberland">
-          <img src="./assets/logo.png" alt="Logo Ébénisterie Daniel Chamberland" class="nav-logo">
+        <a href="./" class="nav-brand" aria-label="Accueil">
+          <img src="./assets/logo.png" alt="Logo Ebenisterie Daniel Chamberland" class="nav-logo">
+          <span class="nav-brand-text">DC Ebenisterie</span>
         </a>
-        
-        <ul class="nav-menu" role="menubar">
-          <li role="none">
-            <a href="./" class="nav-link" role="menuitem">Accueil</a>
-          </li>
-          <li role="none">
-            <a href="./realisations.html" class="nav-link" role="menuitem">Réalisations</a>
-          </li>
-          <li role="none">
-            <a href="./a-propos.html" class="nav-link" role="menuitem">À propos</a>
-          </li>
-          <li role="none">
-            <a href="./processus.html" class="nav-link" role="menuitem">Processus</a>
-          </li>
-          <li role="none">
-            <a href="./contact.html" class="nav-link active" role="menuitem">Contact</a>
-          </li>
+
+        <ul class="nav-menu" id="nav-menu" role="menubar">
+          <li role="none"><a href="./" class="nav-link" role="menuitem">Accueil</a></li>
+          <li role="none"><a href="./realisations.html" class="nav-link" role="menuitem">Realisations</a></li>
+          <li role="none"><a href="./a-propos.html" class="nav-link" role="menuitem">A propos</a></li>
+          <li role="none"><a href="./processus.html" class="nav-link" role="menuitem">Processus</a></li>
+          <li role="none"><a href="./contact.html" class="nav-link active" role="menuitem">Contact</a></li>
         </ul>
-        
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+
+        <div class="nav-cta">
+          <a href="./contact.html" class="btn btn-primary btn-magnetic">Demarrer un projet</a>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
     </div>
+    <div class="nav-menu-overlay" id="nav-overlay"></div>
   </nav>
 
-  <!-- En-tête de page -->
-  <header class="section-sm" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); margin-top: 70px;">
-    <div class="container text-center">
-      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: var(--space-lg);">Parlons de votre projet</h1>
-      <p class="lead" style="max-width: 600px; margin: 0 auto;">
-        Chaque création commence par une conversation. Contactez-nous pour une consultation personnalisée et gratuite.
-      </p>
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="page-header-content text-center">
+        <div class="section-label reveal">Contact</div>
+        <h1 class="reveal">Parlons de votre projet</h1>
+        <p class="lead reveal">
+          Chaque creation commence par une conversation. Contactez-nous pour une consultation personnalisee et gratuite.
+        </p>
+      </div>
     </div>
   </header>
 
-  <!-- Section principale -->
+  <!-- Contact Info + Form Section -->
   <main class="section" role="main">
     <div class="container">
-      <div class="grid grid-2" style="gap: var(--space-4xl); align-items: start;">
-        
-        <!-- Informations de contact -->
+      <div class="grid grid-2 gap-2xl items-start">
+
+        <!-- Contact Info Cards -->
         <div>
-          <h2 style="margin-bottom: var(--space-2xl);">Nos coordonnées</h2>
-          
-          <!-- Adresse -->
-          <div class="card" style="margin-bottom: var(--space-xl);">
+          <div class="section-header reveal">
+            <div class="section-label">Nos coordonnees</div>
+            <h2>Restons en contact</h2>
+          </div>
+
+          <!-- Address Card -->
+          <div class="card reveal stagger-1 mb-xl">
             <div class="card-content">
-              <div style="display: flex; align-items: flex-start; gap: var(--space-lg);">
-                <div style="font-size: 2rem; color: var(--accent); line-height: 1;">📍</div>
+              <div class="d-flex items-start gap-lg">
+                <div class="card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
                 <div>
-                  <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm); color: var(--text);">Notre atelier</h3>
-                  <address style="font-style: normal; color: var(--text-secondary); line-height: 1.6;">
+                  <h3 class="card-title mb-sm">Notre atelier</h3>
+                  <address class="card-text">
                     <strong>350, rue Boyle</strong><br>
-                    Charlesbourg (Québec)<br>
+                    Charlesbourg (Quebec)<br>
                     G2M 1H9
                   </address>
-                  <p style="margin-top: var(--space-md); font-size: 0.9rem; color: var(--text-muted);">
-                    Stationnement disponible sur place
-                  </p>
+                  <p class="card-text mt-lg mb-0">Stationnement disponible sur place</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Téléphone -->
-          <div class="card" style="margin-bottom: var(--space-xl);">
+          <!-- Phone Card -->
+          <div class="card reveal stagger-2 mb-xl">
             <div class="card-content">
-              <div style="display: flex; align-items: flex-start; gap: var(--space-lg);">
-                <div style="font-size: 2rem; color: var(--accent); line-height: 1;">📞</div>
+              <div class="d-flex items-start gap-lg">
+                <div class="card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
                 <div>
-                  <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm); color: var(--text);">Téléphone</h3>
-                  <p>
-                    <a href="tel:+14185636781" style="font-size: 1.25rem; font-weight: 600; color: var(--primary);">(418) 563-6781</a>
+                  <h3 class="card-title mb-sm">Telephone</h3>
+                  <p class="mb-sm">
+                    <a href="tel:+14185636781">(418) 563-6781</a>
                   </p>
-                  <p style="margin-top: var(--space-sm); font-size: 0.9rem; color: var(--text-muted);">
-                    Fax : (418) 849-7710
-                  </p>
+                  <p class="card-text mb-0">Fax : (418) 849-7710</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Email -->
-          <div class="card" style="margin-bottom: var(--space-xl);">
+          <!-- Email Card -->
+          <div class="card reveal stagger-3 mb-xl">
             <div class="card-content">
-              <div style="display: flex; align-items: flex-start; gap: var(--space-lg);">
-                <div style="font-size: 2rem; color: var(--accent); line-height: 1;">✉️</div>
+              <div class="d-flex items-start gap-lg">
+                <div class="card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
                 <div>
-                  <h3 style="font-size: 1.25rem; margin-bottom: var(--space-sm); color: var(--text);">Courriel</h3>
-                  <p>
-                    <a href="mailto:eben.dc@ccapcable.com" style="font-weight: 600; color: var(--primary);">eben.dc@ccapcable.com</a>
+                  <h3 class="card-title mb-sm">Courriel</h3>
+                  <p class="mb-0">
+                    <a href="mailto:eben.dc@ccapcable.com">eben.dc@ccapcable.com</a>
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Horaires -->
-          <div class="card" style="margin-bottom: var(--space-xl);">
+          <!-- Hours Card -->
+          <div class="card reveal stagger-4 mb-xl">
             <div class="card-content">
-              <div style="display: flex; align-items: flex-start; gap: var(--space-lg);">
-                <div style="font-size: 2rem; color: var(--accent); line-height: 1;">🕒</div>
-                <div style="width: 100%;">
-                  <h3 style="font-size: 1.25rem; margin-bottom: var(--space-lg); color: var(--text);">Heures d'ouverture</h3>
-                  <div style="display: grid; gap: var(--space-md);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: var(--space-sm); border-bottom: 1px solid var(--bg-tertiary);">
-                      <span style="font-weight: 600;">Lundi - Vendredi</span>
-                      <span style="color: var(--text-secondary);">7h30 - 16h30</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: var(--space-sm); border-bottom: 1px solid var(--bg-tertiary);">
-                      <span style="font-weight: 600;">Samedi</span>
-                      <span style="color: var(--text-secondary);">Sur rendez-vous</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                      <span style="font-weight: 600;">Dimanche</span>
-                      <span style="color: var(--text-muted);">Fermé</span>
-                    </div>
+              <div class="d-flex items-start gap-lg">
+                <div class="card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="w-full">
+                  <h3 class="card-title mb-lg">Heures d'ouverture</h3>
+                  <div class="d-flex justify-between items-center mb-md">
+                    <strong>Lundi - Vendredi</strong>
+                    <span>7h30 - 16h30</span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="d-flex justify-between items-center mb-md">
+                    <strong>Samedi</strong>
+                    <span>Sur rendez-vous</span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="d-flex justify-between items-center">
+                    <strong>Dimanche</strong>
+                    <span>Ferme</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Consultation -->
-          <div class="card" style="background: linear-gradient(135deg, var(--accent-light), var(--accent)); color: white;">
+          <!-- Consultation CTA Card -->
+          <div class="card cta-section reveal stagger-5">
             <div class="card-content text-center">
-              <h3 style="color: white; margin-bottom: var(--space-md);">Consultation gratuite</h3>
-              <p style="margin-bottom: var(--space-lg); opacity: 0.9;">
-                Nous nous déplaçons chez vous pour évaluer votre projet et vous conseiller gratuitement.
+              <div class="card-icon mb-lg justify-center" style="margin-inline: auto;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="card-title mb-md">Consultation gratuite</h3>
+              <p class="card-text mb-xl">
+                Nous nous deplacons chez vous pour evaluer votre projet et vous conseiller gratuitement.
               </p>
-              <a href="tel:+14185636781" class="btn" style="background: white; color: var(--accent); border: none;">
+              <a href="tel:+14185636781" class="btn btn-primary btn-magnetic">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 Prendre rendez-vous
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Formulaire de contact -->
+        <!-- Contact Form -->
         <div>
-          <h2 style="margin-bottom: var(--space-2xl);">Demande de projet</h2>
-          
-          <form id="contact-form" action="mailto:eben.dc@ccapcable.com" method="post" enctype="text/plain" class="card">
+          <div class="section-header reveal">
+            <div class="section-label">Demande de projet</div>
+            <h2>Decrivez votre vision</h2>
+          </div>
+
+          <form id="contact-form" action="mailto:eben.dc@ccapcable.com" method="post" enctype="text/plain" class="card reveal">
             <div class="card-content">
-              
-              <!-- Informations personnelles -->
-              <fieldset style="border: none; margin: 0; padding: 0;">
-                <legend style="font-size: 1.125rem; font-weight: 600; color: var(--text); margin-bottom: var(--space-lg);">
-                  Vos informations
-                </legend>
-                
+
+              <!-- Personal Info -->
+              <fieldset>
+                <legend class="card-title mb-xl">Vos informations</legend>
+
                 <div class="form-group">
                   <label for="nom" class="form-label">Nom complet *</label>
-                  <input 
-                    type="text" 
-                    id="nom" 
-                    name="nom" 
+                  <input
+                    type="text"
+                    id="nom"
+                    name="nom"
                     class="form-input"
                     required
                     autocomplete="name"
@@ -199,10 +233,10 @@
                 <div class="grid grid-2">
                   <div class="form-group">
                     <label for="email" class="form-label">Courriel *</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      name="email" 
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
                       class="form-input"
                       required
                       autocomplete="email"
@@ -210,11 +244,11 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="telephone" class="form-label">Téléphone</label>
-                    <input 
-                      type="tel" 
-                      id="telephone" 
-                      name="telephone" 
+                    <label for="telephone" class="form-label">Telephone</label>
+                    <input
+                      type="tel"
+                      id="telephone"
+                      name="telephone"
                       class="form-input"
                       autocomplete="tel"
                     >
@@ -223,34 +257,34 @@
 
                 <div class="form-group">
                   <label for="adresse" class="form-label">Adresse du projet</label>
-                  <input 
-                    type="text" 
-                    id="adresse" 
-                    name="adresse" 
+                  <input
+                    type="text"
+                    id="adresse"
+                    name="adresse"
                     class="form-input"
-                    placeholder="Ville, région"
+                    placeholder="Ville, region"
                     autocomplete="address-line1"
                   >
                 </div>
               </fieldset>
 
-              <!-- Détails du projet -->
-              <fieldset style="border: none; margin: var(--space-2xl) 0 0 0; padding: 0;">
-                <legend style="font-size: 1.125rem; font-weight: 600; color: var(--text); margin-bottom: var(--space-lg);">
-                  Votre projet
-                </legend>
+              <div class="divider divider-accent"></div>
+
+              <!-- Project Details -->
+              <fieldset>
+                <legend class="card-title mb-xl">Votre projet</legend>
 
                 <div class="form-group">
                   <label for="type-projet" class="form-label">Type de projet *</label>
                   <select id="type-projet" name="type-projet" class="form-select" required>
-                    <option value="">Sélectionnez un type de projet</option>
+                    <option value="">Selectionnez un type de projet</option>
                     <option value="cuisine">Cuisine sur mesure</option>
                     <option value="manteau-foyer">Manteau de foyer</option>
                     <option value="mobilier">Mobilier sur mesure</option>
                     <option value="rangement">Solutions de rangement</option>
-                    <option value="bibliotheque">Bibliothèque / Bureau</option>
-                    <option value="salle-bain">Vanité salle de bain</option>
-                    <option value="renovation">Rénovation complète</option>
+                    <option value="bibliotheque">Bibliotheque / Bureau</option>
+                    <option value="salle-bain">Vanite salle de bain</option>
+                    <option value="renovation">Renovation complete</option>
                     <option value="autre">Autre projet</option>
                   </select>
                 </div>
@@ -259,19 +293,19 @@
                   <div class="form-group">
                     <label for="budget" class="form-label">Budget approximatif</label>
                     <select id="budget" name="budget" class="form-select">
-                      <option value="">Sélectionnez une fourchette</option>
+                      <option value="">Selectionnez une fourchette</option>
                       <option value="10000-25000">10 000$ - 25 000$</option>
                       <option value="25000-50000">25 000$ - 50 000$</option>
                       <option value="50000-100000">50 000$ - 100 000$</option>
                       <option value="100000+">100 000$ et plus</option>
-                      <option value="a-discuter">À discuter</option>
+                      <option value="a-discuter">A discuter</option>
                     </select>
                   </div>
 
                   <div class="form-group">
-                    <label for="echeancier" class="form-label">Échéancier souhaité</label>
+                    <label for="echeancier" class="form-label">Echeancier souhaite</label>
                     <select id="echeancier" name="echeancier" class="form-select">
-                      <option value="">Sélectionnez un délai</option>
+                      <option value="">Selectionnez un delai</option>
                       <option value="urgent">Moins de 3 mois</option>
                       <option value="court">3-6 mois</option>
                       <option value="moyen">6-12 mois</option>
@@ -282,87 +316,84 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="description" class="form-label">Description détaillée de votre projet *</label>
-                  <textarea 
-                    id="description" 
-                    name="description" 
+                  <label for="description" class="form-label">Description detaillee de votre projet *</label>
+                  <textarea
+                    id="description"
+                    name="description"
                     class="form-textarea"
                     required
-                    placeholder="Décrivez votre vision, vos besoins spécifiques, les contraintes techniques, le style recherché..."
-                    style="min-height: 150px;"
+                    placeholder="Decrivez votre vision, vos besoins specifiques, les contraintes techniques, le style recherche..."
                   ></textarea>
-                  <div style="font-size: 0.875rem; color: var(--text-muted); margin-top: var(--space-sm);">
-                    Plus vous êtes précis, plus nous pouvons vous aider efficacement.
-                  </div>
+                  <p class="card-text mt-sm mb-0">Plus vous etes precis, plus nous pouvons vous aider efficacement.</p>
                 </div>
 
                 <div class="form-group">
                   <label for="inspiration" class="form-label">Sources d'inspiration</label>
-                  <textarea 
-                    id="inspiration" 
-                    name="inspiration" 
+                  <textarea
+                    id="inspiration"
+                    name="inspiration"
                     class="form-textarea"
                     placeholder="Magazines, sites web, photos, styles particuliers qui vous inspirent..."
-                    style="min-height: 100px;"
                   ></textarea>
                 </div>
               </fieldset>
 
-              <!-- Préférences de contact -->
-              <fieldset style="border: none; margin: var(--space-2xl) 0 0 0; padding: 0;">
-                <legend style="font-size: 1.125rem; font-weight: 600; color: var(--text); margin-bottom: var(--space-lg);">
-                  Préférences de contact
-                </legend>
+              <div class="divider divider-accent"></div>
+
+              <!-- Contact Preferences -->
+              <fieldset>
+                <legend class="card-title mb-xl">Preferences de contact</legend>
 
                 <div class="form-group">
-                  <label for="contact-pref" class="form-label">Moyen de contact préféré</label>
-                  <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap;">
-                    <label style="display: flex; align-items: center; gap: var(--space-sm); cursor: pointer;">
-                      <input type="radio" name="contact-pref" value="telephone" style="margin: 0;">
-                      <span>Téléphone</span>
+                  <label class="form-label">Moyen de contact prefere</label>
+                  <div class="d-flex gap-xl" style="flex-wrap: wrap;">
+                    <label class="d-flex items-center gap-sm" style="cursor: pointer;">
+                      <input type="radio" name="contact-pref" value="telephone">
+                      <span>Telephone</span>
                     </label>
-                    <label style="display: flex; align-items: center; gap: var(--space-sm); cursor: pointer;">
-                      <input type="radio" name="contact-pref" value="email" style="margin: 0;" checked>
+                    <label class="d-flex items-center gap-sm" style="cursor: pointer;">
+                      <input type="radio" name="contact-pref" value="email" checked>
                       <span>Courriel</span>
                     </label>
-                    <label style="display: flex; align-items: center; gap: var(--space-sm); cursor: pointer;">
-                      <input type="radio" name="contact-pref" value="rencontre" style="margin: 0;">
+                    <label class="d-flex items-center gap-sm" style="cursor: pointer;">
+                      <input type="radio" name="contact-pref" value="rencontre">
                       <span>Rencontre sur place</span>
                     </label>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="disponibilites" class="form-label">Vos disponibilités</label>
-                  <input 
-                    type="text" 
-                    id="disponibilites" 
-                    name="disponibilites" 
+                  <label for="disponibilites" class="form-label">Vos disponibilites</label>
+                  <input
+                    type="text"
+                    id="disponibilites"
+                    name="disponibilites"
                     class="form-input"
-                    placeholder="Ex: Weekends, soirées, mardis après 14h..."
+                    placeholder="Ex: Weekends, soirees, mardis apres 14h..."
                   >
                 </div>
               </fieldset>
 
-              <!-- Consentement -->
-              <div class="form-group" style="margin-top: var(--space-2xl);">
-                <label style="display: flex; align-items: flex-start; gap: var(--space-sm); cursor: pointer; font-size: 0.9rem; color: var(--text-secondary);">
-                  <input type="checkbox" name="consentement" required style="margin-top: 0.2rem;">
-                  <span>
-                    J'accepte d'être contacté par Ébénisterie Daniel Chamberland concernant ma demande. 
-                    Mes informations ne seront jamais partagées avec des tiers.
+              <div class="divider"></div>
+
+              <!-- Consent -->
+              <div class="form-group">
+                <label class="d-flex items-start gap-sm" style="cursor: pointer;">
+                  <input type="checkbox" name="consentement" required>
+                  <span class="card-text mb-0">
+                    J'accepte d'etre contacte par Ebenisterie Daniel Chamberland concernant ma demande.
+                    Mes informations ne seront jamais partagees avec des tiers.
                   </span>
                 </label>
               </div>
 
-              <!-- Bouton d'envoi -->
-              <div class="text-center" style="margin-top: var(--space-2xl);">
-                <button type="submit" class="btn btn-primary" style="min-width: 200px;">
+              <!-- Submit -->
+              <div class="text-center mt-2xl">
+                <button type="submit" class="btn btn-primary btn-magnetic">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
                   Envoyer ma demande
                 </button>
-                <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: var(--space-md);">
-                  Nous vous répondrons dans les 24h ouvrables
-                </p>
+                <p class="card-text mt-lg mb-0">Nous vous repondrons dans les 24h ouvrables</p>
               </div>
             </div>
           </form>
@@ -371,45 +402,60 @@
     </div>
   </main>
 
-  <!-- Section FAQ rapide -->
-  <section class="section" style="background-color: var(--bg-secondary);">
+  <!-- FAQ Section -->
+  <section class="section cta-section" aria-labelledby="faq-title">
     <div class="container">
-      <h2 class="text-center mb-2xl">Questions fréquentes</h2>
-      
-      <div class="grid grid-2" style="gap: var(--space-2xl);">
-        <div class="card">
-          <div class="card-content">
-            <h3 style="color: var(--accent); margin-bottom: var(--space-md);">Offrez-vous des consultations à domicile ?</h3>
-            <p style="margin: 0;">
-              Oui, nous nous déplaçons gratuitement dans un rayon de 50 km de Charlesbourg pour évaluer votre projet et prendre les mesures nécessaires.
-            </p>
+      <div class="section-header reveal">
+        <div class="section-label">FAQ</div>
+        <h2 id="faq-title">Questions frequentes</h2>
+      </div>
+
+      <div class="max-w-md" style="margin: 0 auto;">
+        <div class="faq-item reveal stagger-1">
+          <button class="faq-question" aria-expanded="false">
+            <span>Offrez-vous des consultations a domicile ?</span>
+            <span class="faq-question-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Oui, nous nous deplacons gratuitement dans un rayon de 50 km de Charlesbourg pour evaluer votre projet et prendre les mesures necessaires.
+            </div>
           </div>
         </div>
-        
-        <div class="card">
-          <div class="card-content">
-            <h3 style="color: var(--accent); margin-bottom: var(--space-md);">Quel est le délai typique pour un projet ?</h3>
-            <p style="margin: 0;">
-              Cela varie selon la complexité : 4-6 semaines pour du mobilier simple, 8-12 semaines pour une cuisine complète. Nous vous donnons un échéancier précis après évaluation.
-            </p>
+
+        <div class="faq-item reveal stagger-2">
+          <button class="faq-question" aria-expanded="false">
+            <span>Quel est le delai typique pour un projet ?</span>
+            <span class="faq-question-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Cela varie selon la complexite : 4-6 semaines pour du mobilier simple, 8-12 semaines pour une cuisine complete. Nous vous donnons un echeancier precis apres evaluation.
+            </div>
           </div>
         </div>
-        
-        <div class="card">
-          <div class="card-content">
-            <h3 style="color: var(--accent); margin-bottom: var(--space-md);">Proposez-vous des plans de financement ?</h3>
-            <p style="margin: 0;">
-              Nous acceptons différents modes de paiement et pouvons vous orienter vers des solutions de financement adaptées à votre budget.
-            </p>
+
+        <div class="faq-item reveal stagger-3">
+          <button class="faq-question" aria-expanded="false">
+            <span>Proposez-vous des plans de financement ?</span>
+            <span class="faq-question-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Nous acceptons differents modes de paiement et pouvons vous orienter vers des solutions de financement adaptees a votre budget.
+            </div>
           </div>
         </div>
-        
-        <div class="card">
-          <div class="card-content">
-            <h3 style="color: var(--accent); margin-bottom: var(--space-md);">Quelle garantie offrez-vous ?</h3>
-            <p style="margin: 0;">
-              Nous garantissons notre travail 2 ans sur la fabrication et 1 an sur l'installation. La quincaillerie bénéficie de la garantie du fabricant.
-            </p>
+
+        <div class="faq-item reveal stagger-4">
+          <button class="faq-question" aria-expanded="false">
+            <span>Quelle garantie offrez-vous ?</span>
+            <span class="faq-question-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Nous garantissons notre travail 2 ans sur la fabrication et 1 an sur l'installation. La quincaillerie beneficie de la garantie du fabricant.
+            </div>
           </div>
         </div>
       </div>
@@ -417,79 +463,64 @@
   </section>
 
   <!-- Footer -->
-  <footer class="section" role="contentinfo" style="background-color: var(--primary-dark); color: white; padding: var(--space-4xl) 0 var(--space-2xl);">
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="grid grid-4" style="margin-bottom: var(--space-3xl);">
-        <div>
-          <img src="./assets/logo.png" alt="Logo Ébénisterie Daniel Chamberland" style="height: 50px; margin-bottom: var(--space-lg); filter: brightness(0) invert(1);">
-          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            Atelier d'ébénisterie haut de gamme spécialisé dans la création de mobilier sur mesure d'exception.
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="./assets/logo.png" alt="Logo Ebenisterie Daniel Chamberland" class="nav-logo mb-xl">
+          <p>
+            Atelier d'ebenisterie haut de gamme specialise dans la creation de mobilier sur mesure d'exception a Charlesbourg, Quebec.
           </p>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Services</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Cuisines sur mesure</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Manteaux de foyer</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Mobilier sur mesure</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Rangements intégrés</a>
-            </li>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="./realisations.html">Cuisines sur mesure</a></li>
+            <li><a href="./realisations.html">Manteaux de foyer</a></li>
+            <li><a href="./realisations.html">Mobilier sur mesure</a></li>
+            <li><a href="./realisations.html">Rangements integres</a></li>
           </ul>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Contact</h3>
-          <address style="font-style: normal; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            <div style="margin-bottom: var(--space-sm);">
-              📍 350, rue Boyle<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;Charlesbourg, QC G2M 1H9
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              📞 <a href="tel:+14185636781" style="color: rgba(255, 255, 255, 0.8);">(418) 563-6781</a>
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              ✉️ <a href="mailto:eben.dc@ccapcable.com" style="color: rgba(255, 255, 255, 0.8);">eben.dc@ccapcable.com</a>
-            </div>
-          </address>
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-links">
+            <li>350, rue Boyle</li>
+            <li>Charlesbourg, QC G2M 1H9</li>
+            <li><a href="tel:+14185636781">(418) 563-6781</a></li>
+            <li><a href="mailto:eben.dc@ccapcable.com">eben.dc@ccapcable.com</a></li>
+          </ul>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Horaires</h3>
-          <div style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            <div style="margin-bottom: var(--space-sm);">
-              <strong>Lundi - Vendredi</strong><br>
-              7h30 - 16h30
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              <strong>Samedi</strong><br>
-              Sur rendez-vous
-            </div>
-            <div>
-              <strong>Dimanche</strong><br>
-              Fermé
-            </div>
-          </div>
+          <h3 class="footer-heading">Horaires</h3>
+          <ul class="footer-links">
+            <li><strong>Lun-Ven</strong> 7h30-16h30</li>
+            <li><strong>Samedi</strong> Sur rendez-vous</li>
+            <li><strong>Dimanche</strong> Ferme</li>
+          </ul>
         </div>
       </div>
-      
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-xl); text-align: center; color: rgba(255, 255, 255, 0.6);">
-        <p>&copy; 2024 Ébénisterie Daniel Chamberland. Tous droits réservés.</p>
-        <p style="font-size: 0.875rem; margin-top: var(--space-sm);">
-          Artisanat québécois d'exception • Charlesbourg, Québec
-        </p>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ebenisterie Daniel Chamberland. Tous droits reserves.</p>
+        <p>Artisanat quebecois d'exception</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- App -->
   <script src="./script.js"></script>
 </body>
 </html>

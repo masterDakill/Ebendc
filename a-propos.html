@@ -3,130 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez Daniel Chamberland, maître ébéniste depuis plus de 20 ans. Expertise en ébénisterie fine, formation École nationale du meuble, savoir-faire artisanal québécois.">
-  <meta name="keywords" content="Daniel Chamberland, ébéniste, maître artisan, École nationale du meuble, ébénisterie fine, savoir-faire, Charlesbourg">
+  <meta name="description" content="Decouvrez Daniel Chamberland, maitre ebeniste depuis plus de 20 ans. Expertise en ebenisterie fine, formation Ecole nationale du meuble, savoir-faire artisanal quebecois.">
+  <meta name="keywords" content="Daniel Chamberland, ebeniste, maitre artisan, Ecole nationale du meuble, ebenisterie fine, savoir-faire, Charlesbourg">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#7a5230">
-  
+  <meta name="theme-color" content="#0a0a0a">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="À Propos - Daniel Chamberland, Maître Ébéniste">
-  <meta property="og:description" content="Plus de 20 ans d'expertise en ébénisterie fine. Découvrez le parcours et la philosophie de Daniel Chamberland.">
+  <meta property="og:title" content="A Propos - Daniel Chamberland, Maitre Ebeniste">
+  <meta property="og:description" content="Plus de 20 ans d'expertise en ebenisterie fine. Decouvrez le parcours et la philosophie de Daniel Chamberland.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ebenisteriechamberland.com/a-propos.html">
-  
+  <meta property="og:locale" content="fr_CA">
+
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-  
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- CSS -->
   <link rel="stylesheet" href="./style.css">
-  
-  <title>À Propos - Daniel Chamberland, Maître Ébéniste</title>
+
+  <title>A Propos - Daniel Chamberland, Maitre Ebeniste</title>
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading">
+    <div class="loading-bar">
+      <div class="loading-bar-inner" id="loading-bar"></div>
+    </div>
+    <div class="loading-text">Chargement</div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Canvas 3D -->
+  <canvas id="canvas-3d" aria-hidden="true"></canvas>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="cursor" aria-hidden="true"></div>
+
   <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
     <div class="container">
       <div class="nav-container">
-        <a href="./" class="nav-brand" aria-label="Accueil Ébénisterie Daniel Chamberland">
-          <img src="./assets/logo.png" alt="Logo Ébénisterie Daniel Chamberland" class="nav-logo">
+        <a href="./" class="nav-brand" aria-label="Accueil">
+          <img src="./assets/logo.png" alt="Logo Ebenisterie Daniel Chamberland" class="nav-logo">
+          <span class="nav-brand-text">DC Ebenisterie</span>
         </a>
-        
-        <ul class="nav-menu" role="menubar">
-          <li role="none">
-            <a href="./" class="nav-link" role="menuitem">Accueil</a>
-          </li>
-          <li role="none">
-            <a href="./realisations.html" class="nav-link" role="menuitem">Réalisations</a>
-          </li>
-          <li role="none">
-            <a href="./a-propos.html" class="nav-link active" role="menuitem">À propos</a>
-          </li>
-          <li role="none">
-            <a href="./processus.html" class="nav-link" role="menuitem">Processus</a>
-          </li>
-          <li role="none">
-            <a href="./contact.html" class="nav-link" role="menuitem">Contact</a>
-          </li>
+
+        <ul class="nav-menu" id="nav-menu" role="menubar">
+          <li role="none"><a href="./" class="nav-link" role="menuitem">Accueil</a></li>
+          <li role="none"><a href="./realisations.html" class="nav-link" role="menuitem">Realisations</a></li>
+          <li role="none"><a href="./a-propos.html" class="nav-link active" role="menuitem">A propos</a></li>
+          <li role="none"><a href="./processus.html" class="nav-link" role="menuitem">Processus</a></li>
+          <li role="none"><a href="./contact.html" class="nav-link" role="menuitem">Contact</a></li>
         </ul>
-        
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+
+        <div class="nav-cta">
+          <a href="./contact.html" class="btn btn-primary btn-magnetic">Demarrer un projet</a>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
     </div>
+    <div class="nav-menu-overlay" id="nav-overlay"></div>
   </nav>
 
-  <!-- En-tête de page -->
-  <header class="section-sm" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary)); margin-top: 70px;">
-    <div class="container text-center">
-      <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: var(--space-lg);">L'artisan derrière vos créations</h1>
-      <p class="lead" style="max-width: 600px; margin: 0 auto;">
-        Plus de 20 ans d'expérience au service de l'excellence artisanale québécoise.
-      </p>
+  <!-- Page Header -->
+  <header class="page-header" role="banner">
+    <div class="container">
+      <div class="page-header-content reveal">
+        <div class="section-label">
+          <span></span>Notre histoire
+        </div>
+        <h1>L'artisan derriere vos creations</h1>
+        <p class="lead">
+          Plus de 20 ans d'experience au service de l'excellence artisanale quebecoise.
+        </p>
+      </div>
     </div>
   </header>
 
   <!-- Section principale - Portrait -->
   <main class="section" role="main">
     <div class="container">
-      <div class="grid grid-2" style="gap: var(--space-4xl); align-items: center;">
-        
+      <div class="grid grid-2 about-portrait-grid">
+
         <!-- Photo et infos principales -->
-        <div>
-          <img 
-            data-src="./assets/img/daniel-portrait.webp" 
-            alt="Daniel Chamberland dans son atelier d'ébénisterie" 
-            style="width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);"
-          >
-          
-          <div class="card" style="margin-top: var(--space-xl); background: linear-gradient(135deg, var(--accent-light), var(--accent)); color: white;">
-            <div class="card-content text-center">
-              <h3 style="color: white; margin-bottom: var(--space-md);">
-                <span style="font-size: 2rem; display: block; margin-bottom: var(--space-sm);">🏆</span>
-                Maître Artisan Certifié
-              </h3>
-              <p style="opacity: 0.9; margin: 0;">
-                Diplômé de l'École nationale du meuble et de l'ébénisterie de Victoriaville
-              </p>
+        <div class="reveal-left">
+          <div class="about-image-wrapper">
+            <img data-src="./assets/img/daniel-portrait.webp" alt="Daniel Chamberland dans son atelier d'ebenisterie">
+          </div>
+
+          <div class="card card-3d card-certified">
+            <div class="card-inner">
+              <div class="card-content text-center">
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                </div>
+                <h3 class="card-title">Maitre Artisan Certifie</h3>
+                <p class="card-text">
+                  Diplome de l'Ecole nationale du meuble et de l'ebenisterie de Victoriaville
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Contenu principal -->
-        <div>
-          <h2 style="margin-bottom: var(--space-xl);">Daniel Chamberland, passion et expertise</h2>
-          
+        <div class="reveal-right">
+          <h2 class="mb-xl">Daniel Chamberland, passion et expertise</h2>
+
           <p class="lead">
-            Depuis plus de deux décennies, Daniel Chamberland perpétue la tradition de l'ébénisterie fine québécoise, 
+            Depuis plus de deux decennies, Daniel Chamberland perpetue la tradition de l'ebenisterie fine quebecoise,
             alliant savoir-faire ancestral et techniques contemporaines.
           </p>
 
           <p>
-            Formé à l'École nationale du meuble et de l'ébénisterie de Victoriaville, Daniel a développé une expertise 
-            reconnue dans la création de mobilier sur mesure haut de gamme. Son approche méticuleuse et sa passion 
-            pour le travail du bois se reflètent dans chaque projet qu'il entreprend.
+            Forme a l'Ecole nationale du meuble et de l'ebenisterie de Victoriaville, Daniel a developpe une expertise
+            reconnue dans la creation de mobilier sur mesure haut de gamme. Son approche meticuleuse et sa passion
+            pour le travail du bois se refletent dans chaque projet qu'il entreprend.
           </p>
 
           <p>
-            Spécialisé dans les projets complexes, Daniel excelle particulièrement dans la conception de cuisines 
-            sur mesure, de manteaux de foyer et de mobilier architectural intégré. Chaque création est unique, 
-            pensée et réalisée selon les besoins spécifiques de ses clients.
+            Specialise dans les projets complexes, Daniel excelle particulierement dans la conception de cuisines
+            sur mesure, de manteaux de foyer et de mobilier architectural integre. Chaque creation est unique,
+            pensee et realisee selon les besoins specifiques de ses clients.
           </p>
 
-          <blockquote style="background: var(--bg-secondary); border-left: 4px solid var(--accent); padding: var(--space-xl); margin: var(--space-2xl) 0; border-radius: var(--radius-md);">
-            <p style="font-style: italic; font-size: 1.125rem; margin-bottom: var(--space-md);">
-              "Pour moi, chaque pièce de bois a une âme. Mon travail consiste à révéler cette beauté naturelle 
-              et à la transformer en quelque chose d'utile et d'émouvant qui traversera les générations."
+          <blockquote class="about-quote">
+            <p>
+              "Pour moi, chaque piece de bois a une ame. Mon travail consiste a reveler cette beaute naturelle
+              et a la transformer en quelque chose d'utile et d'emouvant qui traversera les generations."
             </p>
-            <cite style="color: var(--accent); font-weight: 600;">— Daniel Chamberland</cite>
+            <cite>— Daniel Chamberland</cite>
           </blockquote>
 
-          <div style="margin-top: var(--space-2xl);">
-            <a href="./contact.html" class="btn btn-primary">
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="about-stat-number">20+</div>
+              <div class="about-stat-label">Annees d'expertise</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number">500+</div>
+              <div class="about-stat-label">Projets realises</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-number">100%</div>
+              <div class="about-stat-label">Sur mesure</div>
+            </div>
+          </div>
+
+          <div class="mt-3xl">
+            <a href="./contact.html" class="btn btn-primary btn-magnetic">
               Discuter de votre projet
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
           </div>
         </div>
@@ -135,81 +175,110 @@
   </main>
 
   <!-- Section Valeurs et Philosophie -->
-  <section class="section" style="background-color: var(--bg-secondary);">
+  <section class="section cta-section" aria-labelledby="values-title">
     <div class="container">
-      <h2 class="text-center mb-2xl">Nos valeurs et notre philosophie</h2>
-      
+      <div class="section-header reveal">
+        <div class="section-label">
+          <span></span>Ce qui nous definit
+        </div>
+        <h2 id="values-title">Nos valeurs et notre philosophie</h2>
+      </div>
+
       <div class="grid grid-3">
-        
+
         <!-- Artisanat -->
-        <div class="card text-center">
-          <div class="card-content">
-            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);">🪵</div>
-            <h3 class="card-title">Artisanat traditionnel</h3>
-            <p class="card-text">
-              Respect des techniques ancestrales d'ébénisterie, transmission du savoir-faire québécois 
-              et attention particulière aux détails qui font la différence.
-            </p>
+        <div class="card card-3d reveal stagger-1">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h3 class="card-title">Artisanat traditionnel</h3>
+              <p class="card-text">
+                Respect des techniques ancestrales d'ebenisterie, transmission du savoir-faire quebecois
+                et attention particuliere aux details qui font la difference.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Durabilité -->
-        <div class="card text-center">
-          <div class="card-content">
-            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);">🌲</div>
-            <h3 class="card-title">Matériaux durables</h3>
-            <p class="card-text">
-              Sélection rigoureuse d'essences de bois locales, finitions écologiques 
-              et privilégiation des fournisseurs responsables pour un impact environnemental minimal.
-            </p>
+        <!-- Durabilite -->
+        <div class="card card-3d reveal stagger-2">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8c0-5-5-5-5-5s-5 0-5 5c0 3 2 5 5 8 3-3 5-5 5-8z"/><path d="M12 16v6"/><path d="M8 21h8"/></svg>
+              </div>
+              <h3 class="card-title">Materiaux durables</h3>
+              <p class="card-text">
+                Selection rigoureuse d'essences de bois locales, finitions ecologiques
+                et privilegiation des fournisseurs responsables pour un impact environnemental minimal.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Excellence -->
-        <div class="card text-center">
-          <div class="card-content">
-            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);">⭐</div>
-            <h3 class="card-title">Excellence sans compromis</h3>
-            <p class="card-text">
-              Chaque projet est traité avec le même niveau d'exigence, de la conception initiale 
-              à l'installation finale, pour garantir une qualité irréprochable.
-            </p>
+        <div class="card card-3d reveal stagger-3">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3 class="card-title">Excellence sans compromis</h3>
+              <p class="card-text">
+                Chaque projet est traite avec le meme niveau d'exigence, de la conception initiale
+                a l'installation finale, pour garantir une qualite irreprochable.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Collaboration -->
-        <div class="card text-center">
-          <div class="card-content">
-            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);">🤝</div>
-            <h3 class="card-title">Collaboration étroite</h3>
-            <p class="card-text">
-              Écoute active, conseils personnalisés et implication du client à chaque étape 
-              pour que le résultat final corresponde parfaitement à sa vision.
-            </p>
+        <div class="card card-3d reveal stagger-1">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="card-title">Collaboration etroite</h3>
+              <p class="card-text">
+                Ecoute active, conseils personnalises et implication du client a chaque etape
+                pour que le resultat final corresponde parfaitement a sa vision.
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Innovation -->
-        <div class="card text-center">
-          <div class="card-content">
-            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);">🔬</div>
-            <h3 class="card-title">Innovation mesurée</h3>
-            <p class="card-text">
-              Intégration progressive des nouvelles technologies et techniques modernes 
-              tout en préservant l'authenticité du travail artisanal.
-            </p>
+        <div class="card card-3d reveal stagger-2">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h3 class="card-title">Innovation mesuree</h3>
+              <p class="card-text">
+                Integration progressive des nouvelles technologies et techniques modernes
+                tout en preservant l'authenticite du travail artisanal.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Héritage -->
-        <div class="card text-center">
-          <div class="card-content">
-            <div style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-lg);">🏛️</div>
-            <h3 class="card-title">Créations durables</h3>
-            <p class="card-text">
-              Conception de meubles pensés pour traverser les générations, 
-              avec des matériaux nobles et des assemblages traditionnels éprouvés.
-            </p>
+        <!-- Heritage -->
+        <div class="card card-3d reveal stagger-3">
+          <div class="card-inner">
+            <div class="card-content text-center">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M9 10h1"/><path d="M14 10h1"/><path d="M9 14h1"/><path d="M14 14h1"/></svg>
+              </div>
+              <h3 class="card-title">Creations durables</h3>
+              <p class="card-text">
+                Conception de meubles penses pour traverser les generations,
+                avec des materiaux nobles et des assemblages traditionnels eprouves.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -218,158 +287,204 @@
   </section>
 
   <!-- Section Formation et Expertise -->
-  <section class="section">
+  <section class="section" aria-labelledby="expertise-title">
     <div class="container">
-      <div class="grid grid-2" style="gap: var(--space-4xl); align-items: start;">
-        
+      <div class="section-header reveal">
+        <div class="section-label">
+          <span></span>Parcours et competences
+        </div>
+        <h2 id="expertise-title">Formation et expertise</h2>
+      </div>
+
+      <div class="grid grid-2 about-expertise-grid">
+
         <!-- Formation et parcours -->
-        <div>
-          <h2 style="margin-bottom: var(--space-2xl);">Formation et expertise</h2>
-          
-          <div class="card" style="margin-bottom: var(--space-xl);">
-            <div class="card-content">
-              <h3 style="color: var(--accent); margin-bottom: var(--space-md);">École nationale du meuble et de l'ébénisterie</h3>
-              <p style="margin-bottom: var(--space-md);">
-                Diplômé en ébénisterie fine avec spécialisation en mobilier sur mesure et restauration.
-              </p>
-              <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm);">
-                  <span style="color: var(--accent);">✓</span> Techniques traditionnelles d'assemblage
-                </li>
-                <li style="margin-bottom: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm);">
-                  <span style="color: var(--accent);">✓</span> Finition et vernissage haut de gamme
-                </li>
-                <li style="margin-bottom: var(--space-sm); display: flex; align-items: center; gap: var(--space-sm);">
-                  <span style="color: var(--accent);">✓</span> Design et conception 3D
-                </li>
-              </ul>
+        <div class="reveal-left">
+          <div class="card card-3d">
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+                </div>
+                <h3 class="card-title">Ecole nationale du meuble et de l'ebenisterie</h3>
+                <p class="card-text">
+                  Diplome en ebenisterie fine avec specialisation en mobilier sur mesure et restauration.
+                </p>
+                <ul class="about-skills-list">
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Techniques traditionnelles d'assemblage
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Finition et vernissage haut de gamme
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Design et conception 3D
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div class="card" style="margin-bottom: var(--space-xl);">
-            <div class="card-content">
-              <h3 style="color: var(--accent); margin-bottom: var(--space-md);">Formation continue</h3>
-              <p>
-                Participation régulière à des formations spécialisées pour rester à la pointe 
-                des nouvelles techniques et tendances en ébénisterie.
-              </p>
+          <div class="card card-3d">
+            <div class="card-inner">
+              <div class="card-content">
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838.838-2.872a2 2 0 0 1 .506-.855z"/></svg>
+                </div>
+                <h3 class="card-title">Formation continue</h3>
+                <p class="card-text">
+                  Participation reguliere a des formations specialisees pour rester a la pointe
+                  des nouvelles techniques et tendances en ebenisterie.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Spécialités -->
-        <div>
-          <h2 style="margin-bottom: var(--space-2xl);">Domaines d'expertise</h2>
+        <!-- Specialites -->
+        <div class="reveal-right">
+          <h3 class="mb-2xl">Domaines d'expertise</h3>
 
-          <div style="display: flex; flex-direction: column; gap: var(--space-lg);">
-            
-            <div class="card">
+          <div class="card card-3d">
+            <div class="card-inner">
               <div class="card-content">
-                <div style="display: flex; align-items: center; gap: var(--space-lg);">
-                  <div style="font-size: 2rem; color: var(--accent);">🏠</div>
-                  <div>
-                    <h4 style="margin-bottom: var(--space-sm);">Cuisines sur mesure</h4>
-                    <p style="margin: 0; color: var(--text-secondary);">
-                      Conception complète d'îlots, comptoirs, armoires et solutions de rangement optimisées.
-                    </p>
-                  </div>
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                 </div>
+                <h4 class="card-title">Cuisines sur mesure</h4>
+                <p class="card-text">
+                  Conception complete d'ilots, comptoirs, armoires et solutions de rangement optimisees.
+                </p>
               </div>
             </div>
+          </div>
 
-            <div class="card">
+          <div class="card card-3d">
+            <div class="card-inner">
               <div class="card-content">
-                <div style="display: flex; align-items: center; gap: var(--space-lg);">
-                  <div style="font-size: 2rem; color: var(--accent);">🔥</div>
-                  <div>
-                    <h4 style="margin-bottom: var(--space-sm);">Manteaux de foyer</h4>
-                    <p style="margin: 0; color: var(--text-secondary);">
-                      Créations uniques alliant bois et pierre, adaptées à tous les styles architecturaux.
-                    </p>
-                  </div>
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14 0-5.5 3-7 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 1.5 2.5z"/></svg>
                 </div>
+                <h4 class="card-title">Manteaux de foyer</h4>
+                <p class="card-text">
+                  Creations uniques alliant bois et pierre, adaptees a tous les styles architecturaux.
+                </p>
               </div>
             </div>
+          </div>
 
-            <div class="card">
+          <div class="card card-3d">
+            <div class="card-inner">
               <div class="card-content">
-                <div style="display: flex; align-items: center; gap: var(--space-lg);">
-                  <div style="font-size: 2rem; color: var(--accent);">📚</div>
-                  <div>
-                    <h4 style="margin-bottom: var(--space-sm);">Mobilier architectural</h4>
-                    <p style="margin: 0; color: var(--text-secondary);">
-                      Bibliothèques intégrées, bureaux sur mesure, solutions de rangement complexes.
-                    </p>
-                  </div>
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
                 </div>
+                <h4 class="card-title">Mobilier architectural</h4>
+                <p class="card-text">
+                  Bibliotheques integrees, bureaux sur mesure, solutions de rangement complexes.
+                </p>
               </div>
             </div>
+          </div>
 
-            <div class="card">
+          <div class="card card-3d">
+            <div class="card-inner">
               <div class="card-content">
-                <div style="display: flex; align-items: center; gap: var(--space-lg);">
-                  <div style="font-size: 2rem; color: var(--accent);">🛁</div>
-                  <div>
-                    <h4 style="margin-bottom: var(--space-sm);">Salles de bain</h4>
-                    <p style="margin: 0; color: var(--text-secondary);">
-                      Vanités sur mesure, rangements étanches adaptés aux environnements humides.
-                    </p>
-                  </div>
+                <div class="card-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" x2="8" y1="5" y2="7"/><line x1="2" x2="22" y1="12" y2="12"/><line x1="7" x2="7" y1="19" y2="22"/><line x1="17" x2="17" y1="19" y2="22"/></svg>
                 </div>
+                <h4 class="card-title">Salles de bain</h4>
+                <p class="card-text">
+                  Vanites sur mesure, rangements etanches adaptes aux environnements humides.
+                </p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Témoignages -->
-  <section class="section" style="background-color: var(--bg-secondary);">
+  <!-- Section Temoignages -->
+  <section class="section cta-section" aria-labelledby="testimonials-title">
     <div class="container">
-      <h2 class="text-center mb-2xl">Ce que disent nos clients</h2>
-      
+      <div class="section-header reveal">
+        <div class="section-label">
+          <span></span>Temoignages
+        </div>
+        <h2 id="testimonials-title">Ce que disent nos clients</h2>
+      </div>
+
       <div class="grid grid-3">
-        
-        <div class="card testimonial-card">
-          <div class="card-content">
-            <div style="color: var(--accent); font-size: 1.5rem; margin-bottom: var(--space-md);">★★★★★</div>
-            <p style="font-style: italic; margin-bottom: var(--space-lg);">
-              "Daniel a transformé notre cuisine en véritable œuvre d'art. Son attention aux détails 
-              et son professionnalisme sont exceptionnels. Nous recommandons sans hésitation !"
-            </p>
-            <div>
-              <strong>Marie-Claire Dubois</strong><br>
-              <small style="color: var(--text-muted);">Cuisine sur mesure - Sainte-Foy</small>
+
+        <div class="testimonial-card reveal stagger-1">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "Daniel a transforme notre cuisine en veritable oeuvre d'art. Son attention aux details
+            et son professionnalisme sont exceptionnels. Nous recommandons sans hesitation !"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="testimonial-author-info">
+              <strong>Marie-Claire Dubois</strong>
+              <span>Cuisine sur mesure - Sainte-Foy</span>
             </div>
           </div>
         </div>
 
-        <div class="card testimonial-card">
-          <div class="card-content">
-            <div style="color: var(--accent); font-size: 1.5rem; margin-bottom: var(--space-md);">★★★★★</div>
-            <p style="font-style: italic; margin-bottom: var(--space-lg);">
-              "La bibliothèque réalisée par Daniel dépasse toutes nos attentes. 
-              C'est du grand art, alliant fonctionnalité et beauté. Un vrai artisan !"
-            </p>
-            <div>
-              <strong>Jean-François Lemieux</strong><br>
-              <small style="color: var(--text-muted);">Bibliothèque murale - Québec</small>
+        <div class="testimonial-card reveal stagger-2">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "La bibliotheque realisee par Daniel depasse toutes nos attentes.
+            C'est du grand art, alliant fonctionnalite et beaute. Un vrai artisan !"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="testimonial-author-info">
+              <strong>Jean-Francois Lemieux</strong>
+              <span>Bibliotheque murale - Quebec</span>
             </div>
           </div>
         </div>
 
-        <div class="card testimonial-card">
-          <div class="card-content">
-            <div style="color: var(--accent); font-size: 1.5rem; margin-bottom: var(--space-md);">★★★★★</div>
-            <p style="font-style: italic; margin-bottom: var(--space-lg);">
-              "Travail impeccable du début à la fin. Daniel a su comprendre notre vision 
-              et la concrétiser au-delà de nos espérances. Notre walk-in est magnifique !"
-            </p>
-            <div>
-              <strong>Sophie Tremblay</strong><br>
-              <small style="color: var(--text-muted);">Walk-in sur mesure - Charlesbourg</small>
+        <div class="testimonial-card reveal stagger-3">
+          <div class="testimonial-stars">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <p class="testimonial-text">
+            "Travail impeccable du debut a la fin. Daniel a su comprendre notre vision
+            et la concretiser au-dela de nos esperances. Notre walk-in est magnifique !"
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="testimonial-author-info">
+              <strong>Sophie Tremblay</strong>
+              <span>Walk-in sur mesure - Charlesbourg</span>
             </div>
           </div>
         </div>
@@ -379,98 +494,91 @@
   </section>
 
   <!-- Section CTA -->
-  <section class="section text-center">
-    <div class="container">
-      <h2>Prêt à créer ensemble ?</h2>
-      <p class="lead mb-2xl">
-        Chaque projet est une collaboration unique. Contactez-nous pour discuter de votre vision 
-        et découvrir comment nous pouvons la concrétiser.
-      </p>
-      <div class="d-flex gap-lg justify-center">
-        <a href="./contact.html" class="btn btn-primary">
+  <section class="section cta-section" aria-labelledby="cta-title">
+    <div class="container text-center">
+      <div class="section-header reveal">
+        <div class="section-label">
+          <span></span>Passons a l'action
+        </div>
+        <h2 id="cta-title">Pret a creer ensemble ?</h2>
+        <p class="lead">
+          Chaque projet est une collaboration unique. Contactez-nous pour discuter de votre vision
+          et decouvrir comment nous pouvons la concretiser.
+        </p>
+      </div>
+
+      <div class="reveal">
+        <a href="./contact.html" class="btn btn-primary btn-magnetic">
           Demander une consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="./realisations.html" class="btn btn-outline">
-          Voir nos réalisations
+        <a href="./realisations.html" class="btn btn-outline btn-magnetic">
+          Voir nos realisations
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="section" role="contentinfo" style="background-color: var(--primary-dark); color: white; padding: var(--space-4xl) 0 var(--space-2xl);">
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="grid grid-4" style="margin-bottom: var(--space-3xl);">
-        <div>
-          <img src="./assets/logo.png" alt="Logo Ébénisterie Daniel Chamberland" style="height: 50px; margin-bottom: var(--space-lg); filter: brightness(0) invert(1);">
-          <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            Atelier d'ébénisterie haut de gamme spécialisé dans la création de mobilier sur mesure d'exception.
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="./assets/logo.png" alt="Logo Ebenisterie Daniel Chamberland" class="nav-logo">
+          <p>
+            Atelier d'ebenisterie haut de gamme specialise dans la creation de mobilier sur mesure d'exception a Charlesbourg, Quebec.
           </p>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Services</h3>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Cuisines sur mesure</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Manteaux de foyer</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Mobilier sur mesure</a>
-            </li>
-            <li style="margin-bottom: var(--space-sm);">
-              <a href="./realisations.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Rangements intégrés</a>
-            </li>
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-links">
+            <li><a href="./realisations.html">Cuisines sur mesure</a></li>
+            <li><a href="./realisations.html">Manteaux de foyer</a></li>
+            <li><a href="./realisations.html">Mobilier sur mesure</a></li>
+            <li><a href="./realisations.html">Rangements integres</a></li>
           </ul>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Contact</h3>
-          <address style="font-style: normal; color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            <div style="margin-bottom: var(--space-sm);">
-              📍 350, rue Boyle<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;Charlesbourg, QC G2M 1H9
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              📞 <a href="tel:+14185636781" style="color: rgba(255, 255, 255, 0.8);">(418) 563-6781</a>
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              ✉️ <a href="mailto:eben.dc@ccapcable.com" style="color: rgba(255, 255, 255, 0.8);">eben.dc@ccapcable.com</a>
-            </div>
-          </address>
+          <h3 class="footer-heading">Contact</h3>
+          <ul class="footer-links">
+            <li>350, rue Boyle</li>
+            <li>Charlesbourg, QC G2M 1H9</li>
+            <li><a href="tel:+14185636781">(418) 563-6781</a></li>
+            <li><a href="mailto:eben.dc@ccapcable.com">eben.dc@ccapcable.com</a></li>
+          </ul>
         </div>
-        
+
         <div>
-          <h3 style="color: var(--accent); margin-bottom: var(--space-lg); font-size: 1.125rem;">Horaires</h3>
-          <div style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
-            <div style="margin-bottom: var(--space-sm);">
-              <strong>Lundi - Vendredi</strong><br>
-              7h30 - 16h30
-            </div>
-            <div style="margin-bottom: var(--space-sm);">
-              <strong>Samedi</strong><br>
-              Sur rendez-vous
-            </div>
-            <div>
-              <strong>Dimanche</strong><br>
-              Fermé
-            </div>
-          </div>
+          <h3 class="footer-heading">Horaires</h3>
+          <ul class="footer-links">
+            <li><strong>Lun-Ven</strong> 7h30-16h30</li>
+            <li><strong>Samedi</strong> Sur rendez-vous</li>
+            <li><strong>Dimanche</strong> Ferme</li>
+          </ul>
         </div>
       </div>
-      
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: var(--space-xl); text-align: center; color: rgba(255, 255, 255, 0.6);">
-        <p>&copy; 2024 Ébénisterie Daniel Chamberland. Tous droits réservés.</p>
-        <p style="font-size: 0.875rem; margin-top: var(--space-sm);">
-          Artisanat québécois d'exception • Charlesbourg, Québec
-        </p>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ebenisterie Daniel Chamberland. Tous droits reserves.</p>
+        <p>Artisanat quebecois d'exception</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- App -->
   <script src="./script.js"></script>
 </body>
 </html>
